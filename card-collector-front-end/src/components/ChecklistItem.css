@@ -1,0 +1,37 @@
+.checklist__checklist-item {
+    width: 20rem;
+    height: 2rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    /* align-items: center; */
+}
+
+.checklist__checklist-item h4 {
+    margin: 0;
+    width: 100%;
+}
+
+.checklist__checklist-item input {
+    margin-right: 0.5rem;
+}
+
+.checklist-item__player {
+    width: 12rem;
+    text-align: left;
+    padding-left: 0.5rem;
+}
+
+.checklist-item__cardnumber {
+    text-align: right;
+    width: 2rem;
+}
+
+.checklist-item__inventory {
+    width: 2rem;
+}
+
+.checklist-item__checkbox {
+    width: 1rem;
+    height: 1rem;
+}

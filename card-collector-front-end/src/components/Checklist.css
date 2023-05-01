@@ -1,0 +1,104 @@
+.checklist {
+    width: 21rem;
+    margin: auto;
+    border: 1px solid black;
+}
+
+.checklist__infobox {
+    width: 100%;
+    height: 8rem;
+    background: grey;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    padding: 0.35rem 0.7rem;
+    border-radius: 6px;
+}
+
+.checklist h2 {
+    margin: 0;
+    margin-top: 0.75rem;
+    width: 100%;
+    height: 100%;
+    letter-spacing: 0.2px;
+    font-size: 1rem;
+    position: relative;
+    text-align: left;
+}
+
+h2 span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 0.6rem;
+    transform: translateY(-10px);
+}
+
+.infobox__company {
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 1;
+}
+
+.infobox__season {
+    grid-row: 1 / span 1;
+    grid-column: 2 / span 1;
+}
+
+.infobox__product {
+    grid-row: 2 / span 1;
+    grid-column: 1 / span 1;
+}
+
+.infobox__set-name {
+    grid-row: 2 / span 1;
+    grid-column: 2 / span 1;
+}
+
+.infobox__set-type {
+    grid-row: 3 / span 1;
+    grid-column: 1 / span 1;
+}
+
+.infobox__pack-odds {
+    grid-row: 3 / span 1;
+    grid-column: 2 / span 1;
+}
+
+
+tr {
+    text-align: left;
+}
+
+.checklist__table {
+    width: 20rem;
+    margin-top: 0.5rem;
+}
+
+thead {
+    max-width: 20rem;
+}
+
+.header-row {
+    width: 20rem;
+    height: 2rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+
+.header__cardnum {
+    width: 2rem;
+    text-align: right;
+}
+
+.header__player-name {
+    width: 12rem;
+    text-align: left;
+    padding-left: 0.5rem;
+}
+
+.header__check {
+    width: 2rem;
+    text-align: center;
+}
