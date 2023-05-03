@@ -5,6 +5,7 @@ const PORT = process.env.PORT || 8000
 app.use(express.json())
 
 const { checklistRouter } = require('./routes/checklist.route')
+const { userRouter } = require('./routes/user.route')
 
 
 const { db } = require('./database/database')
@@ -597,6 +598,8 @@ const jsonV = stringify(ud9495checklist)
 
 
 app.use('/api/checklist', checklistRouter)
+app.use('/api/user', userRouter)
+
 
 
 app.listen(PORT, () => {

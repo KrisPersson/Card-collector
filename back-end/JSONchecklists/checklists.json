@@ -1,10 +1,12 @@
 {
     "upperdeck": {
+        "name": "Upper Deck",
         "1994-95": {
             "series1": {
+                "name": "Series 1",
                 "sets": [
                     {
-                        "setName": "Series 1 - Base",
+                        "setName": "Base",
                         "setType": "Base",
                         "cardNumbers": {
                             "first": 1,
@@ -317,13 +319,15 @@
                 ]
             },
             "series2": {
+                "name": "Series 2",
                 "sets": [
                     {
+                        "setName": "Base",
                         "cardNumbers": {
                             "first": 271,
                             "last": 570
                         },
-                        "setType": "base",
+                        "setType": "Base",
                         "parallelSets": [
                             {"name": "Electric Ice", "packOdds": "1:35"}
                         ],
@@ -636,8 +640,3 @@
         }
     }
 }
-    
-      
-    
-    
-

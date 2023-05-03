@@ -1,7 +1,20 @@
 import "./Checklist.css"
+import { useState } from 'react'
+import { ChecklistItem } from "../components/ChecklistItem"
+import setLists from "../../../back-end/JSONchecklists/checklists.json"
 
+
+const cardSet = setLists.upperdeck["1994-95"].series1
 
 function Checklist(props) {
+
+    const [changedSinceLastSave, setChangedSinceLastSave] = useState<number[]>([])
+
+    function handleCheck(newInput: number) {
+        setChangedSinceLastSave([...changedSinceLastSave, newInput])
+    }
+
+    
 
 
     return (
@@ -24,7 +37,7 @@ function Checklist(props) {
                     </tr>
                 </thead>
                 <tbody>
-                    { props.cards }
+                    { props.items }
                 </tbody>
             </table>
         </article>

@@ -10,6 +10,7 @@
   "author": "Kristofer Persson",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.1.0",
     "express": "^4.18.2",
     "joi": "^17.9.2",
     "nedb-promises": "^6.2.1",
