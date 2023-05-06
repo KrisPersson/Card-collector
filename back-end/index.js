@@ -10,6 +10,16 @@ const { userRouter } = require('./routes/user.route')
 
 const { db } = require('./database/database')
 
+
+const cors=require("cors");
+const corsOptions ={
+   origin:'*', 
+   credentials:true,            //access-control-allow-credentials:true
+   optionSuccessStatus:200,
+}
+
+app.use(cors(corsOptions)) // Use this after the variable declaration
+
 async function insertInDb() {
     await db.checklist.insert({ userId: "krillep", company: "Upper Deck", season: "1994-95", product: "Series 1", setName: "Electric Ice", personalChecklist: [] })
 }

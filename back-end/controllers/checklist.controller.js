@@ -1,5 +1,5 @@
 const { getSpecificChecklist, createNewChecklist, getChecklistById, updateChecklist, deleteChecklist } = require('../models/checklist.model')
-
+const { findUserById } = require('../models/user.model')
 async function getSpecificChecklistCtrl(request, response) {
     try {
         const { headers } = request
@@ -25,14 +25,15 @@ async function createNewChecklistCtrl(request, response) {
     try {
         const { body } = request
         const input = { userId: body.userId, company: body.company, season: body.season, product: body.product, setName: body.setName }
+        await findUserById(input.userId)
         const addedChecklist = await createNewChecklist(input)
-        response.json({ success: true, message: 'New checklist created', newChecklistId: addedChecklist.id })
+        response.json({ success: true, message: 'New checklist created', checklistId: addedChecklist.id })
     } catch (error) {
-        response.status(400).json({ success: false, message: error.message })
+        response.status(404).json({ success: false, message: error.message })
     }
 }
 
-async function updateChecklistCtrl(request, response) {
+async function updateChecklistCtrl(request, response) {x
     try {
         await updateChecklist(request.body)
         const updatedChecklist = await getChecklistById(request.body.checklistId)

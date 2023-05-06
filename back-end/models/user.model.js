@@ -25,6 +25,15 @@ async function login(input) {
     return { username: userInDb.username, id: userInDb.id }
 }
 
+async function findUserById(userId) {
+    const userFound = await db.user.findOne({ id: userId })
+    if (!userFound) {
+        throw new Error('User ID not found')
+    } else {
+        return 
+    }
+}
 
 
-module.exports = { addNewUser, login }
+
+module.exports = { addNewUser, login, findUserById }

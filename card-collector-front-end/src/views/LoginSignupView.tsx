@@ -1,5 +1,6 @@
 import "./LoginSignupView.css"
 import { useState } from 'react'
+import { user } from "../api"
 
 function LoginSignupView() {
 
@@ -7,17 +8,18 @@ function LoginSignupView() {
     const [username, setUsername] = useState<string>('')
     const [password, setPassword] = useState<string>('')
 
-    function handleSubmit() {
-
+    function handleSubmit(event) {
+        event.preventDefault()
         const input = {
             username: username,
             password: password
         }
 
         if (isSignupMode) {
-            console.log('Sign up')
+            user(input, "signup")
+            setIsSignupMode(false)
         } else {
-            console.log('Login')
+            user(input, "login")
         }
     }
 

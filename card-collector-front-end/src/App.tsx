@@ -8,7 +8,14 @@ import LoginSignupView from "./views/LoginSignupView"
 
 function App() {
 
+  const 
+
   const [isLoggedIn, setIsLoggedIn] = useState(false)
+
+  function setLoggedIn() {
+
+    setIsLoggedIn(true)
+  }
 
   return (
     isLoggedIn ? 

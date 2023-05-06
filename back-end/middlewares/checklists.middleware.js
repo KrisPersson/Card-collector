@@ -2,8 +2,8 @@ const Joi = require('joi');
 
 const specificChecklistSchema = Joi.object({
     userid: Joi.string()
-        .min(3)
-        .max(30)
+        .min(20)
+        .max(40)
         .required(),
     company: Joi.string()
         .min(3)
@@ -25,8 +25,8 @@ const specificChecklistSchema = Joi.object({
 
 const createNewChecklistSchema = Joi.object({
     userId: Joi.string()
-        .min(3)
-        .max(30)
+        .min(20)
+        .max(40)
         .required(),
     company: Joi.string()
         .min(3)
@@ -95,7 +95,9 @@ async function checkCreateNewChecklist(request, response, next) {
     try {
         const { userId, company, season, product, setName } = request.body
         const input = { userId, company, season, product, setName }
-        const validation = createNewChecklistSchema.validate(input)
+       
+        const validation =  createNewChecklistSchema.validate(input)
+        console.log(validation)
         if (!validation.error) {
             next()
         } else {

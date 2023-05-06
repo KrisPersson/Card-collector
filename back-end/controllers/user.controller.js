@@ -1,3 +1,4 @@
+const jwt = require('jsonwebtoken')
 const { addNewUser, login } = require('../models/user.model')
 
 async function signUpCtrl(request, response) {
@@ -12,10 +13,23 @@ async function signUpCtrl(request, response) {
 async function loginCtrl(request, response) {
     try {
         const user = await login(request.body)
-        response.json({ success: true, message: 'User logged in successfully!', username: user.username, id: user.id })
+        const token = jwt.sign({ id: user.id }, 'a1b1c1', {
+            expiresIn: "24h" // 60 seconds
+        })
+        response.json({ success: true, message: 'User logged in successfully!', username: user.username, id: user.id, token })
     } catch (error) {
         response.json({ success: false, message: error.message })
     }
 }
 
-module.exports = { signUpCtrl, loginCtrl }
+async function verifyTokenCtrl(request, response) {
+    const token = request.headers.authorization.replace('Bearer ', '')
+    try {
+        const data = jwt.verify(token, secret)
+        response.json({ success: true, message: 'Token valid' })
+    } catch (error) {
+        response.status(498).json({ success: false, message: 'Invalid token' })
+    }
+}
+
+module.exports = { signUpCtrl, loginCtrl, verifyTokenCtrl }
