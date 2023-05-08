@@ -1,26 +1,37 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { Outlet, useNavigate } from 'react-router-dom'
 
 import './App.css'
 import { ChecklistView } from "./views/ChecklistView"
-import LoginSignupView from "./views/LoginSignupView"
+import { verifyToken } from './api'
 
+import Header from "./components/Header"
+const tokenInLS = localStorage.getItem('userToken')
+const tokenVerified = await verifyToken(tokenInLS)
 
 
 function App() {
+  const navigate = useNavigate()
 
-  const 
+  useEffect(() => {
+    if (!localStorage.getItem('userToken') || !tokenVerified) {
+      navigate('/login-signup')
+    } 
+  }, [navigate])
 
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  
+  
 
-  function setLoggedIn() {
-
-    setIsLoggedIn(true)
-  }
 
   return (
-    isLoggedIn ? 
-    <ChecklistView /> :
-    <LoginSignupView />
+    <>
+    <Header username={ localStorage.getItem('username') } />
+    
+    <main>
+      <Outlet />
+
+    </main>
+    </>
   )
 }
 

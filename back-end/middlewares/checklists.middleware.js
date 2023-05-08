@@ -48,6 +48,8 @@ const createNewChecklistSchema = Joi.object({
 
 const getChecklistByIdSchema = Joi.string().min(10).required()
 
+const getChecklistCollectionSchema = Joi.string().min(10).required()
+
 const updateChecklistSchema = Joi.object({
     checklistId: Joi.string()
         .min(10)
@@ -126,5 +128,21 @@ async function checkDeleteChecklist(request, response, next) {
     }
 }
 
+async function checkGetChecklistCollection(request, response, next) {
+    try {
+        const { userid } = request.headers
+        const validation = getChecklistCollectionSchema.validate(userid)
+        if (!validation.error) {
+            next()
+        } else {
+            response.status(400).json({ success: false, error: validation.error })
+        }
+    } catch (error) {
+        response.status(400).json({ success: false, message: error.message })
+    }
+}
 
-module.exports = { checkGetSpecificChecklist, checkCreateNewChecklist, checkGetChecklistById, checkUpdateChecklist, checkDeleteChecklist }
+
+
+
+module.exports = { checkGetSpecificChecklist, checkCreateNewChecklist, checkGetChecklistById, checkUpdateChecklist, checkDeleteChecklist, checkGetChecklistCollection }

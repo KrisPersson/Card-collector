@@ -1,14 +1,17 @@
-import "./LoginSignupView.css"
+import "./LoginSignup.css"
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { user } from "../api"
 
-function LoginSignupView() {
+function LoginSignup() {
+
+    const navigate = useNavigate()
 
     const [isSignupMode, setIsSignupMode] = useState(false)
     const [username, setUsername] = useState<string>('')
     const [password, setPassword] = useState<string>('')
 
-    function handleSubmit(event) {
+    function handleSubmit(event: Event) {
         event.preventDefault()
         const input = {
             username: username,
@@ -20,12 +23,12 @@ function LoginSignupView() {
             setIsSignupMode(false)
         } else {
             user(input, "login")
+            navigate('/checklist')
         }
     }
 
     return (
         <div className="view login-signup-view">
-            <h1>Card Collector</h1>
             <section className="signup-box">
                 <h2>{ isSignupMode ? 'Sign up' : 'Log in'}</h2>
                 <form onSubmit={ handleSubmit }>
@@ -46,4 +49,4 @@ function LoginSignupView() {
     )
 }
 
-export default LoginSignupView
+export default LoginSignup

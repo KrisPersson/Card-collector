@@ -8,7 +8,7 @@ interface UserBody {
 }
 
 async function user(body: UserBody, intent: Intent) {
-
+    const { username } = body
     try {
         const response = await fetch(BASE_URL + "/user/" + intent, {
             method: "POST",
@@ -16,16 +16,42 @@ async function user(body: UserBody, intent: Intent) {
             body: JSON.stringify(body)
         })
         const data = await response.json()
-        console.log(data)
         if (intent === 'login') {
             localStorage.setItem('userToken', data?.token)
+            localStorage.setItem('username', username)
+            localStorage.setItem('userId', data?.id)
+
+        } else {
+            localStorage.setItem('userToken', '')
+            localStorage.setItem('username', '')
+            localStorage.setItem('userId', '')
+        }
+        console.log(localStorage)
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+async function verifyToken(token: string) {
+    if (!token) return false
+    try {
+        const response = await fetch(BASE_URL + "/user/verify", {
+            method: "GET",
+            headers: {authorization: `Bearer ${token}`}
+        })
+        const data = await response.json()
+        console.log(data)
+        if (data.success) {
+            return true
+        } else {
+            return false
         }
     } catch (error) {
         console.log(error)
     }
-     
-    
 }
 
 
-export { user }
+
+
+export { user, verifyToken, BASE_URL }

@@ -20,6 +20,14 @@ async function getChecklistById(id) {
     return checklistInDb
 }
 
+async function getChecklistCollection(userId) {
+    const collection =  await db.checklist.find({ userId })
+    if (!collection) {
+        throw new Error('Checklist not found')
+    }
+    return collection
+}
+
 async function createNewChecklist(input) {
     const { userId, company, season, product, setName } = input
     return await db.checklist.insert({ userId, company, season, product, setName, personalChecklist: [], id: uuidv4() })
@@ -42,4 +50,4 @@ async function deleteChecklist(input) {
         throw new Error('Could not delete checklist - checklist ID might not exist, or internal server error')
     }}
 
-module.exports = { getSpecificChecklist, createNewChecklist, getChecklistById, updateChecklist, deleteChecklist }
+module.exports = { getSpecificChecklist, createNewChecklist, getChecklistById, updateChecklist, deleteChecklist, getChecklistCollection }

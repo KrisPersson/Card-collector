@@ -1,4 +1,4 @@
-const { getSpecificChecklist, createNewChecklist, getChecklistById, updateChecklist, deleteChecklist } = require('../models/checklist.model')
+const { getSpecificChecklist, createNewChecklist, getChecklistById, updateChecklist, deleteChecklist, getChecklistCollection } = require('../models/checklist.model')
 const { findUserById } = require('../models/user.model')
 async function getSpecificChecklistCtrl(request, response) {
     try {
@@ -16,6 +16,16 @@ async function getChecklistByIdCtrl(request, response) {
         const { headers } = request
         const checklist = await getChecklistById(headers.id)
         response.json({ success: true, checklist: checklist.personalChecklist })
+    } catch (error) {
+        response.status(404).json({ success: false, message: error.message })
+    }
+}
+
+async function getChecklistCollectionCtrl(request, response) {
+    try {
+        const { headers } = request
+        const collection = await getChecklistCollection(headers.userid)
+        response.json({ success: true, collection })
     } catch (error) {
         response.status(404).json({ success: false, message: error.message })
     }
@@ -52,4 +62,4 @@ async function deleteChecklistCtrl(request, response) {
     }
 }
 
-module.exports = { getSpecificChecklistCtrl, createNewChecklistCtrl, getChecklistByIdCtrl, updateChecklistCtrl, deleteChecklistCtrl }
+module.exports = { getSpecificChecklistCtrl, createNewChecklistCtrl, getChecklistByIdCtrl, updateChecklistCtrl, deleteChecklistCtrl, getChecklistCollectionCtrl }

@@ -25,7 +25,7 @@ async function loginCtrl(request, response) {
 async function verifyTokenCtrl(request, response) {
     const token = request.headers.authorization.replace('Bearer ', '')
     try {
-        const data = jwt.verify(token, secret)
+        const data = jwt.verify(token, 'a1b1c1')
         response.json({ success: true, message: 'Token valid' })
     } catch (error) {
         response.status(498).json({ success: false, message: 'Invalid token' })
