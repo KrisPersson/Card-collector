@@ -1,0 +1,7 @@
+.checklist-container {
+    grid-column: 2 / -1;
+    display: flex;
+    justify-content: flex-start;
+    /* padding: 1rem; */
+
+}

@@ -13,7 +13,7 @@
                             "last": 270
                         },
                         "parallelSets": [
-                            {"name": "Electric Ice", "packOdds": "1:35"}
+                            {"name": "Electric Ice", "packOdds": "1:35", "setId": "ud9495s1ei"}
                         ],
                         "checklist": [
                             "Wayne Gretzky",	 		
@@ -286,7 +286,8 @@
                             "Cory Stillman SR",
                             "David Oliver SR",
                             "Andrei Nazarov SR"
-                        ]
+                        ],
+                        "setId": "ud9495s1b"
                     },
                     {
                         "setName": "Ice Gallery",
@@ -314,7 +315,8 @@
                             "Teemu Selanne",
                             "Pat LaFontaine",
                             "Wayne Gretzky"
-                        ]
+                        ],
+                        "setId": "ud9495s1ig"
                     }
                 ]
             },
@@ -329,7 +331,7 @@
                         },
                         "setType": "Base",
                         "parallelSets": [
-                            {"name": "Electric Ice", "packOdds": "1:35"}
+                            {"name": "Electric Ice", "packOdds": "1:35", "setId": "ud9495s2ei"}
                         ],
                         "checklist": [
                             "Mikael Renberg",
@@ -632,10 +634,810 @@
                             "Jamie Storr WT",			
                             "Brett Hull WT",			
                             "Valeri Karpov WT"
-                        ]
+                        ],
+                        "setId": "ud9495s2b"
                     }
                 ]
                 
+            }
+        },
+        "2022-23": {
+            "series1": {
+                "name": "Series 1",
+                "sets": [
+                    {
+                        "setName": "Base",
+                        "cardNumbers": {
+                            "first": 1,
+                            "last": 250
+                        },
+                        "setType": "Base",
+                       "parallelSets": [
+                            {"name": "Clear Cut", "packOdds": "1:96", "setId": "ud2223s1bcc"},
+                            {"name": "French (Variante Francaise)", "packOdds": "1:30", "setId": "ud2223s1bfv"}
+                       ],
+                       "checklist": [],
+                       "setId": "ud2223s1b"
+                    },
+                    {
+                        "setName": "Centre of Attention",
+                        "cardNumbers": {
+                            "first": 1,
+                            "last": 25
+                        },
+                        "setType": "Insert",
+                        "packOdds": "1:16",
+                        "numPrefix": "CA-",
+                       "parallelSets": [
+                            {"name": "Centre of Attention Gold", "packOdds": "1:192", "setId": "ud2223s1coag"}
+                       ],
+                       "checklist": [
+                            "Nazem Kadri",
+                            "Roope Hintz",
+                            "Pierre-Luc Dubois",
+                            "Trevor Zegras",
+                            "Sidney Crosby",
+                            "Mika Zibanejad",
+                            "Ryan O'Reilly",
+                            "Elias Lindholm",
+                            "Leon Draisaitl",
+                            "Evgeny Kuznetsov",
+                            "Ryan Johansen",
+                            "Brayden Point",
+                            "Dylan Larkin",
+                            "Tim Stutzle",
+                            "Jack Hughes",
+                            "Sebastian Aho",
+                            "Joel Eriksson Ek",
+                            "Patrice Bergeron",
+                            "Jack Eichel",
+                            "Tomas Hertl",
+                            "Aleksander Barkov",
+                            "Jonathan Toews",
+                            "J.T. Miller",
+                            "Anze Kopitar",
+                            "Auston Matthews"
+                       ],
+                       "setId": "ud2223s1coa"
+                    },
+                    {
+                        "setName": "Debut Dates",
+                        "cardNumbers": {
+                            "first": 1,
+                            "last": 25
+                        },
+                        "setType": "Insert",
+                        "packOdds": "1:16",
+                        "numPrefix": "DD-",
+                       "parallelSets": [
+                            {"name": "Debut Dates Gold", "packOdds": "1:192", "setId": "ud2223s1ddg"}
+                       ],
+                       "checklist": [
+                            "Philip Tomassino",
+                            "Vasily Podkolzin",
+                            "Anton Lundell",
+                            "Nils Lundkvist",
+                            "Jamie Drysdale",
+                            "Aliaksei Protas",
+                            "Alex Newhook",
+                            "Lucas Raymond",
+                            "Quinton Byfield",
+                            "Jonathan Dahlén",
+                            "Jeremy Swayman",
+                            "Spencer Knight",
+                            "Trevor Zegras",
+                            "Cole Perfetti",
+                            "Karel Vejmelka",
+                            "Scott Perunovich",
+                            "Cole Caufield",
+                            "Michael Bunting",
+                            "Dysin Mayo",
+                            "Seth Jarvis",
+                            "Dawson Mercer",
+                            "Mason MacTavish",
+                            "Tanner Jeannot",
+                            "Moritz Seider"
+                       ],
+                       "setId": "ud2223s1dd"
+                    },
+                    {
+                        "setName": "Defense Mechanism",
+                        "cardNumbers": {
+                            "first": 1,
+                            "last": 30
+                        },
+                        "setType": "Insert",
+                        "packOdds": "1:13",
+                        "numPrefix": "DM-",
+                       "parallelSets": [
+                            {"name": "Defense Mechanism Gold", "packOdds": "1:160", "setId": "ud2223s1dmg"}
+                       ],
+                       "checklist": [
+                            "Miro Heiskanen",
+                            "Roman Josi",
+                            "Evan Bouchard",
+                            "Aaron Ekblad",
+                            "Morgan Reilly",
+                            "Victor Hedman",
+                            "Drew Doughty",
+                            "Quinn Hughes",
+                            "Seth Jones",
+                            "Torey Krug",
+                            "Rasmus Dahlin",
+                            "Cam Fowler",
+                            "Cale Makar",
+                            "Dougie Hamilton",
+                            "John Carlson",
+                            "Thomas Chabot",
+                            "Neal Pionk",
+                            "Jaccob Slavin",
+                            "Jared Spurgeon",
+                            "Charlie McAvoy",
+                            "Zach Werenski",
+                            "Brent Burns",
+                            "Rasmus Andersson",
+                            "Moritz Seider",
+                            "Alex Pietrangelo",
+                            "Shayne Gostisbehere",
+                            "Adam Fox",
+                            "Noah Dobson",
+                            "Vince Dunn",
+                            "Travis Sanheim"
+                       ],
+                       "setId": "ud2223s1dm"
+                    },
+                    {
+                        "setName": "Freestyles",
+                        "cardNumbers": {
+                            "first": 1,
+                            "last": 50
+                        },
+                        "setType": "Insert",
+                        "packOdds": "1:72",
+                        "numPrefix": "FS-",
+                       "parallelSets": [
+                            {"name": "Freestyles Blue", "packOdds": "1:240 (1:72 Tin)", "setId": "ud2223s1fsb"},
+                            {"name": "Freestyles Gold", "packOdds": "1:1440", "setId": "ud2223s1fsg"},
+                            {"name": "Freestyles Red", "packOdds": "1:72 Retail", "setId": "ud2223s1fsr"}
+                       ],
+                       "checklist": [
+                            "Alex Ovechkin",
+                            "Jacob Markstrom",
+                            "Mikko Rantanen",
+                            "David Pastrnak",
+                            "Jonathan Huberdeau",
+                            "Nick Suzuki",
+                            "Andrei Vasilevskiy",
+                            "Andrei Svechnikov",
+                            "Auston Matthews",
+                            "Jack Hughes",
+                            "Tage Thompson",
+                            "Filip Forsberg",
+                            "Josh Norris",
+                            "Nathan MacKinnon",
+                            "Brayden Point",
+                            "Mitch Marner",
+                            "Clayton Keller",
+                            "Elias Lindholm",
+                            "Steven Stamkos",
+                            "Troy Terry",
+                            "Artemi Panarin",
+                            "Alex DeBrincat",
+                            "Kyle Connor",
+                            "Kirill Kaprizov",
+                            "Patrik Laine",
+                            "Lucas Raymond",
+                            "Connor McDavid",
+                            "Trevor Zegras",
+                            "Johnny Gaudreau",
+                            "Anze Kopitar",
+                            "Timo Meier",
+                            "Jordan Kyrou",
+                            "Nikita Kucherov",
+                            "Jonathan Marchessault",
+                            "Mathew Barzal",
+                            "Brad Marchand",
+                            "Aleksander Barkov",
+                            "Igor Shesterkin",
+                            "Sebastian Aho",
+                            "Victor Hedman",
+                            "Jared McCann",
+                            "Cam Atkinson",
+                            "Leon Draisaitl",
+                            "Patrick Kane",
+                            "Jason Robertson",
+                            "Cale Makar",
+                            "J.T. Miller",
+                            "Frederik Andersen",
+                            "Matthew Tkachuk",
+                            "Sidney Crosby"
+                       ],
+                       "setId": "ud2223s1fs"
+                    },
+                    {
+                        "setName": "Honor Roll",
+                        "cardNumbers": {
+                            "first": 1,
+                            "last": 50
+                        },
+                        "setType": "Insert",
+                        "packOdds": "1:12 (H R T), 1:24 (Bl FP)",
+                        "numPrefix": "HR-",
+                        "parallelSets": [
+                                {"name": "Honor Roll Rainbow", "packOdds": "Unknown", "numbered": "/250", "setId": "ud2223s1hrr"},
+                                {"name": "Honor Roll Rainbow Gold", "packOdds": "Unknown", "numbered": "/25", "setId": "ud2223s1hrrg"},
+                                {"name": "Honor Roll Rainbow Red", "packOdds": "1:10 Mega Blasters", "setId": "ud2223s1hrrr"}
+                        ],
+                       "checklist": [
+                            "Anze Kopitar",
+                            "Leon Draisaitl",
+                            "Frederik Andersen",
+                            "Lukas Reichel",
+                            "Auston Matthews",
+                            "Sam Reinhart",
+                            "Cam Atkinson",
+                            "Mikko Rantanen",
+                            "Sidney Crosby",
+                            "Josh Norris",
+                            "Marco Rossi",
+                            "Patrick Kane",
+                            "Kyle Connor",
+                            "Morgan Reilly",
+                            "Roope Hintz",
+                            "Tristan Jarry",
+                            "Shayne Gostisbehere",
+                            "Artemi Panarin",
+                            "Brad Marchand",
+                            "Teuvo Teravainen",
+                            "Steven Stamkos",
+                            "Alex DeBrincat",
+                            "Jesper Bratt",
+                            "Jason Robertson",
+                            "Brady Tkachuk",
+                            "Matt Boldy",
+                            "Alex Ovechkin",
+                            "Lucas Raymond",
+                            "Oliver Bjorkstrand",
+                            "Tage Thompson",
+                            "J.T. Miller",
+                            "Timo Meier",
+                            "Trevor Zegras",
+                            "Jonathan Marchessault",
+                            "Nick Suzuki",
+                            "Robert Thomas",
+                            "Sebastian Aho",
+                            "Braden Schneider",
+                            "Kirill Kaprizov",
+                            "Jonathan Huberdeau",
+                            "Brock Nelson",
+                            "Matt Duchene",
+                            "Jacob Markstrom",
+                            "Nikita Kucherov",
+                            "Roman Josi",
+                            "Jared McCann",
+                            "Elias Lindholm",
+                            "Jordan Kyrou",
+                            "Erik Kallgren",
+                            "Cale Makar"
+                       ],
+                       "setId": "ud2223s1hr"
+                    },
+                    {
+                        "setName": "Rookie Retrospective",
+                        "cardNumbers": {
+                            "first": 1,
+                            "last": 20
+                        },
+                        "setType": "Insert",
+                        "packOdds": "1:20",
+                        "numPrefix": "RR-",
+                       "parallelSets": [
+                            {"name": "Rookie Retrospective Gold", "packOdds": "1:240", "setId": "ud2223s1rrg"}
+                       ],
+                       "checklist": [
+                            "Seth Jarvis",
+                            "Jonathan Dahlén",
+                            "Philip Tomassino",
+                            "Jamie Drysdale",
+                            "Dawson Mercer",
+                            "Spencer Knight",
+                            "Cole Sillinger",
+                            "Nico Daws",
+                            "Cole Caufield",
+                            "Jeremy Swayman",
+                            "Lucas Raymond",
+                            "Sean Durzi",
+                            "Karel Vejmelka",
+                            "Trevor Zegras",
+                            "Anton Lundell",
+                            "Alex Newhook",
+                            "Moritz Seider",
+                            "Michael Bunting",
+                            "Vasily Podkolzin",
+                            "Tanner Jeannot"
+                       ],
+                       "setId": "ud2223s1rr"
+                    }
+                ]
+            },
+            "series2": {
+                "name": "Series 2",
+                "sets": [
+                    {
+                        "setName": "Base",
+                        "cardNumbers": {
+                            "first": 251,
+                            "last": 500
+                        },
+                        "setType": "Base",
+                       "parallelSets": [
+                            {"name": "Clear Cut", "packOdds": "1:96", "setId": "ud2223s2bcc"},
+                            {"name": "French (Variante Francaise)", "packOdds": "1:30", "setId": "ud2223s2bfv"}
+                       ],
+                       "checklist": [],
+                       "setId": "ud2223s2b"
+                    },
+                    {
+                        "setName": "Calder Candidates",
+                        "cardNumbers": {
+                            "first": 1,
+                            "last": 13
+                        },
+                        "setType": "Insert",
+                        "packOdds": "1:37",
+                        "numPrefix": "CC-",
+                       "parallelSets": [
+                            {"name": "Calder Candidates Gold", "packOdds": "1:739", "setId": "ud2223s2ccg"}
+                       ],
+                       "checklist": [
+                            "Matty Beniers",
+                            "Lukas Reichel",
+                            "Thomas Bordeleau",
+                            "Brandt Clarke",
+                            "Kaiden Guhle",
+                            "Dylan Guenther",
+                            "Juraj Slafkovsky",
+                            "Kent Johnson",
+                            "Dylan Holloway",
+                            "Marco Rossi",
+                            "Owen Power",
+                            "Jake Sanderson",
+                            "Shane Wright"
+                       ],
+                       "setId": "ud2223s2cc"
+                    },
+                    {
+                        "setName": "Honor Roll",
+                        "cardNumbers": {
+                            "first": 51,
+                            "last": 100
+                        },
+                        "setType": "Insert",
+                        "packOdds": "1:12 (H R T), 1:24 (Bl FP)",
+                        "numPrefix": "HR",
+                        "parallelSets": [
+                                {"name": "Honor Roll Rainbow", "packOdds": "Unknown", "numbered": "/250", "setId": "ud2223s2hrr"},
+                                {"name": "Honor Roll Rainbow Gold", "packOdds": "Unknown", "numbered": "/25", "setId": "ud2223s2hrrg"},
+                                {"name": "Honor Roll Rainbow Red", "packOdds": "1:10 Mega Blasters", "setId": "ud2223s2hrrr"}
+                        ],
+                       "checklist": [
+                            "Nick Blankenburg",
+                            "Reilly Walsh",
+                            "Jordan Harris",
+                            "Brayden Tracey",
+                            "Elmer Soderblom",
+                            "Ronnie Attard",
+                            "Trey Fix-Wolansky",
+                            "Jacob Perreault",
+                            "Matty Beniers",
+                            "Matias Maccelli",
+                            "Noah Cates",
+                            "Mads Sogaard",
+                            "Filip Hallander",
+                            "Brandt Clarke",
+                            "Owen Power",
+                            "Ben Meyers",
+                            "Jack McBain",
+                            "Kaiden Guhle",
+                            "Nick Abruzzese",
+                            "Kaedan Korczak",
+                            "Dylan Guenther",
+                            "Dylan Samberg",
+                            "Carson Meyer",
+                            "Nathan Smith",
+                            "Dylan Holloway",
+                            "Bobby Brink",
+                            "Jordan Spence",
+                            "Jake Sanderson",
+                            "Wyatt Johnston",
+                            "Valtteri Puustinen",
+                            "Fredrik Karlstrom",
+                            "Nils Aman",
+                            "Kent Johnson",
+                            "Alex Vlasic",
+                            "Cole Koepke",
+                            "Andrei Kuzmenko",
+                            "Jack Quinn",
+                            "Vladislav Kolyachonok",
+                            "Marc McLaughlin",
+                            "Michael Eyssimont",
+                            "Jakub Galvas",
+                            "Chase Pearson",
+                            "Pyotr Kochetkov",
+                            "Shane Wright",
+                            "Mark Kastelic",
+                            "Nikita Okhotiuk",
+                            "Hayden Hodgson",
+                            "Thomas Bordeleau",
+                            "Samuel Fagemo",
+                            "Juraj Slafkovsky"
+                       ],
+                       "setId": "ud2223s1hr"
+                    },
+                    {
+                        "setName": "Welcome To",
+                        "cardNumbers": {
+                            "first": 1,
+                            "last": 32
+                        },
+                        "setType": "Insert",
+                        "packOdds": "1:15",
+                        "numPrefix": "WT-",
+                       "parallelSets": [
+                            {"name": "Welcome To Gold", "packOdds": "1:300", "setId": "ud2223s2wtg"}
+                       ],
+                       "checklist": [
+                            "Anaheim Ducks",
+                            "Arizona Coyotes",
+                            "Boston Bruins",
+                            "Buffalo Sabres",
+                            "Calgary Flames",
+                            "Carolina Hurricanes",
+                            "Chicago Blackhawks",
+                            "Colorado Avalanche",
+                            "Columbus Blue Jackets",
+                            "Dallas Stars",
+                            "Detroit Red Wings",
+                            "Edmonton Oilers",
+                            "Florida Panthers",
+                            "Los Angeles Kings",
+                            "Minnesota Wild",
+                            "Montreal Canadiens",
+                            "Nashville Predators",
+                            "New Jersey Devils",
+                            "New York Islanders",
+                            "New York Rangers",
+                            "Ottawa Senators",
+                            "Philadelphia Flyers",
+                            "Pittsburgh Penguins",
+                            "San Jose Sharks",
+                            "Seattle Kraken",
+                            "St. Louis Blues",
+                            "Tampa Bay Lightning",
+                            "Toronto Maple Leafs",
+                            "Vancouver Canucks",
+                            "Vegas Golden Knights",
+                            "Washington Capitals",
+                            "Winnipeg Jets"
+                       ],
+                       "setId": "ud2223s2wt"
+                    }
+                    
+                ]
+            }
+        }
+    },
+    "leaf": {
+        "name": "Leaf",
+        "1994-95": {
+            "elitset": {
+                "name": "Elit Set (Swedish)",
+                "sets": [
+                    {
+                        "setName": "Base",
+                        "cardNumbers": {
+                            "first": 1,
+                            "last": 320
+                        },
+                        "setType": "Base",
+                        "checklist": [
+                            {"number":"1","firstname":"Thomas","lastname":"Tallberg","teamname":"Brynäs IF"},{"number":"2","firstname":"Håkan","lastname":"Algotsson"},{"number":"3","firstname":"Mikael","lastname":"Magnusson","teamname":"Djurgårdens IF"},{"number":"4","firstname":"Per","lastname":"Lundell","teamname":"Färjestads BK"},{"number":"5","firstname":"Kenneth","lastname":"Kennholt","teamname":"HV71"},{"number":"6","firstname":"Jan","lastname":"Huokko"},{"number":"7","firstname":"Petter","lastname":"Nilsson","teamname":"Luleå HF"},{"number":"8","firstname":"Johan","lastname":"Norgren","teamname":"Malmö IF"},{"number":"9","firstname":"Anders","lastname":"Berglund","teamname":"Rögle BK"},{"number":"10","firstname":"Kari","lastname":"Eloranta"},{"number":"11","firstname":"Sam","lastname":"Lindståhl"},{"number":"12","firstname":"Johan","lastname":"Rosen","teamname":"Luleå HF"},{"number":"13","firstname":"Jonas","lastname":"Johnson","teamname":"Brynäs IF"},{"number":"14","firstname":"Erik","lastname":"Huusko","teamname":"Djurgårdens IF"},{"number":"15","firstname":"Thomas","lastname":"Rhodin","teamname":"Färjestads BK"},{"number":"16","firstname":"Patric","lastname":"Kjellberg","teamname":"HV71"},{"number":"17","firstname":"Fredrik","lastname":"Andersson","teamname":"MoDo"},{"number":"18","firstname":"Stefan","lastname":"Nilsson"},{"number":"19","firstname":"Petri","lastname":"Liimatainen"},{"number":"20","firstname":"Lars","lastname":"Jansson","teamname":"MoDo"},{"number":"21","firstname":"Per","lastname":"Wallin","teamname":"Rögle BK"},{"number":"22","firstname":"Mika","lastname":"Nieminen","teamname":"Luleå HF"},{"number":"23","firstname":"Lars","lastname":"Ivarsson"},{"number":"24","firstname":"Ronnie","lastname":"Sundin"},{"number":"25","firstname":"Bedrich","lastname":"Scerban"},{"number":"26","firstname":"Anders","lastname":"Huusko"},{"number":"27","firstname":"Erik","lastname":"Granqvist","teamname":"Luleå HF"},{"number":"28","firstname":"Stefan","lastname":"Örnskog","teamname":"HV71"},{"number":"29","firstname":"Marcus","lastname":"Thuresson"},{"number":"30","firstname":"Johan","lastname":"Strömvall","teamname":"Luleå HF"},{"number":"31","firstname":"Peter","lastname":"Hasselblad","teamname":"Malmö IF"},{"number":"32","firstname":"Anders","lastname":"Eriksson"},{"number":"33","firstname":"Roger","lastname":"Elvenes"},{"number":"34","firstname":"Stefan","lastname":"Larsson","teamname":"Frölunda HC"},{"number":"35","firstname":"Alexei","lastname":"Salomatin","teamname":"Västerås IK"},{"number":"36","firstname":"Niclas","lastname":"Hävelid","teamname":"AIK"},{"number":"37","firstname":"Mikael","lastname":"Lindman"},{"number":"38","firstname":"Jens","lastname":"Öhling","teamname":"Djurgårdens IF"},{"number":"39","firstname":"Håkan","lastname":"Loob","teamname":"Färjestads BK"},{"number":"40","firstname":"Johan","lastname":"Hedberg"},{"number":"41","firstname":"Niklas","lastname":"Eriksson"},{"number":"42","firstname":"Robert","lastname":"Nordberg","teamname":"Luleå HF"},{"number":"43","firstname":"Robert","lastname":"Svehla","teamname":"Malmö IF"},{"number":"44","firstname":"Hans","lastname":"Jonsson"},{"number":"45","firstname":"Tomas","lastname":"Srsen","teamname":"Rögle BK"},{"number":"46","firstname":"Thomas","lastname":"Sjögren"},{"number":"47","firstname":"Mishat","lastname":"Fahrutdinov"},{"number":"48","firstname":"Tomas","lastname":"Strandberg"},{"number":"49","firstname":"Andreas","lastname":"Dackell","teamname":"Brynäs IF"},{"number":"50","firstname":"Peter","lastname":"Nilsson"},{"number":"51","firstname":"Andreas","lastname":"Johansson","teamname":"Färjestads BK"},{"number":"52","firstname":"Stefan","lastname":"Falk","teamname":"HV71"},{"number":"53","firstname":"Markus","lastname":"Åkerblom"},{"number":"54","firstname":"Peter","lastname":"Åslin","teamname":"HV71"},{"number":"55","firstname":"Ricard","lastname":"Persson"},{"number":"56","firstname":"Tomas","lastname":"Nänsén"},{"number":"57","firstname":"Per-Johan","lastname":"Svensson"},{"number":"58","firstname":"Terho","lastname":"Koskela","teamname":"Frölunda HC"},{"number":"59","firstname":"Henrik","lastname":"Nilsson"},{"number":"60","firstname":"Mats","lastname":"Lindberg","teamname":"AIK"},{"number":"61","firstname":"Anders","lastname":"Huss"},{"number":"62","firstname":"Magnus","lastname":"Jansson","teamname":"Djurgårdens IF"},{"number":"63","firstname":"Mats","lastname":"Lindgren","teamname":"Färjestads BK"},{"number":"64","firstname":"Thomas","lastname":"Ljungbergh","teamname":"HV71"},{"number":"65","firstname":"Tomas","lastname":"Forslund","teamname":"Leksands IF"},{"number":"66","firstname":"Thomas","lastname":"Östlund","teamname":"Djurgårdens IF"},{"number":"67","firstname":"Raimo","lastname":"Helminen","teamname":"Malmö IF"},{"number":"68","firstname":"Magnus","lastname":"Wernblom","teamname":"MoDo"},{"number":"69","firstname":"Jörgen","lastname":"Jönsson"},{"number":"70","firstname":"Peter","lastname":"Berndtsson"},{"number":"71","firstname":"Stefan","lastname":"Hellkvist"},{"number":"72","firstname":"Tommy","lastname":"Lehmann"},{"number":"73","firstname":"Stefan","lastname":"Klockare"},{"number":"74","firstname":"Ola","lastname":"Josefsson","teamname":"Djurgårdens IF"},{"number":"75","firstname":"Peter","lastname":"Lindmark","teamname":"Malmö IF"},{"number":"76","firstname":"Ove","lastname":"Thörnberg","teamname":"HV71"},{"number":"77","firstname":"Jarmo","lastname":"Mäkitalo"},{"number":"78","firstname":"Tomas","lastname":"Berglund","teamname":"Luleå HF"},{"number":"79","firstname":"Bo","lastname":"Svanberg"},{"number":"80","firstname":"Lennart","lastname":"Hermansson","teamname":"MoDo"},{"number":"81","firstname":"Stefan","lastname":"Elvenes","teamname":"Rögle BK"},{"number":"82","firstname":"Daniel","lastname":"Alfredsson","teamname":"Frölunda HC"},{"number":"83","firstname":"Claes","lastname":"Lindblom","teamname":"Västerås IK"},{"number":"84","firstname":"Björn","lastname":"Ahlström"},{"number":"85","firstname":"Ove","lastname":"Molin","teamname":"Brynäs IF"},{"number":"86","firstname":"Fredrik","lastname":"Lindquist","teamname":"Djurgårdens IF"},{"number":"87","firstname":"Clas","lastname":"Eriksson","teamname":"Färjestads BK"},{"number":"88","firstname":"Peter","lastname":"Hammarström","teamname":"HV71"},{"number":"89","firstname":"Magnus","lastname":"Swärdh"},{"number":"90","firstname":"Lars","lastname":"Hurtig","teamname":"Luleå HF"},{"number":"91","firstname":"Daniel","lastname":"Rydmark"},{"number":"92","firstname":"Lars","lastname":"Byström","teamname":"MoDo"},{"number":"93","firstname":"Mats","lastname":"Lööv"},{"number":"94","firstname":"Lars","lastname":"Dahlström"},{"number":"95","firstname":"Johan","lastname":"Brummer"},{"number":"96","firstname":"Patric","lastname":"Englund","teamname":"AIK"},{"number":"97","firstname":"Christer","lastname":"Olsson","teamname":"Brynäs IF"},{"number":"98","firstname":"Patrik","lastname":"Erickson","teamname":"Djurgårdens IF"},{"number":"99","firstname":"Peter","lastname":"Ottosson","teamname":"Färjestads BK"},{"number":"100","firstname":"Tomas","lastname":"Jonsson","teamname":"Leksands IF"},
+                            {"number":"101","firstname":"Lars","lastname":"Modig"},{"number":"102","firstname":"Åke","lastname":"Lilljebjörn","teamname":"Leksands IF"},{"number":"103","firstname":"Patrik","lastname":"Sylvegård"},{"number":"104","firstname":"Daniel","lastname":"Johansson","teamname":"Rögle BK"},{"number":"105","firstname":"Edvin","lastname":"Frylén"},{"number":"106","firstname":"Pär","lastname":"Edlund","teamname":"Frölunda HC"},{"number":"107","firstname":"Paul","lastname":"Andersson-Everberg"},{"number":"108","firstname":"Rikard","lastname":"Franzén","teamname":"AIK"},{"number":"109","firstname":"Christian","lastname":"Due-Boje"},{"number":"110","firstname":"Tommy","lastname":"Samuelsson","teamname":"Färjestads BK"},{"number":"111","firstname":"Mathias","lastname":"Svedberg"},{"number":"112","firstname":"Hans","lastname":"Lodin","teamname":"Leksands IF"},{"number":"113","firstname":"Jonas","lastname":"Eriksson","teamname":"Färjestads BK"},{"number":"114","firstname":"Mikael","lastname":"Engström","teamname":"Luleå HF"},{"number":"115","firstname":"Håkan","lastname":"Åhlund","teamname":"Malmö IF"},{"number":"116","firstname":"Kari","lastname":"Suoraniemi"},{"number":"117","firstname":"Peter","lastname":"Jakobsson","teamname":"Västerås IK"},{"number":"118","firstname":"Kristian","lastname":"Gahn"},{"number":"119","firstname":"Tommy","lastname":"Melkersson"},{"number":"120","firstname":"Oscar","lastname":"Ackeström"},{"number":"121","firstname":"Thomas","lastname":"Johansson","teamname":"Djurgårdens IF"},{"number":"122","firstname":"Jesper","lastname":"Duus","teamname":"Färjestads BK"},{"number":"123","firstname":"Hans","lastname":"Abrahamsson","teamname":"HV71"},{"number":"124","firstname":"Örjan","lastname":"Lindmark"},{"number":"125","firstname":"Torbjörn","lastname":"Lindberg","teamname":"Luleå HF"},{"number":"126","firstname":"Michael","lastname":"Sundlöv","teamname":"Brynäs IF"},{"number":"127","firstname":"Peter","lastname":"Sundström"},{"number":"128","firstname":"Pierre","lastname":"Johnsson"},{"number":"129","firstname":"Thomas","lastname":"Carlsson"},{"number":"130","firstname":"Stefan","lastname":"Axelsson","teamname":"Frölunda HC"},{"number":"131","firstname":"Robert","lastname":"Nordmark"},{"number":"132","firstname":"Torbjörn","lastname":"Persson","teamname":"HV71"},{"number":"133","firstname":"Björn","lastname":"Nord","teamname":"Djurgårdens IF"},{"number":"134","firstname":"Mats","lastname":"Ytter"},{"number":"135","firstname":"AIK","lastname":"Team Statistics","teamname":"AIK"},{"number":"136","firstname":"Brynäs IF","lastname":"Team Statistics","teamname":"Brynäs IF"},{"number":"137","firstname":"Djurgårdens IF","lastname":"Team Statistics","teamname":"Djurgårdens IF"},{"number":"138","firstname":"Västra Frölunda","lastname":"Team Statistics","teamname":"Västra Frölunda"},{"number":"139","firstname":"Färjestads BK","lastname":"Team Statistics","teamname":"Färjestads BK"},{"number":"140","firstname":"HV71", "lastname":"Team Statistics","teamname": "HV71"},{"number":"141","firstname":"Leksands IF","lastname":"Team Statistics","teamname":"Leksands IF"},{"number":"142","firstname":"Luleå HF","lastname":"Team Statistics","teamname":"Luleå HF"},{"number":"143","firstname":"Malmö IF","lastname":"Team Statistics","teamname":"Malmö IF"},{"number":"144","firstname":"MoDo Hockey","lastname":"Team Statistics","teamname":"MoDo"},{"number":"145","firstname":"Rögle BK","lastname":"Team Statistics","teamname":"Rögle BK"},{"number":"146","firstname":"Västeras IK","lastname":"Team Statistics","teamname":"Västeras IK"},{"number":"147","firstname":"AIK","lastname":"Logo","teamname":"AIK"},{"number":"148","firstname":"Brynäs","lastname":"Logo","teamname":"Brynäs IF"},{"number":"149","firstname":"Djurgårdens","lastname":"Logo","teamname":"Djurgårdens IF"},{"number":"150","firstname":"Västra Frölunda","lastname":"Logo","teamname":"Frölunda HC"},{"number":"151","firstname":"Färjestads BK","lastname":"Logo","teamname":"Färjestad BK"},{"number":"152","firstname":"HV71", "lastname":"Logo", "teamname":"HV71"},{"number":"153","firstname":"Leksands IF","lastname":"Logo","teamname":"Leksands IF"},{"number":"154","firstname":"Luleå HF","lastname":"Logo","teamname":"Luleå HF"},{"number":"155","firstname":"Malmö IF","lastname":"Logo","teamname":"Malmö IF"},{"number":"156","firstname":"MoDo Hockey","lastname":"Logo","teamname":"MoDo"},{"number":"157","firstname":"Rögle BK","lastname":"Logo","teamname":"Rögle BK"},{"number":"158","firstname":"Västeras IK","lastname":"Logo","teamname":"Västeras IK"},{"number":"159","firstname":"Checklist", "lastname": "1-80"},{"number":"160","firstname":"Checklist", "lastname": "81-160"},{"number":"161","firstname":"Kenneth","lastname":"Johansson","teamname":"Rögle BK"},{"number":"162","firstname":"Stefan","lastname":"Jonsson","teamname":"Luleå HF"},{"number":"163","firstname":"Mikael","lastname":"Wahlberg","teamname":"Brynäs IF"},{"number":"164","firstname":"Per","lastname":"Djoos","teamname":"Frölunda HC"},{"number":"165","firstname":"Andreas","lastname":"Schultz","teamname":"HV71"},{"number":"166","firstname":"Sacha","lastname":"Molin","teamname":"AIK"},{"number":"167","firstname":"Marcus","lastname":"Ramen","teamname":"MoDo"},{"number":"168","firstname":"Jergus","lastname":"Baca","teamname":"Leksands IF"},{"number":"169","firstname":"Erik","lastname":"Bergstrom","teamname":"Västerås IK"},{"number":"170","firstname":"Jonas","lastname":"Forsberg","teamname":"Djurgårdens IF"},{"number":"171","firstname":"Olli","lastname":"Kaski","teamname":"Färjestads BK"},{"number":"172","firstname":"Morgan","lastname":"Samuelsson","teamname":"AIK"},{"number":"173","firstname":"Anders","lastname":"Burström","teamname":"Luleå HF"},{"number":"174","firstname":"Stanislav","lastname":"Meciar","teamname":"Rögle BK"},{"number":"175","firstname":"Leif","lastname":"Rohlin","teamname":"Västerås IK"},{"number":"176","firstname":"Lars","lastname":"Edström","teamname":"Frölunda HC"},{"number":"177","firstname":"Esa","lastname":"Keskinen","teamname":"HV71"},{"number":"178","firstname":"Daniel","lastname":"Casselståhl","teamname":"Brynäs IF"},{"number":"179","firstname":"Mattias","lastname":"Timander","teamname":"MoDo"},{"number":"180","firstname":"Peter","lastname":"Nordström","teamname":"Leksands IF"},{"number":"181","firstname":"Patrik","lastname":"Åberg","teamname":"AIK"},{"number":"182","firstname":"Mikael","lastname":"Enander","teamname":"Brynäs IF"},{"number":"183","firstname":"Charles","lastname":"Berglund","teamname":"Djurgårdens IF"},{"number":"184","firstname":"Jonas","lastname":"Andersson-Junkka","teamname":"Frölunda HC"},{"number":"185","firstname":"Sergei","lastname":"Fokin","teamname":"Färjestads BK"},{"number":"186","firstname":"Boo","lastname":"Ahl","teamname":"HV71"},{"number":"187","firstname":"Jiri","lastname":"Kucera","teamname":"Luleå HF"},{"number":"188","firstname":"Roger","lastname":"Nordström","teamname":"Malmö IF"},{"number":"189","firstname":"Peter","lastname":"Forsberg","teamname":"MoDo"},{"number":"190","firstname":"Arto","lastname":"Ruotanen","teamname":"Rögle BK"},{"number":"191","firstname":"Mikael","lastname":"Wiklander","teamname":"Västerås IK"},{"number":"192","firstname":"Joakim","lastname":"Persson","teamname":"AIK"},{"number":"193","firstname":"Peter","lastname":"Larsson","teamname":"Brynäs IF"},{"number":"194","firstname":"Per","lastname":"Eklund","teamname":"Djurgårdens IF"},{"number":"195","firstname":"Joacim","lastname":"Esbjörs","teamname":"Frölunda HC"},{"number":"196","firstname":"Magnus","lastname":"Arvedsson","teamname":"Färjestads BK"},{"number":"197","firstname":"Marko","lastname":"Palo","teamname":"HV71"},{"number":"198","firstname":"Mikael","lastname":"Holmberg","teamname":"Leksands IF"},{"number":"199","firstname":"Mikael","lastname":"Renberg","teamname":"Luleå HF"},{"number":"200","firstname":"Tero","lastname":"Lehtera","teamname":"Malmö IF"},
+                            {"number":"201","firstname":"Fredrik","lastname":"Lindh","teamname":"MoDo"},{"number":"202","firstname":"Johan","lastname":"Finnström","teamname":"Rögle BK"},{"number":"203","firstname":"Peter","lastname":"Popovic","teamname":"Västerås IK"},{"number":"204","firstname":"Tony","lastname":"Barthelsson","teamname":"AIK"},{"number":"205","firstname":"Stefan","lastname":"Pöllä","teamname":"Brynäs IF"},{"number":"206","firstname":"Jonas","lastname":"Esbjörs","teamname":"Frölunda HC"},{"number":"207","firstname":"Roger","lastname":"Hansson","teamname":"Malmö IF"},{"number":"208","firstname":"Mikael","lastname":"Håkanson","teamname":"MoDo"},{"number":"209","firstname":"Daniel","lastname":"Tjärnqvist","teamname":"Rögle BK"},{"number":"210","firstname":"Anders","lastname":"Carlsson","teamname":"Västerås IK"},{"number":"211","firstname":"Dick","lastname":"Tarnstrom","teamname":"AIK"},{"number":"212","firstname":"Johan","lastname":"Tornberg","teamname":"Brynäs IF"},{"number":"213","firstname":"Joakim","lastname":"Lundberg","teamname":"Djurgårdens IF"},{"number":"214","firstname":"Marko","lastname":"Jantunen","teamname":"Frölunda HC"},{"number":"215","firstname":"Patrik","lastname":"Haltia","teamname":"Färjestads BK"},{"number":"216","firstname":"Fredrik","lastname":"Stillman","teamname":"HV71"},{"number":"217","firstname":"Andy","lastname":"Schneider","teamname":"Leksands IF"},{"number":"218","firstname":"Tomas","lastname":"Holmström","teamname":"Luleå HF"},{"number":"219","firstname":"Jens","lastname":"Hemstrom","teamname":"Malmö IF"},{"number":"220","firstname":"Anders","lastname":"Söderberg","teamname":"MoDo"},{"number":"221","firstname":"Peter","lastname":"Lundmark","teamname":"Rögle BK"},{"number":"222","firstname":"Patrik","lastname":"Juhlin","teamname":"Västerås IK"},{"number":"223","firstname":"Anders","lastname":"Gozzi","teamname":"AIK"},{"number":"224","firstname":"Marcus","lastname":"Ragnarsson","teamname":"Djurgårdens IF"},{"number":"225","firstname":"Mattias","lastname":"Olsson","teamname":"Färjestads BK"},{"number":"226","firstname":"Andreas","lastname":"Karlsson","teamname":"Leksands IF"},{"number":"227","firstname":"Tomas","lastname":"Lilja","teamname":"Luleå HF"},{"number":"228","firstname":"Stefan","lastname":"Öhman","teamname":"MoDo"},{"number":"229","firstname":"Jarmo","lastname":"Kekäläinen","teamname":"Västerås IK"},{"number":"230","firstname":"Tony","lastname":"Skopac","teamname":"AIK"},{"number":"231","firstname":"Lars","lastname":"Karlsson","teamname":"Brynäs IF"},{"number":"232","firstname":"Mats","lastname":"Sundin","teamname":"Djurgårdens IF"},{"number":"233","firstname":"Peter","lastname":"Ström","teamname":"Frölunda HC"},{"number":"234","firstname":"Mathias","lastname":"Johansson","teamname":"Färjestads BK"},{"number":"235","firstname":"Johan","lastname":"Lindbom","teamname":"HV71"},{"number":"236","firstname":"Mats","lastname":"Lusth","teamname":"Leksands IF"},{"number":"237","firstname":"Marcus","lastname":"Magnertoft","teamname":"Malmö IF"},{"number":"238","firstname":"Martin","lastname":"Hostak","teamname":"MoDo"},{"number":"239","firstname":"Mikael","lastname":"Pettersson","teamname":"Västerås IK"},{"number":"240","firstname":"Johan","lastname":"Åkerman","teamname":"AIK"},{"number":"241","firstname":"Mathias","lastname":"Hällback","teamname":"Djurgårdens IF"},{"number":"242","firstname":"Johan","lastname":"Davidsson","teamname":"HV71"},{"number":"243","firstname":"Per-Erik","lastname":"Eklund","teamname":"Leksands IF"},{"number":"244","firstname":"Johan","lastname":"Sälle","teamname":"Malmö IF"},{"number":"245","firstname":"Per","lastname":"Svartvadet","teamname":"MoDo"},{"number":"246","firstname":"Ville","lastname":"Sirén","teamname":"Västerås IK"},{"number":"247","firstname":"Mattias","lastname":"Lööf","teamname":"Rögle BK"},{"number":"248","firstname":"P.J.","lastname":"Axelsson","teamname":"Frölunda HC"},{"number":"249","firstname":"Peter","lastname":"Gerhardsson","teamname":"AIK"},{"number":"250","firstname":"Jonas","lastname":"Bergqvist","teamname":"Leksands IF"},{"number":"251","firstname":"Per-Johan","lastname":"Johansson","teamname":"Brynäs IF"},{"number":"252","firstname":"Mattias","lastname":"Bosson","teamname":"Malmö IF"},{"number":"253","firstname":"Andreas","lastname":"Olsson","teamname":"MoDo"},{"number":"254","firstname":"Patrik","lastname":"Zetterberg","teamname":"Västerås IK"},{"number":"255","firstname":"Michael","lastname":"Johansson","teamname":"Rögle BK"},{"number":"256","firstname":"Stefan","lastname":"Gustavsson","teamname":"AIK"},{"number":"257","firstname":"Jerry","lastname":"Persson","teamname":"Frölunda HC"},{"number":"258","firstname":"Stefan","lastname":"Nilsson","teamname":"Färjestads BK"},{"number":"259","firstname":"Roger","lastname":"Johansson","teamname":"Leksands IF"},{"number":"260","firstname":"Jarmo","lastname":"Myllys","teamname":"Luleå HF"},{"number":"261","firstname":"Kyösti","lastname":"Karjalainen","teamname":"MoDo"},{"number":"262","firstname":"Thomas","lastname":"Eriksson","teamname":"Västerås IK"},{"number":"263","firstname":"Michael","lastname":"Hjälm","teamname":"Rögle BK"},{"number":"264","firstname":"Espen","lastname":"Knutsen","teamname":"Djurgårdens IF"},{"number":"265","firstname":"Andreas","lastname":"Salomonsson","teamname":"MoDo"},{"number":"266","firstname":"Patrik","lastname":"Höglund","teamname":"Luleå HF"},{"number":"267","firstname":"Peter","lastname":"Andersson","teamname":"Malmö IF"},{"number":"268","firstname":"Brett","lastname":"Hauer","teamname":"AIK"},{"number":"269","firstname":"Stefan","lastname":"Ketola","teamname":"Brynäs IF"},{"number":"270","firstname":"Patrik","lastname":"Carnbäck","teamname":"Frölunda HC"},{"number":"271","firstname":"Petter","lastname":"Rönnqvist","teamname":"MoDo"},{"number":"272","firstname":"Roger","lastname":"Öhman","teamname":"Malmö IF"},{"number":"273","firstname":"Fredrik","lastname":"Modin","teamname":"Brynäs IF"},{"number":"274","firstname":"Alexander","lastname":"Beliavski","teamname":"Frölunda HC"},{"number":"275","firstname":"Niklas","lastname":"Brännström","teamname":"Färjestads BK"},{"number":"276","firstname":"Per","lastname":"Gustafsson","teamname":"HV71"},{"number":"277","firstname":"Nicklas","lastname":"Nordqvist","teamname":"Leksands IF"},{"number":"278","firstname":"Roger","lastname":"Åkerstrom","teamname":"Luleå HF"},{"number":"279","firstname":"Jiri","lastname":"Vykoukal","teamname":"MoDo"},{"number":"280","firstname":"Jesper","lastname":"Mattsson","teamname":"Malmö IF"},{"number":"281","firstname":"Henrik","lastname":"Nordfeldt","teamname":"Västerås IK"},{"number":"282","firstname":"Joakim","lastname":"Musakka","teamname":"Djurgårdens IF"},{"number":"283","firstname":"Anders","lastname":"Johnson","teamname":"AIK"},{"number":"284","firstname":"Niklas","lastname":"Sundström","teamname":"MoDo"},{"number":"285","firstname":"Nicklas","lastname":"Lidström","teamname":"Västerås IK"},{"number":"286","firstname":"Tomas","lastname":"Sandström","teamname":"Malmö IF"},{"number":"287","firstname":"Jens","lastname":"Nielsen","teamname":"Rögle BK"},{"number":"288","firstname":"Mattias","lastname":"Öhlund","teamname":"Luleå HF"},{"number":"289","firstname":"Marcus","lastname":"Eriksson","teamname":"Leksands IF"},{"number":"290","firstname":"Mikael","lastname":"Sandberg","teamname":"Frölunda HC"},{"number":"291","firstname":"Sergei","lastname":"Pushkov","teamname":"Brynäs IF"},{"number":"292","firstname":"Jonas","lastname":"Höglund","teamname":"Färjestads BK"},{"number":"293","firstname":"Peter","lastname":"Ekelund","teamname":"HV71"},{"number":"294","firstname":"Fredrik","lastname":"Bergqvist","teamname":"MoDo"},{"number":"295","firstname":"Torgny","lastname":"Bendelin","teamname":"AIK"},{"number":"296","firstname":"Tommy","lastname":"Sandlin","teamname":" Brynäs IF"},{"number":"297","firstname":"Tommy","lastname":"Boustedt","teamname":" Djurgårdens IF"},{"number":"298","firstname":"Conny","lastname":"Evensson","teamname":" Färjestads BK"},{"number":"299","firstname":"Sune","lastname":"Bergman","teamname":"HV71"},{"number":"300","firstname":"Wayne","lastname":"Fleming","teamname":" Leksands IF"},
+                            {"number":"301","firstname":"Lars","lastname":"Bergström","teamname":" Luleå HF"},{"number":"302","firstname":"Hannu","lastname":"Jortikka","teamname":"Malmö IF"},{"number":"303","firstname":"Leif","lastname":"Boork","teamname":" MoDo"},{"number":"304","firstname":"Christer","lastname":"Abrahamsson","teamname":" Rögle BK"},{"number":"305","firstname":"Randy","lastname":"Edmonds","teamname":" Västerås IK"},{"number":"306","firstname":"Ulf","lastname":"Labraaten","teamname":"Frölunda HC"},{"number":"307","firstname":"AIK","lastname":"AIK","teamname":"AIK"},{"number":"308","firstname":"Brynäs","lastname":"IF","teamname":"Brynäs IF"},{"number":"309","firstname":"Djurgårdens","lastname":"IF","teamname":"Djurgårdens IF"},{"number":"310","firstname":"Färjestad","lastname":"BK","teamname":"Färjestads BK"},{"number":"311","firstname":"HV71"},{"number":"71","firstname":"HV71"},{"number":"312","firstname":"Leksands","lastname":"IF","teamname":"Leksands IF"},{"number":"313","firstname":"Luleå","lastname":"HF","teamname":"Luleå HF"},{"number":"314","firstname":"Malmö","lastname":"IF","teamname":"Malmö IF"},{"number":"315","firstname":"MoDo","lastname":"Hockey","teamname":"MoDo"},{"number":"316","firstname":"Rögle","lastname":"BK","teamname":"Rögle BK"},{"number":"317","firstname":"Västerås","lastname":"IK","teamname":"Västerås IK"},{"number":"318","firstname":"Västra","lastname":"Frölunda","teamname":"Frölunda HC"},{"number":"319","firstname":"Checklist", "lastname": "161-240"},{"number":"320","firstname":"Checklist", "lastname": "241-320"}
+                            ] ,
+                        "setId": "leafswe9495b"
+                    },
+                    {
+                        "setName": "Cleansweepers",
+                        "setType": "Insert",
+                        "packOdds": "Unknown",
+                        "numPrefix": "",
+                        "cardNumbers": {
+                            "first": 1,
+                            "last": 10
+                        },
+                        "checklist": [{"number":"1","firstname":"Peter","lastname":"Lindmark","teamname":"Malmö IF"},{"number":"2","firstname":"Michael","lastname":"Sundlöv","teamname":"Brynäs IF"},{"number":"3","firstname":"Thomas","lastname":"Östlund","teamname":"Djurgårdens IF"},{"number":"4","firstname":"Jonas","lastname":"Eriksson","teamname":"Färjestads BK"},{"number":"5","firstname":"Peter","lastname":"Åslin","teamname":"HV71"},{"number":"6","firstname":"Åke","lastname":"Lilljebjörn","teamname":"Leksands IF"},{"number":"7","firstname":"Johan","lastname":"Hedberg","teamname":"Leksands IF"},{"number":"8","firstname":"Henrik","lastname":"Arvsell","teamname":"MoDo"},{"number":"9","firstname":"Fredrik","lastname":"Andersson","teamname":"MoDo"},{"number":"10","firstname":"Håkan","lastname":"Algotsson","teamname":"Frölunda HC"}],
+                        "setId": "leafswe9495cs"
+                    },
+                    {
+                        "setName": "Foreign Affairs",
+                        "setType": "Insert",
+                        "packOdds": "Unknown",
+                        "numPrefix": "",
+                        "cardNumbers": {
+                            "first": 1,
+                            "last": 10
+                        },
+                        "checklist": [{"number":"1","firstname":"Espen","lastname":"Knutsen","teamname":"Djurgårdens IF"},{"number":"2","firstname":"Esa","lastname":"Keskinen","teamname":"HV71"},{"number":"3","firstname":"Marko","lastname":"Jantunen","teamname":"Frölunda HC"},{"number":"4","firstname":"Jarmo","lastname":"Myllys","teamname":"Luleå"},{"number":"5","firstname":"Jiri","lastname":"Kucera","teamname":"Luleå"},{"number":"6","firstname":"Jiri","lastname":"Vykoukal","teamname":"MoDo"},{"number":"7","firstname":"Jarmo","lastname":"Kekäläinen","teamname":"Västeras IK"},{"number":"8","firstname":"Olli","lastname":"Kaski","teamname":"Färjestads BK"},{"number":"9","firstname":"Jergus","lastname":"Baca","teamname":"Leksands IF"},{"number":"10","firstname":"Tero","lastname":"Lehterä","teamname":"Malmö IF"}],
+                        "setId": "leafswe9495fa"
+                    },
+                    {
+                        "setName": "Gold",
+                        "setType": "Insert",
+                        "packOdds": "Unknown",
+                        "numPrefix": "",
+                        "cardNumbers": {
+                            "first": 1,
+                            "last": 24
+                        },
+                        "checklist": [{"number":"1","firstname":"Header","lastname":"Card","teamname":"HDR"},{"number":"2","firstname":"Andreas","lastname":"Dackell","teamname":"Brynäs IF"},{"number":"3","firstname":"Charles","lastname":"Berglund","teamname":"Djurgårdens IF"},{"number":"4","firstname":"Christian","lastname":"Due-Boje","teamname":"Djurgårdens IF"},{"number":"5","firstname":"Daniel","lastname":"Rydmark","teamname":"Malmö IF"},{"number":"6","firstname":"Fredrik","lastname":"Stillman","teamname":"HV71"},{"number":"7","firstname":"Håkan","lastname":"Algotsson","teamname":"Frölunda HC"},{"number":"8","firstname":"Håkan","lastname":"Loob","teamname":"Färjestads BK"},{"number":"9","firstname":"Jonas","lastname":"Bergqvist","teamname":"Leksands IF"},{"number":"10","firstname":"Jörgen","lastname":"Jönsson","teamname":"Rögle BK"},{"number":"11","firstname":"Kenny","lastname":"Jönsson","teamname":"Rögle BK"},{"number":"12","firstname":"Leif","lastname":"Rohlin","teamname":"Västerås IK"},{"number":"13","firstname":"Magnus","lastname":"Svensson","teamname":"Leksands IF"},{"number":"14","firstname":"Mats","lastname":"Näslund","teamname":"Malmö IF"},{"number":"15","firstname":"Michael","lastname":"Sundlöv","teamname":"Brynäs IF"},{"number":"16","firstname":"Niklas","lastname":"Eriksson","teamname":"Leksands IF"},{"number":"17","firstname":"Patric","lastname":"Kjellberg","teamname":"HV71"},{"number":"18","firstname":"Patrik","lastname":"Juhlin","teamname":"Västerås IK"},{"number":"19","firstname":"Peter","lastname":"Forsberg","teamname":"MoDo"},{"number":"20","firstname":"Roger","lastname":"Hansson","teamname":"Malmö IF"},{"number":"21","firstname":"Roger","lastname":"Johansson","teamname":"Leksands IF"},{"number":"22","firstname":"Stefan","lastname":"Örnskog","teamname":"HV71"},{"number":"23","firstname":"Tomas","lastname":"Jonsson","teamname":"Leksands IF"},{"number":"24","firstname":"Tommy","lastname":"Salo","teamname":"Västeras IK"}],
+                        "setId": "leafswe9495gold"
+                    },
+                    {
+                        "setName": "Guest Star Special",
+                        "setType": "Insert",
+                        "packOdds": "Unknown",
+                        "numPrefix": "",
+                        "cardNumbers": {
+                            "first": 1,
+                            "last": 8
+                        },
+                        "checklist": [{"number":"1","firstname":"Mats","lastname":"Sundin","teamname":"Djurgårdens IF"},{"number":"2","firstname":"Tomas","lastname":"Sandström","teamname":"Malmö IF"},{"number":"3","firstname":"Peter","lastname":"Forsberg","teamname":"MoDo"},{"number":"4","firstname":"Nicklas","lastname":"Lidström","teamname":"Västerås IK"},{"number":"5","firstname":"Mikael","lastname":"Renberg","teamname":"Luleå"},{"number":"6","firstname":"Roger","lastname":"Johansson","teamname":"Leksands IF"},{"number":"7","firstname":"Peter","lastname":"Popovic","teamname":"Västerås IK"},{"number":"8","firstname":"Patrik","lastname":"Juhlin","teamname":"Västeras IK"}],
+                        "setId": "leafswe9495gss"
+                    },
+                    {
+                        "setName": "NHL Drafts",
+                        "setType": "Insert",
+                        "packOdds": "Unknown",
+                        "numPrefix": "",
+                        "cardNumbers": {
+                            "first": 1,
+                            "last": 10
+                        },
+                        "checklist": [{"number":"1","firstname":"Mattias","lastname":"Öhlund","teamname":"Luleå"},{"number":"2","firstname":"Johan","lastname":"Davidsson","teamname":"HV71"},{"number":"3","firstname":"Fredrik","lastname":"Modin","teamname":"Brynäs IF"},{"number":"4","firstname":"Johan","lastname":"Finnström","teamname":"Rögle BK"},{"number":"5","firstname":"Edvin","lastname":"Frylén","teamname":"Västeras IK"},{"number":"6","firstname":"Daniel","lastname":"Alfredsson","teamname":"Frölunda HC"},{"number":"7","firstname":"Patrik","lastname":"Haltia","teamname":"Färjestads BK"},{"number":"8","firstname":"Peter","lastname":"Ström","teamname":"Frölunda HC"},{"number":"9","firstname":"Tomas","lastname":"Holmström","teamname":"Lulea"},{"number":"10","firstname":"Dick","lastname":"Tärnström","teamname":"AIK"}],
+                        "setId": "leafswe9495nhld"
+                    },
+                    {
+                        "setName": "Playmakers",
+                        "setType": "Insert",
+                        "packOdds": "Unknown",
+                        "numPrefix": "",
+                        "cardNumbers": {
+                            "first": 1,
+                            "last": 6
+                        },
+                        "checklist": [{"number":"1","firstname":"Header","lastname":"card","teamname":""},{"number":"2","firstname":"Stefan","lastname":"Nilsson","teamname":"Luleå"},{"number":"3","firstname":"Mika","lastname":"Nieminen","teamname":"Luleå"},{"number":"4","firstname":"Raimo","lastname":"Helminen","teamname":"Malmö IF"},{"number":"5","firstname":"Peter","lastname":"Larsson","teamname":"Brynäs IF"},{"number":"6","firstname":"Håkan","lastname":"Loob","teamname":"Färjestad BK"}],
+                        "setId": "leafswe9495pm"
+                    },
+                    {
+                        "setName": "Rookie Rockets",
+                        "setType": "Insert",
+                        "packOdds": "Unknown",
+                        "numPrefix": "",
+                        "cardNumbers": {
+                            "first": 1,
+                            "last": 10
+                        },
+                        "checklist": [{"number":"1","firstname":"Fredrik","lastname":"Modin","teamname":"Brynäs IF"},{"number":"2","firstname":"Jonas","lastname":"Andersson-Junkka","teamname":"Frölunda"},{"number":"3","firstname":"Tomas","lastname":"Holmström","teamname":"Luleå"},{"number":"4","firstname":"Mattias","lastname":"Öhlund","teamname":"Luleå"},{"number":"5","firstname":"Per","lastname":"Eklund","teamname":"Djurgardens IF"},{"number":"6","firstname":"Daniel","lastname":"Tjärnqvist","teamname":"Rögle BK"},{"number":"7","firstname":"Joakim","lastname":"Persson","teamname":"AIK"},{"number":"8","firstname":"Patrik","lastname":"Haltia","teamname":"Färjestads BK"},{"number":"9","firstname":"Andreas","lastname":"Karlsson","teamname":"Leksands IF"},{"number":"10","firstname":"Stefan","lastname":"Nilsson","teamname":"Färjestads BK"}],
+                        "setId": "leafswe9495rr"
+                    },
+                    {
+                        "setName": "Studio Signatures",
+                        "setType": "Insert",
+                        "packOdds": "Unknown",
+                        "numPrefix": "",
+                        "cardNumbers": {
+                            "first": 1,
+                            "last": 12
+                        },
+                        "checklist": [{"number":"1","firstname":"Rikard","lastname":"Franzén","teamname":"AIK"},{"number":"2","firstname":"Anders","lastname":"Huss","teamname":"Brynäs IF"},{"number":"3","firstname":"Jens","lastname":"Öhling","teamname":"Djurgårdens IF"},{"number":"4","firstname":"Tommy","lastname":"Samuelsson","teamname":"Färjestad BK"},{"number":"5","firstname":"Fredrik","lastname":"Stillman","teamname":"HV71"},{"number":"6","firstname":"Jonas","lastname":"Bergqvist","teamname":"Leksands IF"},{"number":"7","firstname":"Johan","lastname":"Strömvall","teamname":"Luleå"},{"number":"8","firstname":"Roger","lastname":"Nordström","teamname":"Malmö IF"},{"number":"9","firstname":"Lars","lastname":"Byström","teamname":"MoDo"},{"number":"10","firstname":"Roger","lastname":"Elvenes","teamname":"Rögle BK"},{"number":"11","firstname":"Leif","lastname":"Rohlin","teamname":"    Västerås IK"},{"number":"12","firstname":"Terho","lastname":"Koskela","teamname":"Frölunda HC"}],
+                        "setId": "leafswe9495ss"
+                    },
+                    {
+                        "setName": "Top Gun",
+                        "setType": "Insert",
+                        "packOdds": "Unknown",
+                        "numPrefix": "",
+                        "cardNumbers": {
+                            "first": 1,
+                            "last": 10
+                        },
+                        "checklist": [{"number":"1","firstname":"Tomas","lastname":"Srsen","teamname":"Rögle BK"},{"number":"2","firstname":"Håkan","lastname":"Loob","teamname":"Färjestads BK"},{"number":"3","firstname":"Lars","lastname":"Hurtig","teamname":"Luleå"},{"number":"4","firstname":"Stefan","lastname":"Elvenes","teamname":"Rögle BK"},{"number":"5","firstname":"Jörgen","lastname":"Jönsson","teamname":"Rögle BK"},{"number":"6","firstname":"Robert","lastname":"Svehla","teamname":"Malmö IF"},{"number":"7","firstname":"Daniel","lastname":"Rydmark","teamname":"Malmö IF"},{"number":"8","firstname":"Ove","lastname":"Thörnberg","teamname":"HV71"},{"number":"9","firstname":"Patric","lastname":"Kjellberg","teamname":"HV71"},{"number":"10","firstname":"Mats","lastname":"Lööv","teamname":"Rögle BK"}],
+                        "setId": "leafswe9495tg"
+                    }
+                ]
+            }
+        },
+        "1995-96": {
+            "elitsets1": {
+                "name": "Elit Set Series 1 (Swedish)",
+                "sets": [
+                    {
+                        "setName": "Base",
+                        "cardNumbers": {
+                            "first": 1,
+                            "last": 150
+                        },
+                        "setType": "Base",
+                        "checklist": [],
+                        "setId": "leafswe9596s1b"
+                    },
+                    {
+                        "setName": "Goldies",
+                        "cardNumbers": {
+                            "first": 1,
+                            "last": 10
+                        },
+                        "setType": "Insert",
+                        "packOdds": "1:14",
+                        "checklist": [
+                            "Morgan Samuelsson",
+                            "Ove Molin",
+                            "Fredrik Lindquist",
+                            "Peter Ström",
+                            "Mathias Johansson",
+                            "Stefan Örnskog",
+                            "Niklas Eriksson",
+                            "Johan Rosén",
+                            "Roger Öhman",
+                            "Anders Söderberg"
+                        ],
+                        "setId": "leafswe9596g"
+                    },
+                    {
+                        "setName": "Mega",
+                        "cardNumbers": {
+                            "first": 1,
+                            "last": 15
+                        },
+                        "setType": "Insert",
+                        "packOdds": "1:20",
+                        "checklist": [
+                            "Michael Sundlöv",
+                            "Jonas Bergqvist",
+                            "Marko Jantunen",
+                            "Thomas Östlund",
+                            "Tomas Jonsson",
+                            "Esa Keskinen",
+                            "Roger Nordström",
+                            "Mattias Öhlund",
+                            "Håkan Loob",
+                            "Raimo Helminen",
+                            "Per-Erik Eklund",
+                            "Jarmo Myllys",
+                            "Rikard Franzén",
+                            "Christer Olsson",
+                            "Per Gustafsson"
+                        ],
+                        "setId": "leafswe9596m"
+                    },
+                    {
+                        "setName": "Spidermen",
+                        "cardNumbers": {
+                            "first": 1,
+                            "last": 14
+                        },
+                        "setType": "Insert",
+                        "packOdds": "1:8",
+                        "checklist": [
+                            "Joakim Persson",
+                            "Michael Sundlöv",
+                            "Thomas Östlund",
+                            "Håkan Algotsson",
+                            "Patrik Haltia",
+                            "Boo Ahl",
+                            "Johan Hedberg",
+                            "Jarmo Myllys",
+                            "Jonas Forsberg",
+                            "Petter Rönnqvist",
+                            "Magnus Swärdh",
+                            "Mats Ytter",
+                            "Mikael Sandberg",
+                            "Roger Nordström"
+                        ],
+                        "setId": "leafswe9596r"
+                    }
+                    
+
+                ]
+            },
+            "elitsets2": {
+                "name": "Elit Set Series 2 (Swedish)",
+                "sets": [
+                    {
+                        "setName": "Base",
+                        "cardNumbers": {
+                            "first": 151,
+                            "last": 310
+                        },
+                        "setType": "Base",
+                        "checklist": [],
+                        "setId": "leafswe9596s2b"
+                    },
+                    {
+                        "setName": "Rookies",
+                        "cardNumbers": {
+                            "first": 1,
+                            "last": 9
+                        },
+                        "setType": "Insert",
+                        "checklist": [
+                            "Peter Wallin",
+                            "Jan-Axel Alavaara",
+                            "Nichlas Falk",
+                            "Lars-Göran Wiklander",
+                            "Torbjörn Johansson",
+                            "Jan Mertzig",
+                            "Mikael Burakovsky",
+                            "Marcus Karlsson",
+                            "Roger Rosén"
+                        ],
+                        "setId": "leafswe9596r"
+                    },
+                    {
+                        "setName": "Face to Face",
+                        "cardNumbers": {
+                            "first": 1,
+                            "last": 15
+                        },
+                        "setType": "Insert",
+                        "checklist": [
+                            "Morgan Samuelsson / Thomas Strandberg",
+                            "Bedrich Scerban / Greg Parks",
+                            "Erik Huusko / Anders Huusko",
+                            "Stefan Larsson / Marko Jantunen",
+                            "Håkan Loob / Roger Johansson",
+                            "Kenneth Kennholt / Per Gustafsson",
+                            "Tomas Forslund / Stefan Hellkvist",
+                            "Tomas Holmström / Roger Åkerström",
+                            "Stefan Elvenes / Robert Burakovsky",
+                            "Martin Hostak / Mattias Timander",
+                            "Mats Lööv / Michael Hjälm",
+                            "Alexei Salomatin / Fredrik Öberg",
+                            "Patrik Erickson / Espen Knutsen",
+                            "Peter Andersson / Peter Hasselblad",
+                            "Tomas Jonsson / Markus Åkerblom"
+                        ],
+                        "setId": "leafswe9596ftf"
+                    },
+                    {
+                        "setName": "Champs",
+                        "cardNumbers": {
+                            "first": 1,
+                            "last": 15
+                        },
+                        "setType": "Insert",
+                        "checklist": [
+                            "Tomas Jonsson",
+                            "Patric Kjellberg",
+                            "Håkan Loob",
+                            "Peter Lindmark",
+                            "Anders Carlsson",
+                            "Raimo Helminen",
+                            "Esa Keskinen",
+                            "Jan Larsson",
+                            "Roger Johansson",
+                            "Andreas Dackell",
+                            "Stefan Örnskog",
+                            "Michael Sundlöv",
+                            "Per-Erik Eklund",
+                            "Kenneth Kennholt",
+                            "Jan Viktorsson"
+                        ],
+                        "setId": "leafswe9596ch"
+                    }
+                ]
             }
         }
     }

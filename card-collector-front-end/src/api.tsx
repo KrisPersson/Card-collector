@@ -1,11 +1,9 @@
-
+import { ChecklistFormInput, UserBody, Intent } from "./interfaces";
 const BASE_URL = "http://localhost:8000/api"
 
-type Intent = "login" | "signup"
-interface UserBody {
-    username: string;
-    password: string;
-}
+
+
+
 
 async function user(body: UserBody, intent: Intent) {
     const { username } = body
@@ -51,7 +49,34 @@ async function verifyToken(token: string) {
     }
 }
 
+async function postNewUserChecklist(userId: string,
+        token: string, formInput: ChecklistFormInput) {
+            console.log(userId)
+    try {
+        const { company, season, product, cardSet } = formInput
+        const body = {
+            userId: userId,
+            company: company,
+            season: season,
+            product: product,
+            setName: cardSet
+        }
+        const response = await fetch(BASE_URL + "/checklist", {
+            method: "POST",
+            headers: {
+                authorization: `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(body)
+        })
+        const data = await response.json()
+        return data
+    } catch (error) {
+        console.log(error)
+    }
+}
 
 
 
-export { user, verifyToken, BASE_URL }
+
+export { user, verifyToken, BASE_URL, postNewUserChecklist }

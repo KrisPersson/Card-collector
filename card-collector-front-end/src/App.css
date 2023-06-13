@@ -1,3 +1,14 @@
 body {
   background: rgb(161, 161, 161);
 }
+
+.modal {
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  background: rgb(0 0 0 / 0.8);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+
+}

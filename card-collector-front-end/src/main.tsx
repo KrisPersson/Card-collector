@@ -16,7 +16,7 @@ const router = createBrowserRouter([
         element: <LoginSignup />
       },
       {
-        path: '/',
+        path: '/checklist',
         element: <ChecklistView />
       },
     ]

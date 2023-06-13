@@ -6,11 +6,11 @@ app.use(express.json())
 
 const { checklistRouter } = require('./routes/checklist.route')
 const { userRouter } = require('./routes/user.route')
-
+const { formatted } = require('./JSONchecklists/formatted')
 
 const { db } = require('./database/database')
 
-
+console.log(JSON.stringify(formatted))
 const cors=require("cors");
 const corsOptions ={
    origin:'*', 
@@ -609,6 +609,7 @@ const jsonV = stringify(ud9495checklist)
 
 app.use('/api/checklist', checklistRouter)
 app.use('/api/user', userRouter)
+
 
 
 

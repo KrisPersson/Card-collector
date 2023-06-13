@@ -43,7 +43,7 @@ async function createNewChecklistCtrl(request, response) {
     }
 }
 
-async function updateChecklistCtrl(request, response) {x
+async function updateChecklistCtrl(request, response) {
     try {
         await updateChecklist(request.body)
         const updatedChecklist = await getChecklistById(request.body.checklistId)

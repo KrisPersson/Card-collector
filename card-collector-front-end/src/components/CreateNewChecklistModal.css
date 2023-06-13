@@ -1,0 +1,13 @@
+.modal__form {
+    border: 2px solid white;
+    border-radius: 10px;
+    min-width: 20rem;
+    margin: 4rem;
+    height: fit-content;
+}
+
+.modal__h1 {
+    color: rgb(255 255 255);
+    text-align: center;
+}
+

@@ -1,0 +1,56 @@
+.user-checklist-collection {
+    border: 1px solid black;
+    width: 20rem;
+    text-align: center;
+    grid-column: 1 / span 1;
+    position: relative;
+}
+
+.collection {
+    list-style: none;
+    padding-left: 0;
+
+}
+
+.collection-item {
+    background: rgb(0 0 0 / 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    width: fit-content;
+    text-align: center;
+}
+
+.collection-item--selected {
+    background: rgb(0 0 0 / 0.4);
+
+}
+
+.collection-item:hover {
+    cursor: pointer;
+}
+
+.add-btn {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    border: 1px solid rgb(0 0 0 / 0.6);
+    border-radius: 50%;
+    height: 1.5rem;
+    width: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(255 255 255 / 0.25);
+    color: rgb(0 0 0 / 0.5);
+}
+
+.add-btn:hover {
+    cursor: pointer;
+    border-color: rgb(0 0 0 / 0.9);
+    color: rgb(0 0 0 / 0.9);
+}
+
+.add-btn:active {
+    background: rgb(0 0 0 / 0.2);
+
+}

@@ -1,7 +1,12 @@
 .checklist {
     width: 21rem;
-    margin: auto;
-    border: 1px solid black;
+    margin: 1rem;
+    /* border: 1px solid black; */
+    position: relative;
+    box-shadow: 1px 1px rgb(0 0 0 / 0.2);
+    background: rgb(255 255 255 / 0.25);
+    border-radius: 6px;
+
 }
 
 .checklist__infobox {
@@ -102,3 +107,19 @@ thead {
     width: 2rem;
     text-align: center;
 }
+
+.checklist__save-btn {
+    background: rgb(255 255 255 / 0.25);
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    right: 0.2rem;
+    top: 0.2rem;
+    font-size: 1.2rem;
+    color: rgb(0 0 0 / 0.5);
+    border: none;
+    border-radius: 10%;
+    box-shadow: 1px 1px rgb(0 0 0 / 0.2);
+    z-index: 2;
+}
+
