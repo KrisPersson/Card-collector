@@ -42,7 +42,7 @@ const createNewChecklistSchema = Joi.object({
         .required(),
     setName: Joi.string()
         .min(3)
-        .max(30)
+        .max(50)
         .required(),
 })
 

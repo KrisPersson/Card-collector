@@ -110,11 +110,24 @@ function Checklist({ checklist }) {
         for (let i = data.lowCardNum; i <= data.highCardnum; i++) {
             const isInCollection = currentSavedList.includes(i)
             const card = data.setList[i - data.lowCardNum]
+            const cardHasTwoOrMorePlayers = card.players || false
+            let cardNameString = ''
+            if (cardHasTwoOrMorePlayers) {
+                card.players.forEach((player, i: number) => {
+                    cardNameString += `${player.firstname} ${player.lastname}`
+                    if (i < card.players.length - 1) {
+                        cardNameString += ' / '
+                    }
+                })
+            } else {
+                cardNameString = `${card.firstname} ${card.lastname}`
+            }
+            
             checklistItems.push(
             <ChecklistItem 
                 key={i} 
                 isInCollection={isInCollection} 
-                card={`${card.firstname} ${card.lastname}`} 
+                card={ cardNameString } 
                 cardNumber={data.numPrefix + i} 
                 updateChangedSinceLastSave={updateChangedSinceLastSave} />)
         }

@@ -1,14 +1,75 @@
 const raw = `
-1		 						Tomas Srsen	 						Rögle BK
-2		 						Håkan Loob	 						Färjestads BK
-3		 						Lars Hurtig	 						Luleå
-4		 						Stefan Elvenes	 						Rögle BK
-5		 						Jörgen Jönsson	 						Rögle BK
-6		 						Robert Svehla	 						Malmö IF
-7		 						Daniel Rydmark	 						Malmö IF
-8		 						Ove Thörnberg	 						HV
-9		 						Patric Kjellberg	 						HV
-10		 						Mats Lööv	 						Rögle BK
+
+201		 											Franck Pajonkowski	 											France
+202		 											Pierrick Maia	 											France
+203		 											Christophe Ville	 											France
+204		 											Serge Poudrier	 											France
+205		 											Philippe Bozon	 											France
+206		 											Gerald Guennelon	 											France
+207		 											Antoine Richer	 											France
+208		 											Reto Pavoni	 											Switzerland
+209		 											Renato Tosio	 											Switzerland
+210		 											Jorg Eberle	 											Switzerland
+211		 											Fredy Luthi	 											Switzerland
+212		 											Christian Weber	 											Switzerland
+213		 											Sandro Bertaggia	 											Switzerland
+214		 											Patrick Howald	 											Switzerland
+215		 											Gil Montandon	 											Switzerland
+216		 											Rick Tschumi	 											Switzerland
+217		 											Klaus Merk	 											Germany
+218		 											Joseph Heiss	 											Germany
+219		 											Rick Amann	 											Germany
+220		 											Michael Rumrich	 											Germany
+221		 											Thomas Brandl	 											Germany
+222		 											Andreas Niederberger	 											Germany
+223		 											Leo Stefan	 											Germany
+224		 											Stefan Ustorf	 											Germany
+225		 											Dieter Hegen	 											Germany
+226		 											Michael Rosati	 											Italy
+227		 											Bruno Campese	 											Italy
+228		 											Roberto Oberrauch	 											Italy
+229		 											Anthony Circelli	 											Italy
+230		 											Bill Stewart	 											Italy
+231		 											Bruno Zarrillo	 											Italy
+232		 											Gaetano Orlando	 											Italy
+233		 											Stefano Figliuzzi	 											Italy
+234		 											Jimmy Camazzola	 											Italy
+235		 											Vladislav Tretiak	 											USSR
+236		 											Viacheslav Fetisov	 											USSR
+237		 											Alexei Kasatonov	 											USSR
+238		 											Sergei Makarov	 											USSR
+239		 											Igor Larionov	 											USSR
+240		 											Vladimir Krutov	 											USSR
+241		 											Valeri Kharlamov	 											USSR
+242		 											Vladimir Petrov	 											USSR
+243		 											Boris Mikhailov	 											USSR
+244		 											Olympic Gold	 											Sweden
+245		 											Olympic Gold	 											Sweden
+246		 											Olympic Gold	 											Sweden
+247		 										 World Champions	 											Canada
+248		 										 World Champions	 											Canada
+249		 											Luc Robitaille	 											Canada
+250		 											Manon Rheaume	 											Canada
+251		 											Mats Sundin / Roger Andersson	 											Sweden
+252		 											Tomas Brolin / Espen Knutsen	 											Norway
+253		 											Peter Forsberg	 											Sweden
+254		 											Peter Forsberg	 											Sweden
+255		 											Peter Forsberg	 											Sweden
+256		 											Mats Sundin	 											Sweden
+257		 											Mats Sundin	 											Sweden
+258		 											Mats Sundin	 											Sweden
+259		 											Mikael Renberg	 											Sweden
+260		 											Mikael Renberg	 											Sweden
+261		 											Mikael Renberg	 											Sweden
+262		 											Eric Lindros	 											Canada
+263		 											Eric Lindros	 											Canada
+264		 											Eric Lindros	 											Canada
+265		 											Wayne Gretzky	 											Canada
+266		 											Wayne Gretzky	 											Canada
+267		 											Wayne Gretzky	 											Canada
+268		 											Checklist Card 	 											Sweden
+269		 											Checklist Card  											Sweden
+270		 											Checklist Card  											Sweden
 `
 
 const splitRaw = raw.split(' ')
