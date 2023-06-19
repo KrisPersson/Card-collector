@@ -1,17 +1,17 @@
 const raw = `
 
-1		 		Jacob Markström	 		Brynas IF Gavle
-2		 		Jacob Josefson	 		Djurgardens IF Stockholm
-3		 		Philip Larsen	 		Frolunda HC
-4		 		Henrik Björklund	 		Farjestad BK
-5		 		Mattias Tedenby	 		HV71 Jonkoping
-6		 		Viktor Ekbom	 		Linköping
-7		 		Kristofer Berglund	 		Lulea
-8		 		Jens Westin	 		MoDo
-9		 		Simon Hjalmarsson	 	Frölunda HC	
-10		 		Tim Erixon	 		Skellefteå AIK
-11		 		Lukas Kilström	 		Södertälje SK
-12		 		Magnus Pääjärvi	 		Timra IK
+1		 										Bernhard Starkbaum	 										Brynas IF Gavle
+2		 										Mikael Tellqvist	 										Djurgardens IF Stockholm
+3		 										Robin Figren	 										Frolunda HC
+4		 										Milan Gulas	 										Farjestad BK
+5		 										Kevin Fiala	 										HV71 Jonkoping
+6		 										Oscar Alsenfelt	 										Leksands IF
+7		 										Broc Little	 										Linkoping
+8		 										Daniel Zaar	 										Lulea
+9		 										William Nylander	 										MODO
+10		 										Andrew Calof	 										Skelleftea AIK
+11		 										Cristopher Nihlstorp	 										Vaxjo Lakers
+12		 										Julius Hudacek	 										Orebro HK
 `
 
 const splitRaw = raw.split(' ')
@@ -19,7 +19,7 @@ let trimmedArr = []
 splitRaw.forEach(item => {
     trimmedArr.push(item.replace(/\s/g,'').replace('HV71','HV')) // remove whitespace, and "HV71" from raw string.
 })
-const separated = [] // This will contain strings, which will be either a card number, firstname, lastname, teams firstname, or teams lastname.
+const separated = [] // This will contain strings, which will be either a number, firstname, lastname, teams firstname, or teams lastname.
 trimmedArr.forEach(item => {
     const splitItem = item.split('')
     let numberTypesInItem = 0
