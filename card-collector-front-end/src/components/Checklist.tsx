@@ -10,7 +10,7 @@ import { UpdatedChecklistItem } from "../interfaces"
 
 
 
-function Checklist({ checklist }) {
+function Checklist({ checklist, updateSelectedChecklists, updateUserChecklistCollectionState }) {
     const [changedSinceLastSave, setChangedSinceLastSave] = useState<UpdatedChecklistItem[]>([])
     const [currentSavedList, setCurrentSavedList] = useState([...checklist.personalChecklist])
 
@@ -30,7 +30,7 @@ function Checklist({ checklist }) {
         }
     }
 
-    function handleSave() {
+    function handleSave() { 
         const changedList = [...changedSinceLastSave]
         const oldList = [...currentSavedList]
         const toBeRemoved = []
@@ -50,6 +50,31 @@ function Checklist({ checklist }) {
         setCurrentSavedList([...newList])
         setChangedSinceLastSave([])
         updateUserChecklistApi(checklist.id, newList, localStorage.getItem('userToken') || "")
+    }
+
+    async function handleDelete() {
+        await deleteUserChecklistApi(checklist.id, localStorage.getItem('userToken') || "")
+        await updateSelectedChecklists(checklist.id)
+        updateUserChecklistCollectionState(checklist.id)
+    }
+
+    async function deleteUserChecklistApi(checklistId: string, token: string ) {
+        try {
+            const body = {checklistId}
+            console.log(body)
+            const response = await fetch(BASE_URL + "/checklist", {
+                method: "DELETE",
+                headers: {'authorization': `Bearer ${token}`, 'Content-Type': 'application/json'},
+                body: JSON.stringify(body)
+            })
+            const data = await response.json()
+            console.log(data)
+            if (data.success) {
+                return
+            } 
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     async function updateUserChecklistApi(checklistId: string, updatedChecklist: number[], token: string ) {
@@ -74,7 +99,6 @@ function Checklist({ checklist }) {
     function renderChecklistItems(cardSet, setName: string) {
     
         const productSets = setLists[cardSet.company][cardSet.season][cardSet.product].sets
-    
         const jsonSet = findJsonSet(productSets, setName)
         let path = setLists[cardSet.company][cardSet.season][cardSet.product]
         let data = {
@@ -160,6 +184,7 @@ function Checklist({ checklist }) {
                     { renderedData.checklistItems }
                 </tbody>
             </table>
+            <button className="checklist__delete-btn" onClick={ handleDelete }><i className="fa-solid fa-trash-can"></i></button>
         </article>
     )
 }

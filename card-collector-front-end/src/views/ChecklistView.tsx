@@ -19,7 +19,7 @@ import { findJsonSet } from "../utils"
 
 function ChecklistView() {
 
-    const [userChecklistCollection, setUserChecklistCollection] = useState([])
+    const [userChecklistCollection, setUserChecklistCollection] = useState<string[]>([])
     const [selectedChecklists, setSelectedChecklists] = useState<string[]>([])
     const [showCreateChecklistModal, setShowCreateChecklistModal] = useState(false)
 
@@ -36,7 +36,16 @@ function ChecklistView() {
             const newCol = selectedChecklists.filter(checklist => {
                 return checklist !== id
             })
-            setSelectedChecklists(newCol)
+            setSelectedChecklists([...newCol])
+        }
+    }
+
+    function updateUserChecklistCollectionState(checklistId: string) {
+        if (!userChecklistCollection.includes(checklistId)) {
+            setUserChecklistCollection((prev) => [...prev, checklistId])
+        } else {
+            const newCol = userChecklistCollection.filter(checklist => checklist !== checklistId)
+            setUserChecklistCollection([...newCol])
         }
     }
 
@@ -72,11 +81,16 @@ function ChecklistView() {
                 return <Checklist 
                     key={i}
                     checklist={checklist}
+                    updateSelectedChecklists={updateSelectedChecklists}
+                    updateUserChecklistCollectionState={updateUserChecklistCollectionState}
                 />  
             }
         })}
         </section>
-        { showCreateChecklistModal && <CreateNewChecklistModal /> }
+        { showCreateChecklistModal && 
+        <CreateNewChecklistModal 
+            setShowCreateChecklistModal={ setShowCreateChecklistModal }
+ /> }
         </>
     )
 }

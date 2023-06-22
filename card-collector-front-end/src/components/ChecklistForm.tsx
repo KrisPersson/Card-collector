@@ -6,7 +6,7 @@ import { ChecklistFormInput } from '../interfaces'
 
 
 
-function ChecklistForm() {
+function ChecklistForm({setShowCreateChecklistModal}) {
 
     const [company, setCompany] = useState('')
     const [season, setSeason] = useState('')
@@ -76,6 +76,7 @@ function ChecklistForm() {
             cardSet: cardSet
         }
         const databaseInsert = await postNewUserChecklist(userId, token, formInput)
+        setShowCreateChecklistModal(false)
         console.log(databaseInsert)
     }
 

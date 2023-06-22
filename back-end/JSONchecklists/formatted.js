@@ -1,24 +1,20 @@
 const raw = `
-1		 					Robin Kovacs	 					AIK IF Stockholm
-2		 					Michael Haga	 					Almtuna IS
-3		 					Tuomas Salmela	 					Asploven HC
-4		 					Joel Gistedt	 					BIK Karlskoga
-5		 					Henrik Björklund	 					BIK Karlskoga
-6		 					Marcus Eriksson	 					HC Vita Hasten
-7		 					Kevin Lindskoug	 					IF Bjorkloven
-8		 					Joakim Hagelin	 					IK Oskarshamn
-9		 					Viktor Andrén	 					IK Pantern
-10		 					Martin Grönberg	 					Leksands IF
-11		 					Henrik Haukeland	 					Leksands IF
-12		 					Daniel Hermansson	 					Mora IK
-13		 					Magnus Åkerlund	 					IF Sundsvall Hockey
-14		 					Jeremy Boyce	 					Timra IK
-15		 					Jonathan Dahlén	 					Timra IK
-16		 					Eric Castonguay	 					Tingsryds AIF
-17		 					Kevin Ekman-Larsson	 					Tingsryds AIF
-18		 					Cody Murphy	 					VIK Västerås HK
+16		 									Shane Wright	 									Seattle Kraken
+17		 									Jack Quinn	 									Buffalo Sabres
+18		 									Dylan Holloway	 									Edmonton Oilers
+19		 									Jack McBain	 									Arizona Coyotes
+20		 									Wyatt Johnston	 									Dallas Stars
+21		 									Mads Sogaard	 									Ottawa Senators
+22		 									Nick Abruzzese	 									Toronto Maple Leafs
+23		 									Pavol Regenda	 									Anaheim Ducks
+24		 									Dylan Guenther	 									Arizona Coyotes
+25		 									Jordan Harris	 									Montreal Canadiens
+26		 									Brandt Clarke	 									Los Angeles Kings
+27		 									Andrei Kuzmenko	 									Vancouver Canucks
+28		 									Jake Sanderson	 									Ottawa Senators
+29		 									Matias Maccelli	 									Arizona Coyotes
+30		 									Juraj Slafkovsky	 									Montreal Canadiens
 `
-
 const splitRaw = raw.split(' ')
 let trimmedArr = []
 splitRaw.forEach(item => {
@@ -26,7 +22,7 @@ splitRaw.forEach(item => {
 })
 const separated = [] // This will contain strings, which will be either a number, firstname, lastname, teams firstname, or teams lastname.
 trimmedArr.forEach(item => {
-    const splitItem = item.split('')
+const splitItem = item.split('')
     let numberTypesInItem = 0
     for (const char of splitItem) { // check if each char in a string can be converted to a number, and if so, increment counter.
         // console.log(char)
