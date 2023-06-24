@@ -1,4 +1,5 @@
 import "./MyChecklistCollection.scss"
+import setLists from "../../../back-end/JSONchecklists/checklists.json"
 
 function MyChecklistCollection({ userChecklistCollection, selectedChecklists, updateSelectedChecklists, setShowCreateChecklistModal }) {
 
@@ -28,7 +29,7 @@ function MyChecklistCollection({ userChecklistCollection, selectedChecklists, up
         let structured = {}
 
         liItems.forEach(liItem => {
-            const { company, season, product, setname } = liItem.props
+            const { company, season, product } = liItem.props
             if (!structured[company]) {
                 structured = {...structured, [company]: {}}
             }
@@ -43,31 +44,33 @@ function MyChecklistCollection({ userChecklistCollection, selectedChecklists, up
         return structured
     }
     function sortAndAssembleMyChecklistsBeforeRendering(structure, liItems) {
-
+        console.log(structure)
+        console.log(liItems)
         let result = []
         let counter = 0
         for (const companyKey in structure) {
-            result.push(<h4 key={counter}>{ companyKey }</h4>)
-            counter++
-
-            for (const seasonKey in structure[companyKey]) {
-                result.push(<h4 key={counter}>{ seasonKey }</h4>)
+            if (companyKey !== 'undefined') {
+                result.push(<h4 className="collection__key collection__key--company" key={counter}>{ setLists[companyKey]['name'] || companyKey }</h4>)
                 counter++
-                for (const productKey in structure[companyKey][seasonKey]) {
-                    result.push(<h4 key={counter}>{ productKey }</h4>)
+    
+                for (const seasonKey in structure[companyKey]) {
+                    result.push(<h4 className="collection__key collection__key--season" key={counter}>- { seasonKey }</h4>)
                     counter++
-                    structure[companyKey][seasonKey][productKey].forEach(checklistId => {
-                        const foundLiItem = liItems.find(item => item.props.id === checklistId)
-                        result.push(foundLiItem)
+                    for (const productKey in structure[companyKey][seasonKey]) {
+                        result.push(<h4 className="collection__key collection__key--product" key={counter}>-- { setLists[companyKey][seasonKey][productKey]["name"] }</h4>)
                         counter++
-                    })
+                        structure[companyKey][seasonKey][productKey].forEach(checklistId => {
+                            const foundLiItem = liItems.find(item => item.props.id === checklistId)
+                            result.push(foundLiItem)
+                            counter++
+                        })
+                    }
                 }
             }
         }
         return result
     }
-    console.log(liItems)
-    console.log(structureMyChecklistsBeforeRendering(liItems))
+    
     
 
     return (

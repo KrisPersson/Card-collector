@@ -8,21 +8,52 @@
     h3 {
         font-family: 'Pathway Extreme', sans-serif;
     }
+
+    padding: 1rem;
 }
 
 .collection {
     list-style: none;
     padding-left: 0;
+    font-family: 'Pathway Extreme', sans-serif;
+    letter-spacing: 0.1px;
+    display: flex;
+    flex-flow: row wrap;
+    &__key {
+        margin: 0;
+        padding:0;
+        text-align: left;
+        text-transform: capitalize;
+        font-size: 0.75rem;
+        &--company {
+            font-size: 1.4rem;
+            width: 100%;
+        }
+        &--season {
+            margin-left: 0.75rem;;
+            width: 100%;
+
+        }
+        &--product {
+            margin-left: 1.5rem;;
+            width: 100%;
+
+        }
+    }
 
 }
 
 .collection-item {
     background: rgb(0 0 0 / 0.2);
     padding: 0.5rem 1rem;
+    margin: 0.1rem 0.1rem;
     border-radius: 15px;
     width: fit-content;
     text-align: left;
     font-family: 'Pathway Extreme', sans-serif;
+    font-size: 0.8rem;
+    display: inline-block;
+    align-self: flex-start;
 }
 
 .collection-item--selected {

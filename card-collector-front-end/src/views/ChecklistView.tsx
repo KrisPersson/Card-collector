@@ -22,12 +22,13 @@ function ChecklistView() {
     const [userChecklistCollection, setUserChecklistCollection] = useState<string[]>([])
     const [selectedChecklists, setSelectedChecklists] = useState<string[]>([])
     const [showCreateChecklistModal, setShowCreateChecklistModal] = useState(false)
+    const [refetchChecklistCollectionRefArr, setRefetchChecklistCollectionRefArr] = useState<number[]>([])
 
     useEffect(() => {
         const userId = localStorage.getItem('userId') as string
         const token = localStorage.getItem('userToken') as string
         getUserChecklistCollection(userId, token)
-    }, [])
+    }, [refetchChecklistCollectionRefArr])
 
     function updateSelectedChecklists(id: string) {
         if (!selectedChecklists.includes(id)) {
@@ -74,6 +75,7 @@ function ChecklistView() {
             updateSelectedChecklists={ updateSelectedChecklists }
             selectedChecklists={ selectedChecklists }
             setShowCreateChecklistModal={ setShowCreateChecklistModal }
+            
         />
         <section className="checklist-container">
         {selectedChecklists.length > 0 && userChecklistCollection.map((checklist, i) => {
@@ -83,6 +85,7 @@ function ChecklistView() {
                     checklist={checklist}
                     updateSelectedChecklists={updateSelectedChecklists}
                     updateUserChecklistCollectionState={updateUserChecklistCollectionState}
+                    setRefetchChecklistCollectionRefArr={setRefetchChecklistCollectionRefArr}
                 />  
             }
         })}
@@ -90,6 +93,8 @@ function ChecklistView() {
         { showCreateChecklistModal && 
         <CreateNewChecklistModal 
             setShowCreateChecklistModal={ setShowCreateChecklistModal }
+            setRefetchChecklistCollectionRefArr={setRefetchChecklistCollectionRefArr}
+
  /> }
         </>
     )

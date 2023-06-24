@@ -10,7 +10,7 @@ import { UpdatedChecklistItem } from "../interfaces"
 
 
 
-function Checklist({ checklist, updateSelectedChecklists, updateUserChecklistCollectionState }) {
+function Checklist({ checklist, updateSelectedChecklists, updateUserChecklistCollectionState, setRefetchChecklistCollectionRefArr }) {
     const [changedSinceLastSave, setChangedSinceLastSave] = useState<UpdatedChecklistItem[]>([])
     const [currentSavedList, setCurrentSavedList] = useState([...checklist.personalChecklist])
 
@@ -56,6 +56,7 @@ function Checklist({ checklist, updateSelectedChecklists, updateUserChecklistCol
         await deleteUserChecklistApi(checklist.id, localStorage.getItem('userToken') || "")
         await updateSelectedChecklists(checklist.id)
         updateUserChecklistCollectionState(checklist.id)
+        setRefetchChecklistCollectionRefArr((prev) => [...prev, 1])
     }
 
     async function deleteUserChecklistApi(checklistId: string, token: string ) {

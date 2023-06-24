@@ -1,19 +1,5 @@
 const raw = `
-16		 									Shane Wright	 									Seattle Kraken
-17		 									Jack Quinn	 									Buffalo Sabres
-18		 									Dylan Holloway	 									Edmonton Oilers
-19		 									Jack McBain	 									Arizona Coyotes
-20		 									Wyatt Johnston	 									Dallas Stars
-21		 									Mads Sogaard	 									Ottawa Senators
-22		 									Nick Abruzzese	 									Toronto Maple Leafs
-23		 									Pavol Regenda	 									Anaheim Ducks
-24		 									Dylan Guenther	 									Arizona Coyotes
-25		 									Jordan Harris	 									Montreal Canadiens
-26		 									Brandt Clarke	 									Los Angeles Kings
-27		 									Andrei Kuzmenko	 									Vancouver Canucks
-28		 									Jake Sanderson	 									Ottawa Senators
-29		 									Matias Maccelli	 									Arizona Coyotes
-30		 									Juraj Slafkovsky	 									Montreal Canadiens
+
 `
 const splitRaw = raw.split(' ')
 let trimmedArr = []
