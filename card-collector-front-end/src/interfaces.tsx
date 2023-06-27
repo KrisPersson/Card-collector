@@ -16,4 +16,30 @@ interface UpdatedChecklistItem {
     isChecked: boolean;
 }
 
-export type { ChecklistFormInput, Intent, UserBody, UpdatedChecklistItem }
+interface Player {
+    tempId: number;
+    firstname: string;
+    lastname: string;
+    teamname: string;
+}
+
+interface Card {
+    cardTempId: number;
+    players: Player[];
+    manufacturer: string;
+    season: string;
+    product: string;
+    setName: string;
+    setType: string;
+    numberedTo: string;
+    rookie: boolean;
+    autograph: boolean;
+    memorabilia: boolean;
+    jerseyNumMatch: boolean;
+    pc: boolean;
+    comment: string;
+    copies: number;
+    price: number;
+}
+
+export type { ChecklistFormInput, Intent, UserBody, UpdatedChecklistItem, Player, Card }

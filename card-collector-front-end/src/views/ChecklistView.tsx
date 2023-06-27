@@ -5,7 +5,7 @@ import { ud9495checklist } from "../upperdeck9495"
 import { ChecklistItem } from "../components/ChecklistItem"
 import CreateNewChecklistForm from "../components/ChecklistForm"
 import MyChecklistCollection from "../components/MyChecklistCollection"
-import { CreateNewChecklistModal } from "../components/CreateNewChecklistModal"
+import { AddNewCardModal } from "../components/AddNewCardModal"
 import { BASE_URL } from "../api"
 import setLists from "../../../back-end/JSONchecklists/checklists.json"
 import { findJsonSet } from "../utils"
@@ -58,7 +58,7 @@ function ChecklistView() {
             })
             const data = await response.json()
             if (data.success) {
-                setUserChecklistCollection([...data?.collection])
+                setUserChecklistCollection([...data.collection])
             } 
         } catch (error) {
             console.log(error)

@@ -1,0 +1,24 @@
+.modal--add-new-card {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.submit-btn {
+    width: 15rem;
+    height: 3rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    background: goldenrod;
+    color: rgb(0 0 0 / 0.55);
+    border: 1px solid rgb(255 255 255 / 0.4);
+    border-radius: 30px;
+    margin-top: 1rem;
+}
+
+.submit-btn:hover {
+    cursor: pointer;
+    color: rgb(0 0 0 / 0.85);
+
+}

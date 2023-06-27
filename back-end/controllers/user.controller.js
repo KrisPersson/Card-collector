@@ -14,7 +14,7 @@ async function loginCtrl(request, response) {
     try {
         const user = await login(request.body)
         const token = jwt.sign({ id: user.id }, 'a1b1c1', {
-            expiresIn: "24h" // 60 seconds
+            expiresIn: "24h" // 
         })
         response.json({ success: true, message: 'User logged in successfully!', username: user.username, id: user.id, token })
     } catch (error) {

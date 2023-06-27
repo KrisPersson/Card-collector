@@ -5,6 +5,7 @@ import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import LoginSignup  from "./views/LoginSignup"
 import { ChecklistView } from './views/ChecklistView'
+import InventoryView from './views/InventoryView'
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: '/checklist',
         element: <ChecklistView />
+      },
+      {
+        path: '/inventory',
+        element: <InventoryView />
       },
     ]
   }

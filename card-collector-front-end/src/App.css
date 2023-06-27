@@ -4,11 +4,44 @@ body {
 
 .modal {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   z-index: 2;
   background: rgb(0 0 0 / 0.8);
+  color: rgb(255 255 255 / 0.7);
   position: absolute;
   display: flex;
   justify-content: center;
+  padding-bottom: 4.5rem;;
+}
+
+.modal__close-btn {
+  height: 2.7rem;
+  width: 2.7rem;
+  font-size: 1.7rem;
+  color: rgb(205, 205, 205);
+  background: transparent;
+  border: none;
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+}
+
+.modal__h1 {
+  color: rgb(255 255 255);
+  text-align: center;
+} 
+
+.modal__close-btn:hover {
+  color: rgb(146, 146, 146);
+  cursor: pointer;
+}
+
+.modal__close-btn:active {
+  color: rgb(112, 112, 112);
+  cursor: pointer;
+}
+
+button {
+  font-family: 'Pathway Extreme', sans-serif;
 
 }

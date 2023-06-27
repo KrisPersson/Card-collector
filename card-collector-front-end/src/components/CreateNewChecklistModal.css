@@ -6,7 +6,7 @@
     height: fit-content;
 }
 
-.modal__h1 {
+/* .modal__h1 {
     color: rgb(255 255 255);
     text-align: center;
 } 
@@ -21,15 +21,6 @@
     position: absolute;
     top: 1rem;
     right: 2rem;
-}
+} */
 
-.modal__close-btn:hover {
-    color: rgb(146, 146, 146);
-    cursor: pointer;
-}
-
-.modal__close-btn:active {
-    color: rgb(112, 112, 112);
-    cursor: pointer;
-}
 

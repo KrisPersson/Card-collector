@@ -44,9 +44,7 @@ function MyChecklistCollection({ userChecklistCollection, selectedChecklists, up
         return structured
     }
     function sortAndAssembleMyChecklistsBeforeRendering(structure, liItems) {
-        console.log(structure)
-        console.log(liItems)
-        let result = []
+        const result = []
         let counter = 0
         for (const companyKey in structure) {
             if (companyKey !== 'undefined') {

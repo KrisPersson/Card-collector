@@ -11,7 +11,7 @@ function LoginSignup() {
     const [username, setUsername] = useState<string>('')
     const [password, setPassword] = useState<string>('')
 
-    function handleSubmit(event: Event) {
+    async function handleSubmit(event: Event) {
         event.preventDefault()
         const input = {
             username: username,
@@ -19,11 +19,13 @@ function LoginSignup() {
         }
 
         if (isSignupMode) {
-            user(input, "signup")
+            await user(input, "signup")
             setIsSignupMode(false)
         } else {
-            user(input, "login")
-            navigate('/checklist')
+            const login = await user(input, "login")
+            if (login) {
+                navigate('/checklist')
+            }
         }
     }
 

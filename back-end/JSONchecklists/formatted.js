@@ -1,5 +1,29 @@
 const raw = `
 
+1		 									Christoffer From-Björk	 									Almtuna IS
+2		 									Niklas Andersson	 									Almtuna IS
+3		 									Petter Sandberg	 									Almtuna IS
+4		 									Andreas Dahlberg	 									IFK Arboga IK
+5		 									Andreas Nordfeldt	 									IFK Arboga IK
+6		 									Jesse Pehu	 									IFK Arboga IK
+7		 									Jens Jakobs	 									Nykoping
+8		 									Olof Svensson	 									Nykoping
+9		 									Robert Andberg	 									Nykoping
+10		 									Andreas Valdix	 									IK Oskarshamn
+11		 									Fredrik Håkansson	 									IK Oskarshamn
+12		 									Patrik Rönnqvist	 									IK Oskarshamn
+13		 									Calle Steen	 									Södertälje SK
+14		 									Carter Trevisani	 									Södertälje SK
+15		 									Fredrik Sonntag	 									Södertälje SK
+16		 									Henric Björkman	 									VIK Västerås HK
+17		 									Marcus Söderkvist	 									VIK Västerås HK
+18		 									Robin Persson	 									VIK Västerås HK
+19		 									Brandon Nolan	 									Vaxjo Lakers
+20		 									David Holmqvist	 									Vaxjo Lakers
+21		 									Eric Yngve	 									Vaxjo Lakers
+22		 									Elias Granath	 									Leksands IF
+23		 									Mikael Karlberg	 									Leksands IF
+24		 									Niclas Andersén	 									Leksands IF
 `
 const splitRaw = raw.split(' ')
 let trimmedArr = []

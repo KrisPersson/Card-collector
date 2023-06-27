@@ -6,6 +6,8 @@ app.use(express.json())
 
 const { checklistRouter } = require('./routes/checklist.route')
 const { userRouter } = require('./routes/user.route')
+const { inventoryRouter } = require('./routes/inventory.route')
+
 const { formatted } = require('./JSONchecklists/formatted')
 
 const { db } = require('./database/database')
@@ -608,7 +610,9 @@ const jsonV = stringify(ud9495checklist)
 
 
 app.use('/api/checklist', checklistRouter)
+app.use('/api/inventory', inventoryRouter)
 app.use('/api/user', userRouter)
+
 
 
 

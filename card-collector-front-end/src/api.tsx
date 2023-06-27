@@ -18,7 +18,7 @@ async function user(body: UserBody, intent: Intent) {
             localStorage.setItem('userToken', data?.token)
             localStorage.setItem('username', username)
             localStorage.setItem('userId', data?.id)
-
+            return data?.id
         } else {
             localStorage.setItem('userToken', '')
             localStorage.setItem('username', '')
