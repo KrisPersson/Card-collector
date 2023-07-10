@@ -2,6 +2,7 @@ import "./AddNewCardModal.scss"
 import AddNewCardForm from "./AddNewCardForm"
 import { useState } from "react"
 import { Player, Card } from "../interfaces"
+import { postNewInventory } from "../api"
 
 const emptyCard = {
     players: [{tempId: 1, firstname: "", lastname: "", teamname: ""}],
@@ -21,23 +22,36 @@ const emptyCard = {
     price: 0
 }
 
-function AddNewCardModal({setShowAddCardModal}) {
+function AddNewCardModal({setShowAddCardModal, getLatestUserCards}) {
 
     const [cardsArr, setCardsArr] = useState<Card[]>([
         {
             cardTempId: 1,
-            players: [{tempId: 1, firstname: "", lastname: "", teamname: ""}],
+            players: [{tempId: 1, firstname: "", lastname: "", teamname: "", role: "Player"}],
             manufacturer: "",
             season: "",
             product: "",
             setName: "",
-            setType: "",
+            setType: "Insert",
+            serial: "",
             numberedTo: "",
+            competition: "NHL",
             rookie: false,
             autograph: false,
             memorabilia: false,
             jerseyNumMatch: false,
+            colorMatch: false,
             pc: false,
+            promoCard: false,
+            stickerCard: false,
+            firstOwner: false,
+            checklistCard: false,
+            printingError: false,
+            clNum: "",
+            location: "",
+            origin: "",
+            grade: "",
+            grader: "",
             comment: "",
             copies: 1,
             price: 0
@@ -54,8 +68,10 @@ function AddNewCardModal({setShowAddCardModal}) {
         //Create new card
         if (createFromTemplate) {
             setCardsArr((prev) => [...prev, {...cardTemplate, cardTempId: highestTempId + 1}])
+            // updateCardsArr({...cardTemplate, cardTempId: highestTempId + 1})
         } else {
             setCardsArr((prev) => [...prev, {...emptyCard, cardTempId: highestTempId + 1}])
+            // updateCardsArr({...emptyCard, cardTempId: highestTempId + 1})
         }
     }
 
@@ -75,7 +91,15 @@ function AddNewCardModal({setShowAddCardModal}) {
 
         if (!verifyForm) return
 
-        console.log("Made it!")
+        const response = await postNewInventory(
+            localStorage.getItem('userId') || '', 
+            cardsArr, 
+            localStorage.getItem('userToken') || ''
+        )
+        if (response.success) {
+            await getLatestUserCards()
+            setShowAddCardModal(false)
+        }
     }
 
     function verifyFormBeforeSubmit() {
@@ -139,21 +163,16 @@ console.log(cardsArr)
             <button onClick={()=> setShowAddCardModal(false)} className="modal__close-btn"><i className="fa-regular fa-circle-xmark"></i></button>
             <article className='modal__form'>
                 <h1 className="modal__h1">Add New Card(s)</h1>
-                { cardsArr.length === 1 ?
-                    <AddNewCardForm 
-                        setShowAddCardModal={ setShowAddCardModal } 
-                        addAnotherCard={ addAnotherCard }
-                        initialValues={ cardsArr[0] }
-                        updateCardsArr={ updateCardsArr }
-                    /> 
-                    :
+                { 
                     cardsArr.map((card, i) => {
                         return <AddNewCardForm 
                             key={i}
                             setShowAddCardModal={ setShowAddCardModal } 
                             addAnotherCard={ addAnotherCard }
-                            initialValues={ card }
+                            initialValues={ i === 0 ? cardsArr[0] : card }
                             updateCardsArr={ updateCardsArr }
+                            setCardsArr={ setCardsArr }
+                            cardsArr={ cardsArr }
 
                         />
                     })

@@ -1,8 +1,9 @@
 .add-card-form {
+    position: relative;
     display: flex;
     justify-content: flex-start;
     flex-flow: row wrap;
-    max-width: 28rem;
+    max-width: 45.75rem;
     border: 2px solid rgb(255 255 255 / 0.7);
     border-radius: 3px;
     padding: 0.5rem;
@@ -33,6 +34,13 @@
 
     }
 
+    &__close-btn {
+        position: absolute;
+        right: 0;
+        top: 0;
+        margin: 0.5rem;
+    }
+
     h2 {
         width: 100%;
     }
@@ -45,7 +53,7 @@
         font-size: 0.7rem;
         line-height: 0.875rem;
         white-space: nowrap;
-        max-width: 31%;
+        max-width: 8.5rem;
         span {
             
         }
@@ -58,6 +66,10 @@
     }
     input[type=checkbox] {
         width: 4rem;
+    }
+    select {
+        width: 8.5rem;
+        height: 1.35rem;
     }
     .input-copies {
         width: 2.5rem !important;
@@ -80,6 +92,25 @@
 
     .card-form__player {
         display: flex;
+    }
+
+    .input-serial {
+        max-width: 3.5rem;
+
+        &--right {
+
+        }
+    }
+
+    .serial-span {
+        min-width: 1rem;
+        font-size: 1rem;
+        margin: 0.2rem 0 0 0.5rem;
+    }
+
+    .select-graded {
+        max-width: 3.5rem;
+
     }
 
     hr {

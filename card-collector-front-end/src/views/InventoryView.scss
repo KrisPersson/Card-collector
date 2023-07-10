@@ -5,3 +5,165 @@
     font-family: 'Pathway Extreme', sans-serif;
     
 }
+
+.inventory-table {
+
+    gap: 1px;
+}
+tbody > tr { 
+    background-color: rgb(255 255 255 / 0.1);
+
+}
+tbody > tr:nth-child(even){
+    background-color: rgb(255 255 255 / 0.2);
+}
+
+.table-row {
+    
+    &--head {
+        th {
+            font-size: 0.65rem;
+            font-weight: 400;
+        }
+    }
+    &--body {
+        td {
+            font-size: 0.75rem;
+            position: relative;
+
+        }
+    }
+    &--expanded {
+        background: grey !important;
+    }
+}
+
+
+
+.expand-section__teamname {
+    bottom: -300% !important;
+    min-height: 2rem;
+    min-width: 4rem;
+    background: green;
+}
+
+.table-column {
+
+    &--expand-section {
+        width: inherit;
+        height: 4rem;
+        position: absolute;
+        left: 0;
+        top: 105%;;
+        background: grey;
+        display: flex;
+        flex-flow: column nowrap;
+        // visibility: collapse;
+
+        z-index:1;
+        p {
+            margin: 0.5rem 0;
+            min-height: 1rem;
+        }
+
+        &__head {
+        }
+
+        
+
+        .expand-section__head-p {
+            font-size: 0.65rem;
+            color: rgb(0 0 0 / 0.7);
+        }
+    }
+
+
+    &__firstname {
+        width: 8rem;
+    }
+    &__lastname {
+        width: 8rem;
+        
+    }
+    &__teamname {
+        width: 9rem;
+        
+    }
+    &__season {
+        width: 3.5rem;
+        
+    }
+    &__product {
+        width: 8rem;
+        
+    }
+    &__setname {
+        width: 10rem;
+        
+    }
+    &__features {
+        width: 8rem;
+        height: 2.1rem;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        align-items: center;
+
+        
+        
+    }
+
+    .feature-pill {
+        font-size: 0.6rem;
+        border-radius: 20px;
+        padding: 1px 2.5px;
+        margin: 0.5px;
+        &--rookie {
+            background: red;
+            color: white;
+        }
+        &--numbered {
+            background: green;
+            color: white;
+        }
+        &--autograph {
+            background: blue;
+            color: white;
+        }
+        &--memorabilia {
+            background: orange;
+            color: white;
+        }
+        &--psa {
+            background: rgb(255, 0, 200);
+            color: white;
+        }
+        &--pc {
+            background: rgb(132, 0, 132);
+            color: white;
+        }
+        &--lst {
+            background: rgb(0, 132, 119);
+            color: white;
+        }
+        &--inv {
+            background: rgb(62, 132, 0);
+            color: white;
+        }
+        &--none {
+            background: rgb(30, 30, 30);
+            color: white;
+        }
+    }
+
+    &__comment {
+        width: 10rem;
+    }
+    &__status {
+        width: 4rem;
+    }
+    &__price {
+        width: 4rem;
+        
+    }
+}

@@ -1,4 +1,4 @@
-import { ChecklistFormInput, UserBody, Intent } from "./interfaces";
+import { ChecklistFormInput, UserBody, Intent, Card } from "./interfaces";
 const BASE_URL = "http://localhost:8000/api"
 
 
@@ -76,9 +76,42 @@ async function postNewUserChecklist(userId: string,
     }
 }
 
-async function 
+async function postNewInventory(userid: string, formInput: Card[], token: string ) {
+    try {
+        const response = await fetch(BASE_URL + "/inventory", {
+            method: "POST",
+            headers: {
+                authorization: `Bearer ${token}`,
+                'Content-Type': 'application/json',
+                'userid': userid
+            },
+            body: JSON.stringify(formInput)
+        })
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return error
+    }
+}
+
+async function getInventory(userid: string, token: string) {
+    try {
+        const response = await fetch(BASE_URL + "/inventory", {
+            method: "GET",
+            headers: {
+                authorization: `Bearer ${token}`,
+                'Content-Type': 'application/json',
+                'userid': userid
+            }
+        })
+        const data = await response.json()
+        return data
+    } catch (error) {
+        return error
+    }
+}
 
 
 
 
-export { user, verifyToken, BASE_URL, postNewUserChecklist }
+export { user, verifyToken, BASE_URL, postNewUserChecklist, postNewInventory, getInventory }

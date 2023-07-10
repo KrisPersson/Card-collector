@@ -16,4 +16,9 @@ async function addNewCards(input, userId) {
 
 }
 
-module.exports = { addNewCards }
+async function getInventory(userId) {
+    const result = await db.inventory.find({ userId })
+    return result
+}
+
+module.exports = { addNewCards, getInventory }

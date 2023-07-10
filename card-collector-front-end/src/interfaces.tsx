@@ -16,11 +16,14 @@ interface UpdatedChecklistItem {
     isChecked: boolean;
 }
 
+type Role = "Player" | "Mascot" | "Coach" | "Referee" | "Pundit" | "Other"
+
 interface Player {
     tempId: number;
     firstname: string;
     lastname: string;
     teamname: string;
+    role: Role
 }
 
 interface Card {
@@ -31,15 +34,30 @@ interface Card {
     product: string;
     setName: string;
     setType: string;
-    numberedTo: string;
+    serial?: string;
+    numberedTo?: string;
     rookie: boolean;
     autograph: boolean;
     memorabilia: boolean;
     jerseyNumMatch: boolean;
+    colorMatch: boolean;
+    checklistCard: boolean;
+    stickerCard: boolean;
+    promoCard: boolean;
+    printingError: boolean;
+    firstOwner: boolean;
     pc: boolean;
     comment: string;
     copies: number;
     price: number;
+    competition?: string;
+    clNum?: string;
+    location?: string;
+    origin?: string;
+    dateAdded?: string;
+    grade?: string;
+    grader?: string;
+
 }
 
 export type { ChecklistFormInput, Intent, UserBody, UpdatedChecklistItem, Player, Card }
