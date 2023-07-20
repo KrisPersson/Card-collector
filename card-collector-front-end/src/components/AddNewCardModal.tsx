@@ -135,6 +135,8 @@ function AddNewCardModal({setShowAddCardModal, getLatestUserCards}) {
                 return  false
             }
             if (!cardsArr[i].setType) {
+                console.log(i)
+
                 handleRejectedSubmit('Set type required')
                 return  false
             }

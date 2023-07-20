@@ -1,4 +1,4 @@
-const { addNewCards, getInventory } = require('../models/inventory.model')
+const { addNewCards, getInventory, editInventory } = require('../models/inventory.model')
 const { findUserById } = require('../models/user.model')
 
 
@@ -24,5 +24,17 @@ async function getInventoryCtrl(request, response) {
     }
 }
 
+async function editInventoryCtrl(request, response) {
+    try {
+        const { userid } = request.headers
+        const { cardId, updates } = request.body
+        const result = await editInventory(cardId, userid, updates)
+        response.json({ success: true, result })
+        
+    } catch (error) {
+        response.status(500).json({ success: false, error: error.message })
+    }
+}
 
-module.exports = { postInventoryCtrl, getInventoryCtrl }
+
+module.exports = { postInventoryCtrl, getInventoryCtrl, editInventoryCtrl }

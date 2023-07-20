@@ -2,6 +2,8 @@ import "./InventoryView.scss"
 import { useState, useEffect } from "react"
 
 import AddNewCardModal from "../components/AddNewCardModal"
+import EditCardModal from "../components/EditCardModal"
+
 import InventoryCard from "../components/InventoryCard"
 import { getInventory } from "../api"
 import { Card } from "../interfaces"
@@ -9,7 +11,8 @@ import { Card } from "../interfaces"
 
 function InventoryView() {
 
-    const [showAddCardModal, setShowAddCardModal] = useState(true)
+    const [showAddCardModal, setShowAddCardModal] = useState(false)
+    const [showEditCardModal, setShowEditCardModal] = useState(false)
     const [currentUserCards, setCurrentUserCards] = useState<Card[]>([])
 
     async function getLatestUserCards() {
@@ -30,6 +33,13 @@ function InventoryView() {
                 showAddCardModal && 
                 <AddNewCardModal
                     setShowAddCardModal={ setShowAddCardModal }
+                    getLatestUserCards={ getLatestUserCards }
+                />
+            }
+            {
+                showEditCardModal && 
+                <EditCardModal
+                    setShowEditCardModal={ setShowEditCardModal }
                     getLatestUserCards={ getLatestUserCards }
                 />
             }

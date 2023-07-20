@@ -1,78 +1,30 @@
-import "./AddNewCardForm.scss"
+import "./EditCardForm.scss"
 import { useState } from 'react'
 import { Player, Card } from "../interfaces"
 
 
-function AddNewCardForm({ addAnotherCard, initialValues, updateCardsArr, setCardsArr, cardsArr }) {
+function EditCardForm({ initialValues }) {
 
     const [amtOfPlayersOnCard, setAmtOfPlayersOnCard] = useState(initialValues.players.length)
-    // const [formState, setFormState] = useState<Card>({
-    //     cardTempId: initialValues.cardTempId,
-    //     players: initialValues.players,
-    //     manufacturer: initialValues.manufacturer,
-    //     season: initialValues.season,
-    //     product: initialValues.product,
-    //     setName: initialValues.setName,
-    //     setType: initialValues.setType,
-    //     serial: initialValues.serial,
-    //     numberedTo: initialValues.numberedTo,
-    //     competition: initialValues.competition,
-    //     rookie: initialValues.rookie,
-    //     autograph: initialValues.autograph,
-    //     memorabilia: initialValues.memorabilia,
-    //     jerseyNumMatch: initialValues.jerseyNumMatch,
-    //     colorMatch: initialValues.colorMatch,
-    //     pc: initialValues.pc,
-    //     comment: initialValues.comment,
-    //     copies: initialValues.copies,
-    //     price: initialValues.price,
-    //     status: initialValues.status,
-    //     clNum: initialValues.clNum,
-    //     location: initialValues.location,
-    //     origin: initialValues.origin,
-    //     grade: initialValues.grade,
-    //     grader: initialValues.grader,
+    const [formState, setFormState] = useState<Card>({})
 
-    // })
 
-    const emptyCard = {
-        players: [{tempId: 1, firstname: "", lastname: "", teamname: "", role: "Player"}],
-        manufacturer: "",
-        season: "",
-        product: "",
-        setName: "",
-        setType: "",
-        serial: "",
+    function updateFormState(event, prop, targetType: "value" | "checked") {
 
-        numberedTo: "",
-        competition: "NHL",
+        const value = prop === "copies" || prop === "price" ?
+            Number(event.target[targetType]) : 
+            event.target[targetType]
 
-        rookie: false,
-        autograph: false,
-        memorabilia: false,
-        jerseyNumMatch: false,
-        colorMatch: false,
-        checklistCard: false,
-        stickerCard: false,
-        promoCard: false,
-        printingError: false,
-
-        pc: false,
-        comment: "",
-        copies: 1,
-        price: 0,
-        clNum: "",
-        location: "",
-        origin: "",
-        grade: "",
-        grader: "",
-
+        setFormState(prev => {
+            return {...prev, [prop]: value}
+        })
     }
+
+    
      
     function handleRadioClick(num: number) {
         if (num !== amtOfPlayersOnCard) {
             setAmtOfPlayersOnCard(num)
-            const actualCard = cardsArr.find(card => card.cardTempId === initialValues.cardTempId)
             const newPlayerArray: Player[] = []
             for (let i = 1; i <= num; i++ ) {
                 newPlayerArray.push({
@@ -83,66 +35,25 @@ function AddNewCardForm({ addAnotherCard, initialValues, updateCardsArr, setCard
                     role: "Player"
                 })
             }
-            const newCardsArr = cardsArr.map(card => {
-                return card.cardTempId === initialValues.cardTempId ? {...actualCard, players: [...newPlayerArray]} : card
+            setFormState(prev => {
+                return {...prev, players: [...newPlayerArray]}
             })
-            setCardsArr([...newCardsArr])
-            // setFormState({...formState, players: [...newPlayerArray]})
-            // updateCardsArr({...formState, players: [...newPlayerArray]})
-            
         }
     }
 
-    function updatePlayers(event, id: number, prop: string) {
-        const newPlayers: Player[] = []
-        const actualCard = cardsArr.find(card => card.cardTempId === initialValues.cardTempId)
-        for (let i = 0; i < actualCard.players.length; i++) {
-            if (actualCard.players[i].tempId === id) {
-                newPlayers.push({...actualCard.players[i], [prop]: event.target.value})
-            } else {
-                newPlayers.push(actualCard.players[i])
-            }
-        }
-        console.log(newPlayers)
-        const newCardsArr = cardsArr.map(card => {
-            if (card.cardTempId === initialValues.cardTempId) {
-                return {...card, players: [...newPlayers]}
-            } else {
-                return {...card}
-            }    
-        })
-        console.log(newCardsArr)
+    
 
-        setCardsArr([...newCardsArr])
-    }
+    
 
-    function updateFormState(event, prop: string, targetType: "value" | "checked") {
-        const value = prop === "copies" || prop === "price" ?
-            Number(event.target[targetType]) : 
-            event.target[targetType]
+    
 
-
-        setCardsArr(prev => prev.map(card => {
-            if (card.cardTempId === initialValues.cardTempId) {
-                return {...card, [prop]: value}
-            } else {
-                return {...card}
-            }
-        }))
-        // setFormState({...formState, [prop]: value})
-        // updateCardsArr({...formState, [prop]: value})
-    }
-
-    function closeCurrentCardForm(event: Event) {
-        setCardsArr(prev => prev.filter(form => form.cardTempId !== Number(event.target.id)))
-    }
+    
 
     const thisFormInCardsArr = cardsArr.find(card => card.cardTempId === initialValues.cardTempId)
 
     return (
         <section className="add-card-form">
-            <h4 className="add-card-form__card-temp-id"># { thisFormInCardsArr.cardTempId || '' }</h4>
-            { thisFormInCardsArr.cardTempId > 1 && <button id={thisFormInCardsArr.cardTempId.toString()} onClick={ (event) => closeCurrentCardForm(event) } className="add-card-form__close-btn">X</button> }
+            <h4 className="add-card-form__card-temp-id"># { initialValues.id }</h4>
             <fieldset>
                 <legend>Number of players on card</legend>
                 <label className="radio-btn-label"><input defaultChecked={initialValues.players.length === 0} type="radio" name={`amt-players${initialValues.cardTempId}`} onClick={() => handleRadioClick(0)} /> 0</label>
@@ -297,4 +208,4 @@ function AddNewCardForm({ addAnotherCard, initialValues, updateCardsArr, setCard
     )
 }
 
-export default AddNewCardForm
+export default EditCardForm

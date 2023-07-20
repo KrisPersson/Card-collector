@@ -20,10 +20,11 @@ function InventoryCard({ cardData }) {
         setType,
         location,
         origin,
-        dateAdded,
+        createdAt,
         grade,
         grader,
         pc,
+        id,
         competition,
         checklistCard,
         stickerCard,
@@ -33,6 +34,7 @@ function InventoryCard({ cardData }) {
      } = cardData
 
     const [showExpandSection, setShowExpandSection] = useState(false)
+    const parsedDate = new Date(createdAt)
 
     const playersFirstName = players.map((player, i) => {
         if (i > 0) {
@@ -51,12 +53,16 @@ function InventoryCard({ cardData }) {
     })
 
     function showHideExpand(event) {
-        console.log(event.currentTarget)
-        setShowExpandSection(prev => !prev)
+        
+        const classList = event.target.classList.value.split(' ')
+        console.log(classList)
+        if (!classList.includes('fa-solid') && !classList.includes('inventory-card__action-btn')) {
+            setShowExpandSection(prev => !prev)
+        }
     }
 
     return (
-        <tr onClick={(event) => showHideExpand(event)} className={`table-row table-row--body ${showExpandSection && 'table-row--expanded'}`}>
+        <tr onClick={(event) => showHideExpand(event)} className={`table-row table-row--body ${showExpandSection ? 'table-row--expanded' : ''}`}>
             <td className="table-column table-column__firstname"> { players[0].firstname }
             {
                 showExpandSection &&
@@ -137,16 +143,17 @@ function InventoryCard({ cardData }) {
                     showExpandSection &&
                     <section className="table-column--expand-section table-column--expand-section__head">
                         <p className="expand-section__head-p">Date added</p>
-                        <p className="expand-section__body-p">{ dateAdded || '' }</p>
+                        <p className="expand-section__body-p">{ parsedDate.toLocaleDateString() || '' }</p>
                     </section>
                 }
             </td>
             <td className="table-column table-column__price">{ price || 0 }
             {
                 showExpandSection &&
-                <section className="table-column--expand-section table-column--expand-section__head">
-                    <p></p>
-                    <p></p>
+                <section className="table-column--expand-section table-column--expand-section__head expand-section--action-btns">
+                    <button className="inventory-card__action-btn" ><i className="fa-solid fa-pen-to-square"></i></button>
+                    <button className="inventory-card__action-btn"><i className="fa-solid fa-trash"></i></button>
+
                 </section>
             }
             </td>

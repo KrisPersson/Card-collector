@@ -1,13 +1,14 @@
 .inventory-view {
     display: flex;
     justify-content: center;
+    align-items: center;
     grid-column: 1 / -1;
     font-family: 'Pathway Extreme', sans-serif;
-    
+    flex-flow: column nowrap;
 }
 
 .inventory-table {
-
+    width: 75%;
     gap: 1px;
 }
 tbody > tr { 
