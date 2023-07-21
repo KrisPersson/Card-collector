@@ -8,6 +8,7 @@ import InventoryCard from "../components/InventoryCard"
 import { getInventory } from "../api"
 import { Card } from "../interfaces"
 import { emptyCard } from "../utils"
+import { sortTableElementsBy } from "../utils"
 
 
 function InventoryView() {
@@ -37,6 +38,33 @@ function InventoryView() {
         scroll(0,0)
     }
 
+    function sortTableElementsBy(elements: Card[], prop: string) {
+        const elems = [...elements]
+
+        if (prop !== 'price' && prop !== 'season') {
+            elems.sort((a: Card, b: Card) => {
+                if (a[prop] > b[prop]) {
+                    return 1
+                } else if (a[prop] < b[prop]) {
+                    return -1
+                } else {
+                    return 0
+                }
+            }) 
+        } else {
+            elems.sort((a: Card, b: Card) => {
+                if (a[prop] < b[prop]) {
+                    return 1
+                } else if (a[prop] > b[prop]) {
+                    return -1
+                } else {
+                    return 0
+                }
+            })  
+        }
+        setCurrentUserCards([...elems])
+    }
+
 
     return (
         <div className="view inventory-view">
@@ -59,22 +87,23 @@ function InventoryView() {
             <table className="inventory-table">
                 <thead>
                     <tr className="table-row table-row--head">
-                        <th className="table-column table-column__firstname">Firstname</th>
+                        <th onClick={() => sortTableElementsBy(currentUserCards, "firstname")} className="table-column table-column__firstname">Firstname</th>
                         <th className="table-column table-column__lastname">Lastname</th>
                         <th className="table-column table-column__teamname">Team</th>
-                        <th className="table-column table-column__season">Season</th>
-                        <th className="table-column table-column__product">Product</th>
-                        <th className="table-column table-column__setname">Card-set name</th>
+                        <th onClick={() => sortTableElementsBy(currentUserCards, "season")} className="table-column table-column__season">Season</th>
+                        <th onClick={() => sortTableElementsBy(currentUserCards, "product")} className="table-column table-column__product">Product</th>
+                        <th onClick={() => sortTableElementsBy(currentUserCards, "setName")} className="table-column table-column__setname">Card-set name</th>
                         <th className="table-column table-column__features">Features</th>
-                        <th className="table-column table-column__comment">Comment</th>
+                        <th onClick={() => sortTableElementsBy(currentUserCards, "comment")} className="table-column table-column__comment">Comment</th>
                         <th className="table-column table-column__status">Status</th>
-                        <th className="table-column table-column__price">Price</th>
+                        <th onClick={() => sortTableElementsBy(currentUserCards, "price")} className="table-column table-column__price">Price</th>
                     </tr>
                 </thead>
                 <tbody>
                     { currentUserCards.length > 0 && 
-                        currentUserCards.map(card => {
+                        currentUserCards.map((card, i)=> {
                             return <InventoryCard 
+                                key={ i }
                                 cardData={ card }
                                 handleOpenEdit={ handleOpenEdit }
                                 />
