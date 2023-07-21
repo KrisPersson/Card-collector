@@ -111,7 +111,31 @@ async function getInventory(userid: string, token: string) {
     }
 }
 
+async function editInventory(userid: string, formInput: Card, cardId: string, token: string ) {
+
+    const body = {
+        cardId: cardId,
+        updates: {...formInput}
+    }
+    console.log(formInput)
+    try {
+        const response = await fetch(BASE_URL + "/inventory", {
+            method: "PUT",
+            headers: {
+                authorization: `Bearer ${token}`,
+                'Content-Type': 'application/json',
+                'userid': userid
+            },
+            body: JSON.stringify(body)
+        })
+        const data = await response.json()
+        return data
+    } catch (error) {
+        console.log(error)
+    }
+}
 
 
 
-export { user, verifyToken, BASE_URL, postNewUserChecklist, postNewInventory, getInventory }
+
+export { user, verifyToken, BASE_URL, postNewUserChecklist, postNewInventory, getInventory, editInventory }

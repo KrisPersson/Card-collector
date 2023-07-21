@@ -1,7 +1,7 @@
 import "./InventoryCard.scss"
 import { useState } from "react"
 
-function InventoryCard({ cardData }) {
+function InventoryCard({ cardData, handleOpenEdit }) {
 
 
     const { players, 
@@ -151,7 +151,7 @@ function InventoryCard({ cardData }) {
             {
                 showExpandSection &&
                 <section className="table-column--expand-section table-column--expand-section__head expand-section--action-btns">
-                    <button className="inventory-card__action-btn" ><i className="fa-solid fa-pen-to-square"></i></button>
+                    <button onClick={ () => handleOpenEdit(cardData) } className="inventory-card__action-btn" ><i className="fa-solid fa-pen-to-square"></i></button>
                     <button className="inventory-card__action-btn"><i className="fa-solid fa-trash"></i></button>
 
                 </section>

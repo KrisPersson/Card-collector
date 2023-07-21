@@ -7,10 +7,12 @@ import EditCardModal from "../components/EditCardModal"
 import InventoryCard from "../components/InventoryCard"
 import { getInventory } from "../api"
 import { Card } from "../interfaces"
+import { emptyCard } from "../utils"
 
 
 function InventoryView() {
 
+    const [cardBeingEdited, setCardBeingEdited] = useState<Card>(emptyCard)
     const [showAddCardModal, setShowAddCardModal] = useState(false)
     const [showEditCardModal, setShowEditCardModal] = useState(false)
     const [currentUserCards, setCurrentUserCards] = useState<Card[]>([])
@@ -27,6 +29,15 @@ function InventoryView() {
     },[])
 
 
+    function handleOpenEdit(values: Card) {
+        setCardBeingEdited(() => {
+            return {...values}
+        })
+        setShowEditCardModal(true)
+        scroll(0,0)
+    }
+
+
     return (
         <div className="view inventory-view">
             {
@@ -41,6 +52,7 @@ function InventoryView() {
                 <EditCardModal
                     setShowEditCardModal={ setShowEditCardModal }
                     getLatestUserCards={ getLatestUserCards }
+                    initialValues={ cardBeingEdited }
                 />
             }
             <button onClick={ () => setShowAddCardModal(true) }>Add Card(s)</button>
@@ -62,7 +74,10 @@ function InventoryView() {
                 <tbody>
                     { currentUserCards.length > 0 && 
                         currentUserCards.map(card => {
-                            return <InventoryCard cardData={ card } />
+                            return <InventoryCard 
+                                cardData={ card }
+                                handleOpenEdit={ handleOpenEdit }
+                                />
                         })
                     }
                 </tbody>

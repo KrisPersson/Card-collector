@@ -1,70 +1,29 @@
 import "./EditCardForm.scss"
-import { useState } from 'react'
-import { Player, Card } from "../interfaces"
+import { Card } from "../interfaces"
 
-
-function EditCardForm({ initialValues }) {
-
-    const [amtOfPlayersOnCard, setAmtOfPlayersOnCard] = useState(initialValues.players.length)
-    const [formState, setFormState] = useState<Card>({})
-
-
-    function updateFormState(event, prop, targetType: "value" | "checked") {
-
-        const value = prop === "copies" || prop === "price" ?
-            Number(event.target[targetType]) : 
-            event.target[targetType]
-
-        setFormState(prev => {
-            return {...prev, [prop]: value}
-        })
-    }
-
-    
-     
-    function handleRadioClick(num: number) {
-        if (num !== amtOfPlayersOnCard) {
-            setAmtOfPlayersOnCard(num)
-            const newPlayerArray: Player[] = []
-            for (let i = 1; i <= num; i++ ) {
-                newPlayerArray.push({
-                    tempId: i,
-                    firstname: "",
-                    lastname: "",
-                    teamname: "",
-                    role: "Player"
-                })
-            }
-            setFormState(prev => {
-                return {...prev, players: [...newPlayerArray]}
-            })
-        }
-    }
-
-    
-
-    
-
-    
-
-    
-
-    const thisFormInCardsArr = cardsArr.find(card => card.cardTempId === initialValues.cardTempId)
-
+function EditCardForm({ initialValues, updateFormState, updatePlayers, handleRadioClick, amtOfPlayersOnCard, formState }: {
+    initialValues: Card;
+    updateFormState: void;
+    updatePlayers: void;
+    handleRadioClick: void;
+    amtOfPlayersOnCard: number;
+    formState: Card;
+}) {
+console.log(updatePlayers)
     return (
         <section className="add-card-form">
             <h4 className="add-card-form__card-temp-id"># { initialValues.id }</h4>
             <fieldset>
                 <legend>Number of players on card</legend>
-                <label className="radio-btn-label"><input defaultChecked={initialValues.players.length === 0} type="radio" name={`amt-players${initialValues.cardTempId}`} onClick={() => handleRadioClick(0)} /> 0</label>
-                <label className="radio-btn-label"><input defaultChecked={initialValues.players.length === 1} type="radio" name={`amt-players${initialValues.cardTempId}`} onClick={() => handleRadioClick(1)} /> 1</label>
-                <label className="radio-btn-label"><input defaultChecked={initialValues.players.length === 2} type="radio" name={`amt-players${initialValues.cardTempId}`} onClick={() => handleRadioClick(2)} /> 2</label>
-                <label className="radio-btn-label"><input defaultChecked={initialValues.players.length === 3} type="radio" name={`amt-players${initialValues.cardTempId}`} onClick={() => handleRadioClick(3)} /> 3</label>
-                <label className="radio-btn-label"><input defaultChecked={initialValues.players.length === 4} type="radio" name={`amt-players${initialValues.cardTempId}`} onClick={() => handleRadioClick(4)} /> 4</label>
-                <label className="radio-btn-label"><input defaultChecked={initialValues.players.length === 5} type="radio" name={`amt-players${initialValues.cardTempId}`} onClick={() => handleRadioClick(5)} /> 5</label>
-                <label className="radio-btn-label"><input defaultChecked={initialValues.players.length === 6} type="radio" name={`amt-players${initialValues.cardTempId}`} onClick={() => handleRadioClick(6)} /> 6</label>
-                <label className="radio-btn-label"><input defaultChecked={initialValues.players.length === 7} type="radio" name={`amt-players${initialValues.cardTempId}`} onClick={() => handleRadioClick(7)} /> 7</label>
-                <label className="radio-btn-label"><input defaultChecked={initialValues.players.length === 8} type="radio" name={`amt-players${initialValues.cardTempId}`} onClick={() => handleRadioClick(8)} /> 8</label>
+                <label className="radio-btn-label"><input defaultChecked={initialValues.players?.length === 0} type="radio" name={`amt-players${initialValues.cardTempId}`} onClick={() => handleRadioClick(0)} /> 0</label>
+                <label className="radio-btn-label"><input defaultChecked={initialValues.players?.length === 1} type="radio" name={`amt-players${initialValues.cardTempId}`} onClick={() => handleRadioClick(1)} /> 1</label>
+                <label className="radio-btn-label"><input defaultChecked={initialValues.players?.length === 2} type="radio" name={`amt-players${initialValues.cardTempId}`} onClick={() => handleRadioClick(2)} /> 2</label>
+                <label className="radio-btn-label"><input defaultChecked={initialValues.players?.length === 3} type="radio" name={`amt-players${initialValues.cardTempId}`} onClick={() => handleRadioClick(3)} /> 3</label>
+                <label className="radio-btn-label"><input defaultChecked={initialValues.players?.length === 4} type="radio" name={`amt-players${initialValues.cardTempId}`} onClick={() => handleRadioClick(4)} /> 4</label>
+                <label className="radio-btn-label"><input defaultChecked={initialValues.players?.length === 5} type="radio" name={`amt-players${initialValues.cardTempId}`} onClick={() => handleRadioClick(5)} /> 5</label>
+                <label className="radio-btn-label"><input defaultChecked={initialValues.players?.length === 6} type="radio" name={`amt-players${initialValues.cardTempId}`} onClick={() => handleRadioClick(6)} /> 6</label>
+                <label className="radio-btn-label"><input defaultChecked={initialValues.players?.length === 7} type="radio" name={`amt-players${initialValues.cardTempId}`} onClick={() => handleRadioClick(7)} /> 7</label>
+                <label className="radio-btn-label"><input defaultChecked={initialValues.players?.length === 8} type="radio" name={`amt-players${initialValues.cardTempId}`} onClick={() => handleRadioClick(8)} /> 8</label>
             </fieldset>
             {
                 amtOfPlayersOnCard === 0 ?
@@ -84,8 +43,8 @@ function EditCardForm({ initialValues }) {
                             </select>
                         </label>
                 </section>) 
-                : 
-                initialValues.players.map(player => {
+                :
+                formState.players?.map(player => {
                     return (
                     <section key={player.tempId} className="card-form__player">
                         <label>First name <span>*</span><input onChange={(event) => updatePlayers(event, player.tempId, "firstname") } defaultValue={player.firstname} type="text" placeholder="ex. Wayne" required /></label>
@@ -106,7 +65,7 @@ function EditCardForm({ initialValues }) {
                 })
             }
             <hr />
-            <label>Manufacturer <span>*</span><input onChange={(event) => updateFormState(event, "manufacturer", "value")} defaultValue={initialValues.manufacturer} type="text" placeholder="ex. Upper Deck" /></label>
+            <label>Manufacturer <span>*</span><input onChange={(event) => updateFormState(event, "manufacturer", "value")} defaultValue={formState.manufacturer} type="text" placeholder="ex. Upper Deck" /></label>
             <label>Season <span>*</span><input onChange={(event) => updateFormState(event, "season", "value")} defaultValue={initialValues.season} type="text" placeholder="ex. 1994/95" /></label>
             <label>Product <span>*</span><input onChange={(event) => updateFormState(event, "product", "value")} defaultValue={initialValues.product} type="text" placeholder="ex. Series 1, SPx, etc" /></label>
             <label>Card-set name <span>*</span><input onChange={(event) => updateFormState(event, "setName", "value")} defaultValue={initialValues.setName} type="text" placeholder="ex. Future Watch" required /></label>
@@ -179,31 +138,25 @@ function EditCardForm({ initialValues }) {
                     <option value="Other">Other</option>
                 </select>
             </label>
-            <label className="check-box__card-label">Rookie card<input onChange={(event) => updateFormState(event, "rookie", "checked")} checked={initialValues.rookie} type="checkbox" /></label>
-            <label className="check-box__card-label">Autograph<input onChange={(event) => updateFormState(event, "autograph", "checked")} checked={initialValues.autograph} type="checkbox" /></label>
-            <label className="check-box__card-label">Memorabilia<input onChange={(event) => updateFormState(event, "memorabilia", "checked")} checked={initialValues.memorabilia} type="checkbox" /></label>
-            <label className="check-box__card-label">Jersey nr match<input onChange={(event) => updateFormState(event, "jerseyNumMatch", "checked")} checked={initialValues.jerseyNumMatch} type="checkbox" /></label>
-            <label className="check-box__card-label">Color match<input onChange={(event) => updateFormState(event, "colorMatch", "checked")} checked={initialValues.colorMatch} type="checkbox" /></label>
-            <label className="check-box__card-label">Checklist card<input onChange={(event) => updateFormState(event, "checklistCard", "checked")} checked={initialValues.checklistCard} type="checkbox" /></label>
-            <label className="check-box__card-label">Sticker card<input onChange={(event) => updateFormState(event, "stickerCard", "checked")} checked={initialValues.stickerCard} type="checkbox" /></label>
-            <label className="check-box__card-label">Promo card<input onChange={(event) => updateFormState(event, "promoCard", "checked")} checked={initialValues.promoCard} type="checkbox" /></label>
+            <label className="check-box__card-label">Rookie card<input onChange={(event) => updateFormState(event, "rookie", "checked")} defaultChecked={initialValues.rookie} type="checkbox" /></label>
+            <label className="check-box__card-label">Autograph<input onChange={(event) => updateFormState(event, "autograph", "checked")} defaultChecked={initialValues.autograph} type="checkbox" /></label>
+            <label className="check-box__card-label">Memorabilia<input onChange={(event) => updateFormState(event, "memorabilia", "checked")} defaultChecked={initialValues.memorabilia} type="checkbox" /></label>
+            <label className="check-box__card-label">Jersey nr match<input onChange={(event) => updateFormState(event, "jerseyNumMatch", "checked")} defaultChecked={initialValues.jerseyNumMatch} type="checkbox" /></label>
+            <label className="check-box__card-label">Color match<input onChange={(event) => updateFormState(event, "colorMatch", "checked")} defaultChecked={initialValues.colorMatch} type="checkbox" /></label>
+            <label className="check-box__card-label">Checklist card<input onChange={(event) => updateFormState(event, "checklistCard", "checked")} defaultChecked={initialValues.checklistCard} type="checkbox" /></label>
+            <label className="check-box__card-label">Sticker card<input onChange={(event) => updateFormState(event, "stickerCard", "checked")} defaultChecked={initialValues.stickerCard} type="checkbox" /></label>
+            <label className="check-box__card-label">Promo card<input onChange={(event) => updateFormState(event, "promoCard", "checked")} defaultChecked={initialValues.promoCard} type="checkbox" /></label>
 
-            <label className="check-box__card-label">Printing error<input onChange={(event) => updateFormState(event, "printingError", "checked")} checked={initialValues.printingError} type="checkbox" /></label>
-            <label className="check-box__card-label">First owner<input onChange={(event) => updateFormState(event, "firstOwner", "checked")} checked={initialValues.firstOwner} type="checkbox" /></label>
+            <label className="check-box__card-label">Printing error<input onChange={(event) => updateFormState(event, "printingError", "checked")} defaultChecked={initialValues.printingError} type="checkbox" /></label>
+            <label className="check-box__card-label">First owner<input onChange={(event) => updateFormState(event, "firstOwner", "checked")} defaultChecked={initialValues.firstOwner} type="checkbox" /></label>
 
-
-
-            <label className="check-box__card-label">PC<input onChange={(event) => updateFormState(event, "pc", "checked")} checked={initialValues.pc} type="checkbox" /></label>
+            <label className="check-box__card-label">PC<input onChange={(event) => updateFormState(event, "pc", "checked")} defaultChecked={initialValues.pc} type="checkbox" /></label>
             
             <label>Comment<input onChange={(event) => updateFormState(event, "comment", "value")} type="text" placeholder="" defaultValue={initialValues.comment} /></label>
             <label>Physical location<input onChange={(event) => updateFormState(event, "location", "value")} defaultValue={initialValues.location} type="text" placeholder="ex. shelf 2, box 3" /></label>
             <label className="copies-label">Copies <span>*</span><input onChange={(event) => updateFormState(event, "copies", "value")} type="number" className="input-copies" defaultValue={initialValues.copies || 1} /></label>
             <label className="price-label">Price/unit SEK <span>*</span><input onChange={(event) => updateFormState(event, "price", "value")} type="number" defaultValue={initialValues.price} placeholder="ex. 20" /></label>
             <hr />
-            <aside></aside>
-            <button onClick={ () => addAnotherCard(thisFormInCardsArr, false) }><i className="fa-regular fa-file"></i> Add another empty</button>
-            <button onClick={ () => addAnotherCard(thisFormInCardsArr, true) }><i className="fa-regular fa-copy"></i> Add another from this</button>
-
         </section>
     )
 }

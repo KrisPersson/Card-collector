@@ -35,39 +35,7 @@ function AddNewCardForm({ addAnotherCard, initialValues, updateCardsArr, setCard
 
     // })
 
-    const emptyCard = {
-        players: [{tempId: 1, firstname: "", lastname: "", teamname: "", role: "Player"}],
-        manufacturer: "",
-        season: "",
-        product: "",
-        setName: "",
-        setType: "",
-        serial: "",
-
-        numberedTo: "",
-        competition: "NHL",
-
-        rookie: false,
-        autograph: false,
-        memorabilia: false,
-        jerseyNumMatch: false,
-        colorMatch: false,
-        checklistCard: false,
-        stickerCard: false,
-        promoCard: false,
-        printingError: false,
-
-        pc: false,
-        comment: "",
-        copies: 1,
-        price: 0,
-        clNum: "",
-        location: "",
-        origin: "",
-        grade: "",
-        grader: "",
-
-    }
+    
      
     function handleRadioClick(num: number) {
         if (num !== amtOfPlayersOnCard) {

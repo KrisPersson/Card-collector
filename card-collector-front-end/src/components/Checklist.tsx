@@ -1,4 +1,4 @@
-import "./Checklist.css"
+import "./Checklist.scss"
 import { useState } from 'react'
 import { ChecklistItem } from "../components/ChecklistItem"
 import setLists from "../../../back-end/JSONchecklists/checklists.json"
@@ -33,8 +33,8 @@ function Checklist({ checklist, updateSelectedChecklists, updateUserChecklistCol
     function handleSave() { 
         const changedList = [...changedSinceLastSave]
         const oldList = [...currentSavedList]
-        const toBeRemoved = []
-        const toBeAdded = []
+        const toBeRemoved: number[] = []
+        const toBeAdded: number[] = []
 
         changedList.forEach(changedItem => {
             if (oldList.includes(changedItem.cardId) && !changedItem.isChecked) {
@@ -52,11 +52,15 @@ function Checklist({ checklist, updateSelectedChecklists, updateUserChecklistCol
         updateUserChecklistApi(checklist.id, newList, localStorage.getItem('userToken') || "")
     }
 
+    function handleClose() {
+        updateSelectedChecklists(checklist.id)
+    }
+
     async function handleDelete() {
         await deleteUserChecklistApi(checklist.id, localStorage.getItem('userToken') || "")
         await updateSelectedChecklists(checklist.id)
         updateUserChecklistCollectionState(checklist.id)
-        setRefetchChecklistCollectionRefArr((prev) => [...prev, 1])
+        setRefetchChecklistCollectionRefArr((prev: number[]) => [...prev, 1])
     }
 
     async function deleteUserChecklistApi(checklistId: string, token: string ) {
@@ -165,6 +169,7 @@ function Checklist({ checklist, updateSelectedChecklists, updateUserChecklistCol
     return (
         <article className="checklist">
             <button className="checklist__save-btn" onClick={ handleSave }><i className="fa-solid fa-floppy-disk"></i></button>
+            <button className="checklist__close-btn" onClick={ handleClose }><i className="fa-solid fa-circle-xmark"></i></button>
             <section className="checklist__infobox">
                 <h2 className="infobox__company"><span className="infobox__title">Company</span>{ renderedData.companyName }</h2>
                 <h2 className="infobox__season"><span className="infobox__title">Season</span>{ checklist.season }</h2>

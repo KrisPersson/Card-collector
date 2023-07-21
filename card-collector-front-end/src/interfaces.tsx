@@ -57,7 +57,8 @@ interface Card {
     createdAt?: string;
     grade?: string;
     grader?: string;
-
+    id?: string;
+    _id?: string;
 }
 
-export type { ChecklistFormInput, Intent, UserBody, UpdatedChecklistItem, Player, Card }
+export type { ChecklistFormInput, Intent, UserBody, UpdatedChecklistItem, Player, Card, Role }

@@ -1,7 +1,8 @@
+import { Card } from "./interfaces"
 
 function findJsonSet(productSets, setName) {
     
-    let actualSet = productSets.find(set => set.setName === setName)
+    const actualSet = productSets.find(set => set.setName === setName)
     const arr: string[] = []
     if (!actualSet) {
         productSets.forEach(set => {
@@ -17,4 +18,50 @@ function findJsonSet(productSets, setName) {
     return actualSet || arr[0]
 }
 
-export { findJsonSet }
+const emptyCard: Card = {
+    players: [{tempId: 1, firstname: "", lastname: "", teamname: "", role: "Player"}],
+    manufacturer: "",
+    season: "",
+    product: "",
+    setName: "",
+    setType: "",
+    serial: "",
+
+    numberedTo: "",
+    competition: "NHL",
+
+    rookie: false,
+    autograph: false,
+    memorabilia: false,
+    jerseyNumMatch: false,
+    colorMatch: false,
+    checklistCard: false,
+    stickerCard: false,
+    promoCard: false,
+    printingError: false,
+
+    pc: false,
+    comment: "",
+    copies: 1,
+    price: 0,
+    clNum: "",
+    location: "",
+    origin: "",
+    grade: "",
+    grader: "",
+}
+
+function extractChangesOnlyBeforePostingEdit(initialValues: Card, formState: Card) {
+
+    const result: Card = {}
+
+    for (const key in initialValues) {
+        if (initialValues[key] != formState[key] && key !== "_id") {
+            result[key] = formState[key]
+        }
+    }
+    console.log(result)
+    return result
+}
+
+export { findJsonSet, emptyCard, extractChangesOnlyBeforePostingEdit }
