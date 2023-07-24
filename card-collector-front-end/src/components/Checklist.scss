@@ -7,13 +7,25 @@
     background: rgb(255 255 255 / 0.25);
     border-radius: 6px;
 
+    &__progressbar-container {
+        width: 4rem;
+        height: 4rem;
+        grid-row: 2 / -1;
+        grid-column: 3 / -1;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        align-self: center;
+        justify-self: center;
+    }
+
     &__save-btn {
         background: rgb(255 255 255 / 0.25);
         width: 1.8rem;
         height: 1.8rem;
         position: absolute;
-        right: 2.4rem;
-        top: 0.2rem;
+        right: 2.6rem;
+        top: 0.5rem;
         font-size: 1rem;
         color: rgb(0 0 0 / 0.5);
         border: none;
@@ -27,8 +39,8 @@
         width: 1.8rem;
         height: 1.8rem;
         position: absolute;
-        right: 0.2rem;
-        top: 0.2rem;
+        right: 0.5rem;
+        top: 0.5rem;
         font-size: 1rem;
         color: rgb(0 0 0 / 0.5);
         border: none;
@@ -41,11 +53,11 @@
 
 .checklist__infobox {
     width: 100%;
-    height: 8rem;
+    height: 9rem;
     background: grey;
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 40% 40% 20%;
     padding: 0.35rem 0.7rem;
     border-radius: 6px;
 }

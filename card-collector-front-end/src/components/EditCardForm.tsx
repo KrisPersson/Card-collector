@@ -9,7 +9,6 @@ function EditCardForm({ initialValues, updateFormState, updatePlayers, handleRad
     amtOfPlayersOnCard: number;
     formState: Card;
 }) {
-console.log(updatePlayers)
     return (
         <section className="add-card-form">
             <h4 className="add-card-form__card-temp-id"># { initialValues.id }</h4>

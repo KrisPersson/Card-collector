@@ -5,7 +5,8 @@ import setLists from "../../../back-end/JSONchecklists/checklists.json"
 import { findJsonSet } from "../utils"
 import { BASE_URL } from "../api"
 import { UpdatedChecklistItem } from "../interfaces"
-
+import { CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 // const cardSet = setLists.upperdeck["1994-95"].series1
 
 
@@ -165,6 +166,8 @@ function Checklist({ checklist, updateSelectedChecklists, updateUserChecklistCol
     }
 
     const renderedData = renderChecklistItems(checklist, checklist.setName)
+    const percentage = currentSavedList.length / renderedData.checklistItems.length * 100
+    console.log(percentage)
 
     return (
         <article className="checklist">
@@ -177,7 +180,11 @@ function Checklist({ checklist, updateSelectedChecklists, updateUserChecklistCol
                 <h2 className="infobox__set-name"><span className="infobox__title">Set name</span>{ checklist.setName }</h2>
                 <h2 className="infobox__set-type"><span className="infobox__title">Set type</span>{ renderedData.setType }</h2>
                 <h2 className="infobox__pack-odds"><span className="infobox__title">Pack odds</span>{ renderedData.packOdds }</h2>
+                <article className="checklist__progressbar-container">
+                <CircularProgressbar value={ percentage } text={`${Math.round(percentage * 10) / 10}%`} />
+            </article>
             </section>
+            
             <table className="checklist__table">
                 <thead>
                     <tr className="header-row">

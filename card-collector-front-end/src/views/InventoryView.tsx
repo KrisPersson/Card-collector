@@ -40,27 +40,51 @@ function InventoryView() {
 
     function sortTableElementsBy(elements: Card[], prop: string) {
         const elems = [...elements]
-
-        if (prop !== 'price' && prop !== 'season') {
-            elems.sort((a: Card, b: Card) => {
-                if (a[prop] > b[prop]) {
-                    return 1
-                } else if (a[prop] < b[prop]) {
-                    return -1
-                } else {
-                    return 0
-                }
-            }) 
+        if (prop !== 'firstname' && prop !== 'lastname' && prop !== 'teamname') {
+            if (elems[0][prop] >= elems[elems.length - 1][prop]) {
+                elems.sort((a: Card, b: Card) => {
+                    if (a[prop] > b[prop]) {
+                        return 1
+                    } else if (a[prop] < b[prop]) {
+                        return -1
+                    } else {
+                        return 0
+                    }
+                }) 
+            } else {
+                elems.sort((a: Card, b: Card) => {
+                    if (a[prop] < b[prop]) {
+                        return 1
+                    } else if (a[prop] > b[prop]) {
+                        return -1
+                    } else {
+                        return 0
+                    }
+                }) 
+            }
         } else {
-            elems.sort((a: Card, b: Card) => {
-                if (a[prop] < b[prop]) {
-                    return 1
-                } else if (a[prop] > b[prop]) {
-                    return -1
-                } else {
-                    return 0
-                }
-            })  
+            if (elems[0].players[0][prop] < elems[elems.length - 1].players[0][prop]) {
+                elems.sort((a: Card, b: Card) => {
+                    if (a.players[0][prop] < b.players[0][prop]) {
+                        return 1
+                    } else if (a.players[0][prop] > b.players[0][prop]) {
+                        return -1
+                    } else {
+                        return 0
+                    }
+                }) 
+            } else {
+                elems.sort((a: Card, b: Card) => {
+                    if (a.players[0][prop] > b.players[0][prop]) {
+                        return 1
+                    } else if (a.players[0][prop] < b.players[0][prop]) {
+                        return -1
+                    } else {
+                        return 0
+                    }
+                }) 
+            }
+             
         }
         setCurrentUserCards([...elems])
     }
@@ -88,8 +112,8 @@ function InventoryView() {
                 <thead>
                     <tr className="table-row table-row--head">
                         <th onClick={() => sortTableElementsBy(currentUserCards, "firstname")} className="table-column table-column__firstname">Firstname</th>
-                        <th className="table-column table-column__lastname">Lastname</th>
-                        <th className="table-column table-column__teamname">Team</th>
+                        <th onClick={() => sortTableElementsBy(currentUserCards, "lastname")} className="table-column table-column__lastname">Lastname</th>
+                        <th onClick={() => sortTableElementsBy(currentUserCards, "teamname")} className="table-column table-column__teamname">Team</th>
                         <th onClick={() => sortTableElementsBy(currentUserCards, "season")} className="table-column table-column__season">Season</th>
                         <th onClick={() => sortTableElementsBy(currentUserCards, "product")} className="table-column table-column__product">Product</th>
                         <th onClick={() => sortTableElementsBy(currentUserCards, "setName")} className="table-column table-column__setname">Card-set name</th>
