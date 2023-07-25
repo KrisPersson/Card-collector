@@ -1,4 +1,4 @@
-const { addNewCards, getInventory, editInventory } = require('../models/inventory.model')
+const { addNewCards, getInventory, editInventory, deleteInventory } = require('../models/inventory.model')
 const { findUserById } = require('../models/user.model')
 
 
@@ -36,5 +36,17 @@ async function editInventoryCtrl(request, response) {
     }
 }
 
+async function deleteInventoryCtrl(request, response) {
+    try {
+        const { userid } = request.headers
+        const { cardId } = request.body
+        const result = await deleteInventory(userid, cardId)
+        response.json({ success: true, result })
+        
+    } catch (error) {
+        response.status(500).json({ success: false, error: error.message })
+    }
+}
 
-module.exports = { postInventoryCtrl, getInventoryCtrl, editInventoryCtrl }
+
+module.exports = { postInventoryCtrl, getInventoryCtrl, editInventoryCtrl, deleteInventoryCtrl }

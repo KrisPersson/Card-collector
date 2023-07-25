@@ -23,9 +23,12 @@ async function getInventory(userId) {
 
 async function editInventory(cardId, userId, updates) {
     const result = await db.inventory.update({ id: cardId, userId }, { $set: {...updates} })
-    console.log(result)
-
     return result
 }
 
-module.exports = { addNewCards, getInventory, editInventory }
+async function deleteInventory(userId, cardId) {
+    const result = await db.inventory.remove({ userId, id: cardId })
+    return result
+}
+
+module.exports = { addNewCards, getInventory, editInventory, deleteInventory }

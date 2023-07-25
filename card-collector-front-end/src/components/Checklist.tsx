@@ -5,7 +5,7 @@ import setLists from "../../../back-end/JSONchecklists/checklists.json"
 import { findJsonSet } from "../utils"
 import { BASE_URL } from "../api"
 import { UpdatedChecklistItem } from "../interfaces"
-import { CircularProgressbar } from 'react-circular-progressbar';
+import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 // const cardSet = setLists.upperdeck["1994-95"].series1
 
@@ -181,7 +181,12 @@ function Checklist({ checklist, updateSelectedChecklists, updateUserChecklistCol
                 <h2 className="infobox__set-type"><span className="infobox__title">Set type</span>{ renderedData.setType }</h2>
                 <h2 className="infobox__pack-odds"><span className="infobox__title">Pack odds</span>{ renderedData.packOdds }</h2>
                 <article className="checklist__progressbar-container">
-                <CircularProgressbar value={ percentage } text={`${Math.round(percentage * 10) / 10}%`} />
+                <CircularProgressbar value={ percentage } text={`${Math.round(percentage * 10) / 10}%`} styles={buildStyles({
+                    textSize: '1.5rem',
+                    pathColor: percentage == 100 ? `rgb(61 190 14)` : `rgb(94 0 189)`,
+                    textColor: percentage == 100 ? `rgb(61 190 14)` : 'rgb(89 0 178)',
+                    trailColor: '#d6d6d6'
+                })} />
             </article>
             </section>
             

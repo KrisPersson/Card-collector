@@ -83,6 +83,10 @@ const editInventoryBodySchema = Joi.object({
     
 })
 
+const deleteInventoryBodySchema = Joi.object({
+    cardId: Joi.string().min(10)
+}).required()
+
 
 async function checkPostInventory(request, response, next) {
     const { body, headers } = request
@@ -104,5 +108,15 @@ async function checkEditInventory(request, response, next) {
     }
 }
 
+async function checkDeleteInventory(request, response, next) {
+    const { body, headers } = request
+    const validation = deleteInventoryBodySchema.validate(body)
+    if (!validation.error && headers.userid && typeof headers.userid === 'string') {
+        next()
+    } else {
+        response.status(400).json({ success: false, error: validation.error })
+    }
+}
 
-module.exports = { checkPostInventory, checkEditInventory }
+
+module.exports = { checkPostInventory, checkEditInventory, checkDeleteInventory }

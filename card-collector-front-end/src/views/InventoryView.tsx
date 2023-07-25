@@ -8,7 +8,6 @@ import InventoryCard from "../components/InventoryCard"
 import { getInventory } from "../api"
 import { Card } from "../interfaces"
 import { emptyCard } from "../utils"
-import { sortTableElementsBy } from "../utils"
 
 
 function InventoryView() {
