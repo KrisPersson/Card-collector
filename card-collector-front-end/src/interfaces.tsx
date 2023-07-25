@@ -19,7 +19,7 @@ interface UpdatedChecklistItem {
 type Role = "Player" | "Mascot" | "Coach" | "Referee" | "Pundit" | "Other"
 
 interface Player {
-    tempId: number;
+    tempId?: number;
     firstname: string;
     lastname: string;
     teamname: string;

@@ -135,7 +135,29 @@ async function editInventory(userid: string, formInput: Card, cardId: string, to
     }
 }
 
+async function deleteInventory(userid: string, cardId: string, token: string ) {
+
+    const body = {
+        cardId: cardId
+    }
+    try {
+        const response = await fetch(BASE_URL + "/inventory", {
+            method: "DELETE",
+            headers: {
+                authorization: `Bearer ${token}`,
+                'Content-Type': 'application/json',
+                'userid': userid
+            },
+            body: JSON.stringify(body)
+        })
+        const data = await response.json()
+        return data
+    } catch (error) {
+        console.log(error)
+    }
+}
 
 
 
-export { user, verifyToken, BASE_URL, postNewUserChecklist, postNewInventory, getInventory, editInventory }
+
+export { user, verifyToken, BASE_URL, postNewUserChecklist, postNewInventory, getInventory, editInventory, deleteInventory }

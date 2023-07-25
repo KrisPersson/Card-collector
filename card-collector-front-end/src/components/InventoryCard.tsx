@@ -1,7 +1,8 @@
 import "./InventoryCard.scss"
 import { useState } from "react"
+import { Player } from "../interfaces"
 
-function InventoryCard({ cardData, handleOpenEdit }) {
+function InventoryCard({ cardData, handleOpenEdit, handleDeleteCard }) {
 
 
     const { players, 
@@ -36,33 +37,40 @@ function InventoryCard({ cardData, handleOpenEdit }) {
     const [showExpandSection, setShowExpandSection] = useState(false)
     const parsedDate = new Date(createdAt)
 
-    const playersFirstName = players.map((player, i) => {
+    const playersFirstName = players.map((player: Player, i: number) => {
         if (i > 0) {
             return <p className="expand-section__firstname">{ player.firstname }</p>
         }
     })
-    const playersLastName = players.map((player, i) => {
+    const playersLastName = players.map((player: Player, i: number) => {
         if (i > 0) {
             return <p className="expand-section__lastname">{ player.lastname }</p>
         }
     })
-    const playersTeamName = players.map((player, i) => {
+    const playersTeamName = players.map((player: Player, i: number) => {
         if (i > 0) {
             return <p className="expand-section__teamname">{ player.teamname }</p>
         }
     })
 
-    function showHideExpand(event) {
+    function showHideExpand(event: Event) {
         
-        const classList = event.target.classList.value.split(' ')
+        const classList = event.target?.classList.value.split(' ')
         console.log(classList)
         if (!classList.includes('fa-solid') && !classList.includes('inventory-card__action-btn')) {
             setShowExpandSection(prev => !prev)
         }
     }
 
+    async function handleHandleDelete(cardId: string) {
+        const result = await handleDeleteCard(cardId)
+        if (result === true) {
+            setShowExpandSection(false)
+        }
+    }
+
     return (
-        <tr onClick={(event) => showHideExpand(event)} className={`table-row table-row--body ${showExpandSection ? 'table-row--expanded' : ''}`}>
+        <tr onClick={(event: Event) => showHideExpand(event)} className={`table-row table-row--body ${showExpandSection ? 'table-row--expanded' : ''}`}>
             <td className="table-column table-column__firstname"> { players[0].firstname }
             {
                 showExpandSection &&
@@ -152,7 +160,7 @@ function InventoryCard({ cardData, handleOpenEdit }) {
                 showExpandSection &&
                 <section className="table-column--expand-section table-column--expand-section__head expand-section--action-btns">
                     <button onClick={ () => handleOpenEdit(cardData) } className="inventory-card__action-btn" ><i className="fa-solid fa-pen-to-square"></i></button>
-                    <button className="inventory-card__action-btn"><i className="fa-solid fa-trash"></i></button>
+                    <button onClick={ () => handleHandleDelete(cardData.id) } className="inventory-card__action-btn"><i className="fa-solid fa-trash"></i></button>
 
                 </section>
             }

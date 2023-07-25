@@ -5,7 +5,7 @@ import AddNewCardModal from "../components/AddNewCardModal"
 import EditCardModal from "../components/EditCardModal"
 
 import InventoryCard from "../components/InventoryCard"
-import { getInventory } from "../api"
+import { getInventory, deleteInventory } from "../api"
 import { Card } from "../interfaces"
 import { emptyCard } from "../utils"
 
@@ -36,6 +36,18 @@ function InventoryView() {
         setShowEditCardModal(true)
         scroll(0,0)
     }
+
+    async function handleDeleteCard(cardId: string) {
+        const { result } = await deleteInventory(localStorage.getItem('userId') || '', cardId, localStorage.getItem('userToken') || '')
+        if (result === 1) {
+            await getLatestUserCards()
+            scroll(0,0)
+            return true
+        } else {
+            return false
+        }
+    }
+
 
     function sortTableElementsBy(elements: Card[], prop: string) {
         const elems = [...elements]
@@ -129,6 +141,7 @@ function InventoryView() {
                                 key={ i }
                                 cardData={ card }
                                 handleOpenEdit={ handleOpenEdit }
+                                handleDeleteCard={ handleDeleteCard  }
                                 />
                         })
                     }
