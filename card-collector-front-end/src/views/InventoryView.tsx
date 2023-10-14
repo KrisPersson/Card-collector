@@ -9,7 +9,6 @@ import { getInventory, deleteInventory } from "../api"
 import { Card } from "../interfaces"
 import { emptyCard } from "../utils"
 
-
 function InventoryView() {
 
     const [cardBeingEdited, setCardBeingEdited] = useState<Card>(emptyCard)
@@ -27,7 +26,6 @@ function InventoryView() {
     useEffect(() => {
         getLatestUserCards()
     },[])
-
 
     function handleOpenEdit(values: Card) {
         setCardBeingEdited(() => {
@@ -47,7 +45,6 @@ function InventoryView() {
             return false
         }
     }
-
 
     function sortTableElementsBy(elements: Card[], prop: string) {
         const elems = [...elements]

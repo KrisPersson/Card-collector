@@ -1,9 +1,9 @@
-import { Card } from "./interfaces"
+import { Card, CardSet } from "./interfaces"
 
-function findJsonSet(productSets, setName) {
+function findJsonSet(productSets: CardSet[], setName: string): CardSet {
     
     const actualSet = productSets.find(set => set.setName === setName)
-    const arr: string[] = []
+    const arr: CardSet[] = []
     if (!actualSet) {
         productSets.forEach(set => {
             if (set.parallelSets) {

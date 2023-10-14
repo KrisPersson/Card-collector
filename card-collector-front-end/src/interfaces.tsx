@@ -1,3 +1,54 @@
+
+export interface SetLists  {
+    [company: string]: Company
+}
+
+export interface Company {
+    name: string,
+    [season: string]: Season
+}
+
+export interface Season {
+    [product: string]: Product
+}
+
+export interface Product {
+    name: string,
+    sets: CardSet[]
+}
+
+export interface CardSet {
+    setName: string;
+    cardNumbers: {
+        first: number,
+        last: number
+    },
+    setType: string,
+    packOdds?: string,
+    numPrefix?: string,
+    parallelSets?: ParallelCardSet[],
+    numberedTo?: number,
+    checklist: ChecklistCard[],
+    setId: string
+}
+
+export interface ChecklistCard {
+    number: number,
+    firstname: string,
+    lastname: string,
+    teamname?: string,
+    players?: Player[]
+}
+
+export interface ParallelCardSet {
+    name: string,
+    packOdds?: string,
+    numberedTo?: number,
+    numPrefix?: string,
+    setId: string
+}
+
+
 interface ChecklistFormInput {
     company: string
     season: string
@@ -61,4 +112,14 @@ interface Card {
     _id?: string;
 }
 
-export type { ChecklistFormInput, Intent, UserBody, UpdatedChecklistItem, Player, Card, Role }
+interface UserChecklist {
+    company: string,
+    id: string,
+    personalChecklist: number[],
+    product: string,
+    season: string,
+    setName: string,
+    _id?: string
+}
+
+export type { UserChecklist, ChecklistFormInput, Intent, UserBody, UpdatedChecklistItem, Player, Card, Role }

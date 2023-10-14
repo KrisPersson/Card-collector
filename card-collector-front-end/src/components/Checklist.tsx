@@ -4,14 +4,24 @@ import { ChecklistItem } from "../components/ChecklistItem"
 import setLists from "../../../back-end/JSONchecklists/checklists.json"
 import { findJsonSet } from "../utils"
 import { BASE_URL } from "../api"
-import { UpdatedChecklistItem } from "../interfaces"
+import { UpdatedChecklistItem, UserChecklist, CardSet, Player, ChecklistCard, Company, SetLists } from "../interfaces"
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 // const cardSet = setLists.upperdeck["1994-95"].series1
 
-
-
-function Checklist({ checklist, updateSelectedChecklists, updateUserChecklistCollectionState, setRefetchChecklistCollectionRefArr }) {
+function Checklist(
+    { 
+        checklist, 
+        updateSelectedChecklists, 
+        updateUserChecklistCollectionState, 
+        setRefetchChecklistCollectionRefArr 
+    }:
+    { 
+        checklist: UserChecklist, 
+        updateSelectedChecklists: (id: string) => void, 
+        updateUserChecklistCollectionState: (checklistId: string) => void, 
+        setRefetchChecklistCollectionRefArr: React.Dispatch<React.SetStateAction<number[]>> 
+    }) {
     const [changedSinceLastSave, setChangedSinceLastSave] = useState<UpdatedChecklistItem[]>([])
     const [currentSavedList, setCurrentSavedList] = useState([...checklist.personalChecklist])
 
@@ -102,27 +112,40 @@ function Checklist({ checklist, updateSelectedChecklists, updateUserChecklistCol
         }
     }
 
-    function renderChecklistItems(cardSet, setName: string) {
-    
-        const productSets = setLists[cardSet.company][cardSet.season][cardSet.product].sets
-        const jsonSet = findJsonSet(productSets, setName)
-        let path = setLists[cardSet.company][cardSet.season][cardSet.product]
-        let data = {
-            companyName: setLists[cardSet.company].name,
-            productName: setLists[cardSet.company][cardSet.season][cardSet.product].name,
+    interface ChecklistItemsData {
+        companyName: string,
+        productName: string,
+        setName: string,
+        setType: string,
+        lowCardNum: number,
+        highCardnum: number,
+        setList: ChecklistCard[],
+        packOdds: string,
+        numPrefix: string,
+        checklistItems: JSX.Element[]
+    }
+
+    function renderChecklistItems(cardSet: UserChecklist, setName: string) {
+        const sLists = {...setLists} as unknown as SetLists
+        const company = sLists[cardSet.company] as Company
+        const productSets: CardSet[] = company[cardSet.season][cardSet.product].sets
+        const jsonSet: CardSet = findJsonSet(productSets, setName)
+        const data: ChecklistItemsData = {
+            companyName: company.name,
+            productName: company[cardSet.season][cardSet.product].name,
             setName: cardSet.setName,
             setType: jsonSet.setType,
             lowCardNum: jsonSet.cardNumbers.first,
             highCardnum: jsonSet.cardNumbers.last,
             setList: jsonSet.checklist,
             packOdds: jsonSet.packOdds || "N/A",
-            numPrefix: cardSet.numPrefix || "",
+            numPrefix: jsonSet.numPrefix || "",
             checklistItems: []
         }
         
         if (!(setName.toLowerCase() === jsonSet.setName.toLowerCase())) {
     
-            jsonSet.parallelSets.forEach(set => {
+            jsonSet.parallelSets?.forEach(set => {
                 if (set.name.toLowerCase() === setName.toLowerCase()) {
                     data.setType = 'Parallel'
                     data.setName = set.name
@@ -135,7 +158,7 @@ function Checklist({ checklist, updateSelectedChecklists, updateUserChecklistCol
                 }
             })
         }
-        const checklistItems = []
+        const checklistItems: JSX.Element[] = []
         
         for (let i = data.lowCardNum; i <= data.highCardnum; i++) {
             const isInCollection = currentSavedList.includes(i)
@@ -143,9 +166,9 @@ function Checklist({ checklist, updateSelectedChecklists, updateUserChecklistCol
             const cardHasTwoOrMorePlayers = card.players || false
             let cardNameString = ''
             if (cardHasTwoOrMorePlayers) {
-                card.players.forEach((player, i: number) => {
+                card.players?.forEach((player: Player, i: number) => {
                     cardNameString += `${player.firstname} ${player.lastname}`
-                    if (i < card.players.length - 1) {
+                    if (card.players && i < card.players.length - 1) {
                         cardNameString += ' / '
                     }
                 })

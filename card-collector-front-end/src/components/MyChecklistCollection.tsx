@@ -1,9 +1,18 @@
 import "./MyChecklistCollection.scss"
 import setLists from "../../../back-end/JSONchecklists/checklists.json"
+import { UserChecklist } from "../interfaces" 
 
-function MyChecklistCollection({ userChecklistCollection, selectedChecklists, updateSelectedChecklists, setShowCreateChecklistModal }) {
-
-
+function MyChecklistCollection({ 
+    userChecklistCollection, 
+    selectedChecklists,
+    updateSelectedChecklists, 
+    setShowCreateChecklistModal 
+}: {
+    userChecklistCollection: UserChecklist[], 
+    selectedChecklists: string[],
+    updateSelectedChecklists: (id: string) => void, 
+    setShowCreateChecklistModal: React.Dispatch<React.SetStateAction<boolean>>
+}) {
 
     const liItems = userChecklistCollection.map(checklist => {
             const className = selectedChecklists.includes(checklist.id) ? "collection-item collection-item--selected" : "collection-item"
@@ -16,7 +25,7 @@ function MyChecklistCollection({ userChecklistCollection, selectedChecklists, up
                 product={checklist.product}
                 setname={checklist.setName}
 
-                onClick={ (e) => updateSelectedChecklists(e.target.id) } 
+                onClick={ (e: React.MouseEvent<HTMLLIElement>) => updateSelectedChecklists(e.currentTarget.id) } 
                 className={ className }
 
             >
@@ -25,11 +34,19 @@ function MyChecklistCollection({ userChecklistCollection, selectedChecklists, up
             </li>)
     })
 
-    function structureMyChecklistsBeforeRendering(liItems) {
-        let structured = {}
+    interface UserChecklistStructure {
+        [company: string]: {
+            [season: string]: {
+                [product: string]: string[]
+            }
+        }
+    }
+
+    function structureMyChecklistsBeforeRendering(liItems: JSX.Element[]) {
+        let structured: UserChecklistStructure = {}
 
         liItems.forEach(liItem => {
-            const { company, season, product } = liItem.props
+            const { company, season, product }: { company: string, season: string, product: string } = liItem.props
             if (!structured[company]) {
                 structured = {...structured, [company]: {}}
             }
@@ -43,7 +60,7 @@ function MyChecklistCollection({ userChecklistCollection, selectedChecklists, up
         })
         return structured
     }
-    function sortAndAssembleMyChecklistsBeforeRendering(structure, liItems) {
+    function sortAndAssembleMyChecklistsBeforeRendering(structure: UserChecklistStructure, liItems: JSX.Element[]) {
         const result = []
         let counter = 0
         for (const companyKey in structure) {
@@ -69,8 +86,6 @@ function MyChecklistCollection({ userChecklistCollection, selectedChecklists, up
         return result
     }
     
-    
-
     return (
         <section className="user-checklist-collection">
             <button onClick={ () => setShowCreateChecklistModal((prev) => !prev) } className="add-btn"><i className="fa-solid fa-plus"></i></button>

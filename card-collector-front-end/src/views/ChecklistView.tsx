@@ -10,19 +10,15 @@ import { AddNewCardModal } from "../components/AddNewCardModal"
 import { BASE_URL } from "../api"
 import setLists from "../../../back-end/JSONchecklists/checklists.json"
 import { findJsonSet } from "../utils"
+import { UserChecklist } from "../interfaces"
 
 // const cardSet = setLists.upperdeck["1994-95"].series1.sets[1]
 
-
-
-
-
-
 function ChecklistView() {
 
-    const [userChecklistCollection, setUserChecklistCollection] = useState<string[]>([])
+    const [userChecklistCollection, setUserChecklistCollection] = useState<UserChecklist[]>([])
     const [selectedChecklists, setSelectedChecklists] = useState<string[]>([])
-    const [showCreateChecklistModal, setShowCreateChecklistModal] = useState(false)
+    const [showCreateChecklistModal, setShowCreateChecklistModal] = useState<boolean>(false)
     const [refetchChecklistCollectionRefArr, setRefetchChecklistCollectionRefArr] = useState<number[]>([])
 
     useEffect(() => {
@@ -43,12 +39,8 @@ function ChecklistView() {
     }
 
     function updateUserChecklistCollectionState(checklistId: string) {
-        if (!userChecklistCollection.includes(checklistId)) {
-            setUserChecklistCollection((prev) => [...prev, checklistId])
-        } else {
-            const newCol = userChecklistCollection.filter(checklist => checklist !== checklistId)
-            setUserChecklistCollection([...newCol])
-        }
+        const newCol = userChecklistCollection.filter(checklist => checklist.id !== checklistId)
+        setUserChecklistCollection([...newCol])
     }
 
     async function getUserChecklistCollection(userId: string, token: string) {
@@ -59,7 +51,8 @@ function ChecklistView() {
             })
             const data = await response.json()
             if (data.success) {
-                setUserChecklistCollection([...data.collection])
+                const dataCollection: UserChecklist[] = data.collection
+                setUserChecklistCollection([...dataCollection])
             } 
         } catch (error) {
             console.log(error)
@@ -67,8 +60,6 @@ function ChecklistView() {
     }
 
     // const { setName, setType, checklistItems, packOdds } = newChecklist
-
-
     return (
         <>
         <MyChecklistCollection 
@@ -100,6 +91,5 @@ function ChecklistView() {
         </>
     )
 }
-
 
 export { ChecklistView }

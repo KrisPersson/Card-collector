@@ -2,18 +2,26 @@ import "./ChecklistForm.css"
 import setLists from "../../../back-end/JSONchecklists/checklists.json"
 import { useState } from 'react'
 import { postNewUserChecklist } from '../api'
-import { ChecklistFormInput } from '../interfaces'
+import { ChecklistFormInput, SetLists, Company, Season, Product, CardSet, ParallelCardSet } from '../interfaces'
 
-
-
-function ChecklistForm({setShowCreateChecklistModal, setRefetchChecklistCollectionRefArr}) {
+function ChecklistForm(
+    {
+        setShowCreateChecklistModal, 
+        setRefetchChecklistCollectionRefArr
+    }:
+    {
+        setShowCreateChecklistModal: React.Dispatch<React.SetStateAction<boolean>>, 
+        setRefetchChecklistCollectionRefArr: React.Dispatch<React.SetStateAction<number[]>>
+    }
+) {
+    const sLists = {...setLists} as unknown as SetLists
 
     const [company, setCompany] = useState('')
     const [season, setSeason] = useState('')
     const [product, setProduct] = useState('')
     const [cardSet, setCardSet] = useState('')
 
-    function changeState(value, prop) {
+    function changeState(value: string, prop: string) {
         switch (prop) {
             case "company":
                 setCompany(value)
@@ -36,26 +44,27 @@ function ChecklistForm({setShowCreateChecklistModal, setRefetchChecklistCollecti
         }
     }
 
-    function renderOptions(path) {
+    function renderOptions(path: Company | Product | Season | SetLists) {
         const options = []
         let index = 0
         for (const prop in path) {
             if (prop !== 'name') {
-                options.push(<option key={index} value={prop}>{ path[prop].name ? path[prop].name : prop }</option>)
+                const pathProp = path[prop]
+                options.push(<option key={index} value={prop}>{ pathProp.name ? pathProp.name : prop }</option>)
                 index += 1
             }
         }
         return options
     }
 
-    function renderCardSetOptions(array) {
+    function renderCardSetOptions(array: CardSet[]) {
         const options = []
         let index = 0
         for (const set of array) {
             options.push(<option key={index} value={set.setName}>{ set.setName }</option>)
             index += 1
             if (set.parallelSets) {
-                for (let paraSet of set.parallelSets) {
+                for (const paraSet of set.parallelSets as ParallelCardSet[]) {
                     options.push(<option key={index} value={paraSet.name}>{ paraSet.name }</option>)
                     index += 1
                 }
@@ -64,10 +73,9 @@ function ChecklistForm({setShowCreateChecklistModal, setRefetchChecklistCollecti
         return options
     }
 
-    async function handleSubmit(event) {
+    async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault()
         const token = localStorage.getItem('userToken') || ""
-        const username = localStorage.getItem('username') 
         const userId = localStorage.getItem('userId') || ""
         const formInput: ChecklistFormInput = {
             company: company,
@@ -84,12 +92,12 @@ function ChecklistForm({setShowCreateChecklistModal, setRefetchChecklistCollecti
     
 
     return (
-        <form onSubmit={ handleSubmit } className="checklist-form" action="">
+        <form onSubmit={(event) => handleSubmit(event) } className="checklist-form" action="">
             <label>
                 Company
                 <select value={company} onChange={(e)=> changeState(e.target.value, "company")} name="company" id="">
                     <option selected disabled value="">-Pick a company-</option>
-                    { renderOptions(setLists) }
+                    { renderOptions(sLists) }
                 </select>
             </label>
             { 
@@ -98,7 +106,7 @@ function ChecklistForm({setShowCreateChecklistModal, setRefetchChecklistCollecti
                     Season
                     <select defaultValue='' onChange={(e)=> changeState(e.target.value, "season")} name="season" id="">
                         <option selected disabled value="">-Pick a season-</option>
-                        { renderOptions(setLists[company]) }
+                        { renderOptions(sLists[company]) }
                     </select>
                 </label>
             }
@@ -108,7 +116,7 @@ function ChecklistForm({setShowCreateChecklistModal, setRefetchChecklistCollecti
                     Product
                     <select defaultValue='' onChange={(e)=> changeState(e.target.value, "product")} name="product" id="">
                         <option selected disabled value="">-Pick a product-</option>
-                        { renderOptions(setLists[company][season]) }
+                        { renderOptions(sLists[company][season]) }
                     </select>
                 </label>
             }
@@ -118,7 +126,7 @@ function ChecklistForm({setShowCreateChecklistModal, setRefetchChecklistCollecti
                     Card set
                     <select defaultValue='' onChange={(e)=> changeState(e.target.value, "cardSet")} name="cardset" id="">
                         <option selected disabled value="">-Pick a Card set-</option>
-                        { renderCardSetOptions(setLists[company][season][product].sets) }
+                        { renderCardSetOptions(sLists[company][season][product].sets) }
                     </select>
                 </label>
             }   
