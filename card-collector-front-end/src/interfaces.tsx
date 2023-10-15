@@ -1,21 +1,35 @@
 
-export interface SetLists  {
+export type SetLists = SetListsCompany & {[key: string]: Company}
+
+interface SetListsCompany {
     [company: string]: Company
+
 }
 
-export interface Company {
-    name: string,
+interface NameCompany {
+    name: string
+}
+interface SeasonCompany {
     [season: string]: Season
 }
+
+export type Company = NameCompany & SeasonCompany & {[key: string]: Season}
 
 export interface Season {
     [product: string]: Product
 }
 
-export interface Product {
-    name: string,
-    sets: CardSet[]
+interface NameProduct {
+    name: string
 }
+interface SetsProduct {
+    sets: CardSet[],
+    name?: string
+}
+
+export type Path = {[key: string]: Company | Season | Product }
+
+export type Product = NameProduct & SetsProduct & {[key: string]: CardSet[]}
 
 export interface CardSet {
     setName: string;

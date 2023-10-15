@@ -2,7 +2,7 @@ import "./ChecklistForm.css"
 import setLists from "../../../back-end/JSONchecklists/checklists.json"
 import { useState } from 'react'
 import { postNewUserChecklist } from '../api'
-import { ChecklistFormInput, SetLists, Company, Season, Product, CardSet, ParallelCardSet } from '../interfaces'
+import { ChecklistFormInput, SetLists, Company, Season, Product, CardSet, ParallelCardSet, Path } from '../interfaces'
 
 function ChecklistForm(
     {
@@ -44,13 +44,13 @@ function ChecklistForm(
         }
     }
 
-    function renderOptions(path: Company | Product | Season | SetLists) {
+    function renderOptions(path: Path) {
         const options = []
         let index = 0
         for (const prop in path) {
             if (prop !== 'name') {
-                const pathProp = path[prop]
-                options.push(<option key={index} value={prop}>{ pathProp.name ? pathProp.name : prop }</option>)
+                const name: string = path[prop].name ? path[prop].name.toString() : prop
+                options.push(<option key={index} value={prop}>{ name }</option>)
                 index += 1
             }
         }
