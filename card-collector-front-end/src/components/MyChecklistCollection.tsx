@@ -1,6 +1,8 @@
 import "./MyChecklistCollection.scss"
 import setLists from "../../../back-end/JSONchecklists/checklists.json"
-import { UserChecklist } from "../interfaces" 
+import { UserChecklist, SetLists } from "../interfaces" 
+
+const sLists = {...setLists} as SetLists
 
 function MyChecklistCollection({ 
     userChecklistCollection, 
@@ -42,7 +44,7 @@ function MyChecklistCollection({
         }
     }
 
-    function structureMyChecklistsBeforeRendering(liItems: JSX.Element[]) {
+    function structureMyChecklistsBeforeRendering(liItems:JSX.Element[]) {
         let structured: UserChecklistStructure = {}
 
         liItems.forEach(liItem => {
@@ -65,14 +67,14 @@ function MyChecklistCollection({
         let counter = 0
         for (const companyKey in structure) {
             if (companyKey !== 'undefined') {
-                result.push(<h4 className="collection__key collection__key--company" key={counter}>{ setLists[companyKey]['name'] || companyKey }</h4>)
+                result.push(<h4 className="collection__key collection__key--company" key={counter}>{ sLists[companyKey]['name'] || companyKey }</h4>)
                 counter++
     
                 for (const seasonKey in structure[companyKey]) {
                     result.push(<h4 className="collection__key collection__key--season" key={counter}>- { seasonKey }</h4>)
                     counter++
                     for (const productKey in structure[companyKey][seasonKey]) {
-                        result.push(<h4 className="collection__key collection__key--product" key={counter}>-- { setLists[companyKey][seasonKey][productKey]["name"] }</h4>)
+                        result.push(<h4 className="collection__key collection__key--product" key={counter}>-- { sLists[companyKey][seasonKey][productKey]["name"] }</h4>)
                         counter++
                         structure[companyKey][seasonKey][productKey].forEach(checklistId => {
                             const foundLiItem = liItems.find(item => item.props.id === checklistId)
