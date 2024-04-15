@@ -1,0 +1,47 @@
+
+.checklist {
+    &__checklist-item {
+        width: 20rem;
+        height: 2rem;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        font-family: 'Pathway Extreme', sans-serif;
+    }
+
+    &__checklist-item h4 {
+        margin: 0;
+        width: 100%;
+        font-weight: 400;
+    }
+    
+    &__checklist-item input {
+        margin-right: 0.5rem;
+    }
+}
+
+.checklist-item {
+
+    &__player {
+        width: 12rem;
+        text-align: left;
+        padding-left: 0.5rem;
+    }
+    &__cardnumber {
+        width: 2rem;
+        white-space: nowrap;
+        padding-inline: 0.5rem;
+        text-align: justify;
+        letter-spacing: 2%;
+    }
+}
+
+.checklist-item__inventory {
+    width: 2rem;
+}
+
+.checklist-item__checkbox {
+    width: 1rem;
+    height: 1rem;
+}

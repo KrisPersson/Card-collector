@@ -22,7 +22,7 @@
     flex-flow: row wrap;
     &__key {
         margin: 0;
-        padding:0;
+        padding: 0;
         text-align: left;
         text-transform: capitalize;
         font-size: 0.75rem;
@@ -55,6 +55,10 @@
     font-size: 0.8rem;
     display: inline-block;
     align-self: flex-start;
+
+    .check-mark-emoji {
+        margin-left: 0.3rem;
+    }
 }
 
 .collection-item--selected {

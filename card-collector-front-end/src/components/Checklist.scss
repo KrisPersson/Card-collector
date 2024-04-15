@@ -48,6 +48,21 @@
         box-shadow: 1px 1px rgb(0 0 0 / 0.2);
         z-index: 2;
     }
+
+    &__copy-btn {
+        background: rgb(255 255 255 / 0.25);
+        width: 1.8rem;
+        height: 1.8rem;
+        position: absolute;
+        right: 4.7rem;
+        top: 0.5rem;
+        font-size: 1rem;
+        color: rgb(0 0 0 / 0.5);
+        border: none;
+        border-radius: 10%;
+        box-shadow: 1px 1px rgb(0 0 0 / 0.2);
+        z-index: 2;
+    }
     
 }
 
